@@ -107,18 +107,50 @@
 
 ## Traceability
 
-*Updated during roadmap creation.*
+*Updated after roadmap creation — 2026-03-14*
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AUTH-01–06 | Phase 1 | Pending |
-| LEAD-01–06 | Phase 2 | Pending |
-| PIPE-01–05 | Phase 2 | Pending |
-| AUTO-01–06 | Phase 2 | Pending |
-| AI-01–03 | Phase 3 | Pending |
-| DASH-01–05 | Phase 3 | Pending |
-| OPS-01–05 | Phase 4 | Pending |
-| BILL-01–04 | Phase 4 | Pending |
+| AUTH-01 | Phase 1 | Pending |
+| AUTH-02 | Phase 1 | Pending |
+| AUTH-03 | Phase 1 | Pending |
+| AUTH-04 | Phase 1 | Pending |
+| AUTH-05 | Phase 1 | Pending |
+| AUTH-06 | Phase 1 | Pending |
+| LEAD-01 | Phase 2 | Pending |
+| LEAD-02 | Phase 2 | Pending |
+| LEAD-03 | Phase 2 | Pending |
+| LEAD-04 | Phase 2 | Pending |
+| LEAD-05 | Phase 2 | Pending |
+| LEAD-06 | Phase 2 | Pending |
+| PIPE-01 | Phase 2 | Pending |
+| PIPE-02 | Phase 2 | Pending |
+| PIPE-03 | Phase 2 | Pending |
+| PIPE-04 | Phase 2 | Pending |
+| PIPE-05 | Phase 2 | Pending |
+| AUTO-01 | Phase 2 | Pending |
+| AUTO-02 | Phase 2 | Pending |
+| AUTO-03 | Phase 2 | Pending |
+| AUTO-04 | Phase 2 | Pending |
+| AUTO-05 | Phase 2 | Pending |
+| AUTO-06 | Phase 2 | Pending |
+| DASH-01 | Phase 3 | Pending |
+| DASH-02 | Phase 3 | Pending |
+| DASH-03 | Phase 3 | Pending |
+| DASH-04 | Phase 3 | Pending |
+| DASH-05 | Phase 3 | Pending |
+| OPS-01 | Phase 4 | Pending |
+| OPS-02 | Phase 4 | Pending |
+| OPS-03 | Phase 4 | Pending |
+| OPS-04 | Phase 4 | Pending |
+| OPS-05 | Phase 4 | Pending |
+| BILL-01 | Phase 4 | Pending |
+| BILL-02 | Phase 4 | Pending |
+| BILL-03 | Phase 4 | Pending |
+| BILL-04 | Phase 4 | Pending |
+| AI-01 | Phase 5 | Pending |
+| AI-02 | Phase 5 | Pending |
+| AI-03 | Phase 5 | Pending |
 
 **Coverage:**
 - v1 requirements: 38 total
@@ -127,4 +159,4 @@
 
 ---
 *Requirements defined: 2026-03-14*
-*Last updated: 2026-03-14 after initial definition*
+*Last updated: 2026-03-14 after roadmap creation*
