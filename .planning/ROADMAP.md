@@ -30,7 +30,13 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. An LCC user querying the database cannot retrieve leads or records belonging to a different LCC (RLS cross-tenant isolation verified from the client SDK, not the SQL editor)
   4. Operator account can read all tenant data, bypassing per-tenant RLS
   5. Supabase service role key is not exposed in any client-accessible environment variable
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Next.js scaffold + Supabase cloud provisioning + client utilities
+- [ ] 01-02-PLAN.md — Foundation migration SQL (schema + RLS + hook) + seed data
+- [ ] 01-03-PLAN.md — Middleware + login page + route groups + stub dashboards
+- [ ] 01-04-PLAN.md — Test infrastructure (Playwright + Vitest) + auth hook registration checkpoint
 
 ### Phase 2: Lead Capture and Automation
 **Goal**: A family can submit interest on an LCC-specific landing page and receive an automated SMS and email within 60 seconds, with the lead appearing in the correct LCC's pipeline — and signed families trigger referral outreach automatically
@@ -84,7 +90,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/? | Not started | - |
+| 1. Foundation | 0/4 | Not started | - |
 | 2. Lead Capture and Automation | 0/? | Not started | - |
 | 3. LCC Dashboard | 0/? | Not started | - |
 | 4. Operator Admin and Billing | 0/? | Not started | - |
