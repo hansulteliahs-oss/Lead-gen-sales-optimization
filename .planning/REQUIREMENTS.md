@@ -11,7 +11,7 @@
 - [x] **AUTH-02**: LCC can log in with email and password and see only their own pipeline data
 - [ ] **AUTH-03**: User session persists across browser refresh
 - [ ] **AUTH-04**: Unauthenticated users are redirected to login (middleware-enforced)
-- [ ] **AUTH-05**: Each LCC's data is isolated via Supabase RLS — an LCC cannot access another LCC's leads
+- [x] **AUTH-05**: Each LCC's data is isolated via Supabase RLS — an LCC cannot access another LCC's leads
 - [x] **AUTH-06**: Operator account bypasses RLS to access all tenant data
 
 ### Lead Capture
@@ -115,7 +115,7 @@
 | AUTH-02 | Phase 1 | Complete |
 | AUTH-03 | Phase 1 | Pending |
 | AUTH-04 | Phase 1 | Pending |
-| AUTH-05 | Phase 1 | Pending |
+| AUTH-05 | Phase 1 | Complete |
 | AUTH-06 | Phase 1 | Complete |
 | LEAD-01 | Phase 2 | Pending |
 | LEAD-02 | Phase 2 | Pending |
