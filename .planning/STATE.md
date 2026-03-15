@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 01-foundation-01-02-PLAN.md
-last_updated: "2026-03-15T00:36:27.468Z"
+stopped_at: Completed 01-foundation-01-03-PLAN.md
+last_updated: "2026-03-15T00:40:04.246Z"
 last_activity: 2026-03-14 — Roadmap created from requirements and research
 progress:
   total_phases: 5
   completed_phases: 0
   total_plans: 4
-  completed_plans: 2
+  completed_plans: 3
   percent: 0
 ---
 
@@ -52,6 +52,7 @@ Progress: [░░░░░░░░░░] 0%
 *Updated after each plan completion*
 | Phase 01-foundation P01 | 4 | 2 tasks | 18 files |
 | Phase 01-foundation P02 | 3 | 2 tasks | 2 files |
+| Phase 01-foundation P03 | 123 | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -68,6 +69,9 @@ Recent decisions affecting current work:
 - [Phase 01-foundation]: INSERT policy uses WITH CHECK (not USING) for write-side tenant isolation on leads table
 - [Phase 01-foundation]: Custom Access Token Hook reads profiles table at JWT issuance to inject role and lcc_id into app_metadata
 - [Phase 01-foundation]: Migration and hook registration require manual steps in Supabase Dashboard (SQL editor + Auth > Hooks)
+- [Phase 01-foundation]: getClaims() used for JWT validation in middleware — validates cryptographic signature server-side; getSession() explicitly avoided as it trusts unverified cookie data
+- [Phase 01-foundation]: Route groups (auth), (operator), (lcc) used for URL-transparent layout isolation
+- [Phase 01-foundation]: /dashboard serves as post-login routing hub — middleware redirects by role before page renders
 
 ### Pending Todos
 
@@ -81,6 +85,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-15T00:36:27.465Z
-Stopped at: Completed 01-foundation-01-02-PLAN.md
+Last session: 2026-03-15T00:40:04.242Z
+Stopped at: Completed 01-foundation-01-03-PLAN.md
 Resume file: None
