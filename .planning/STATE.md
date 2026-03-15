@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Phase 1 context gathered
-last_updated: "2026-03-14T23:55:55.391Z"
+stopped_at: Completed 01-foundation-01-01-PLAN.md
+last_updated: "2026-03-15T00:24:15.429Z"
 last_activity: 2026-03-14 — Roadmap created from requirements and research
 progress:
   total_phases: 5
   completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
+  total_plans: 4
+  completed_plans: 1
   percent: 0
 ---
 
@@ -50,6 +50,7 @@ Progress: [░░░░░░░░░░] 0%
 - Trend: —
 
 *Updated after each plan completion*
+| Phase 01-foundation P01 | 4 | 2 tasks | 18 files |
 
 ## Accumulated Context
 
@@ -61,6 +62,8 @@ Recent decisions affecting current work:
 - [Init]: Next.js 14 App Router + Supabase + Stripe + Make.com + Claude API stack confirmed
 - [Init]: Operator-run model — LCCs get read-only pipeline view; operator manages all accounts
 - [Init]: YOLO mode — maximum automation, ship fast
+- [Phase 01-foundation]: Supabase three-tier client pattern: browser/server/admin utilities in utils/supabase/ with service role key using SUPABASE_SERVICE_ROLE_KEY (no NEXT_PUBLIC_ prefix)
+- [Phase 01-foundation]: Server Supabase client is async (awaits cookies()) matching Next.js 14 App Router cookie API
 
 ### Pending Todos
 
@@ -74,6 +77,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-14T23:55:55.381Z
-Stopped at: Phase 1 context gathered
-Resume file: .planning/phases/01-foundation/01-CONTEXT.md
+Last session: 2026-03-15T00:24:15.426Z
+Stopped at: Completed 01-foundation-01-01-PLAN.md
+Resume file: None
