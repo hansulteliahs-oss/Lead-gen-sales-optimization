@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 01-foundation-01-03-PLAN.md
-last_updated: "2026-03-15T00:40:04.246Z"
+stopped_at: Completed 01-foundation-01-04-PLAN.md
+last_updated: "2026-03-15T00:49:11.374Z"
 last_activity: 2026-03-14 — Roadmap created from requirements and research
 progress:
   total_phases: 5
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 4
-  completed_plans: 3
+  completed_plans: 4
   percent: 0
 ---
 
@@ -53,6 +53,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 01-foundation P01 | 4 | 2 tasks | 18 files |
 | Phase 01-foundation P02 | 3 | 2 tasks | 2 files |
 | Phase 01-foundation P03 | 123 | 2 tasks | 6 files |
+| Phase 01-foundation P04 | 6 | 2 tasks | 9 files |
 
 ## Accumulated Context
 
@@ -72,6 +73,8 @@ Recent decisions affecting current work:
 - [Phase 01-foundation]: getClaims() used for JWT validation in middleware — validates cryptographic signature server-side; getSession() explicitly avoided as it trusts unverified cookie data
 - [Phase 01-foundation]: Route groups (auth), (operator), (lcc) used for URL-transparent layout isolation
 - [Phase 01-foundation]: /dashboard serves as post-login routing hub — middleware redirects by role before page renders
+- [Phase 01-foundation]: vitest.config.ts parses .env.local synchronously via readFileSync — Vitest does not auto-load Next.js env files; required for SUPABASE_SERVICE_ROLE_KEY to be available in integration tests
+- [Phase 01-foundation]: rls-isolation.spec.ts uses page.evaluate with dynamic import of createBrowserClient — tests RLS from real browser context with lcc1 session cookies, not from Node.js server context
 
 ### Pending Todos
 
@@ -85,6 +88,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-15T00:40:04.242Z
-Stopped at: Completed 01-foundation-01-03-PLAN.md
+Last session: 2026-03-15T00:49:11.371Z
+Stopped at: Completed 01-foundation-01-04-PLAN.md
 Resume file: None

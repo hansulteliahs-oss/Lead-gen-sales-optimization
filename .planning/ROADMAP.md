@@ -12,7 +12,7 @@ The LCC Lead Engine builds in strict dependency order: tenant security must be a
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation** - Supabase project, schema, RLS policies, auth, and Next.js middleware routing — verified secure before any lead data exists
+- [x] **Phase 1: Foundation** - Supabase project, schema, RLS policies, auth, and Next.js middleware routing — verified secure before any lead data exists (completed 2026-03-15)
 - [ ] **Phase 2: Lead Capture and Automation** - Public family form per LCC slug, TCPA consent capture, Make.com webhook trigger, full nurture sequence, and referral automation — with speed-to-lead under 60 seconds
 - [ ] **Phase 3: LCC Dashboard** - Authenticated LCC pipeline view by stage, lead detail records, conversion metrics, and commission progress tracker
 - [ ] **Phase 4: Operator Admin and Billing** - Operator dashboard, atomic LCC provisioning, Stripe subscription lifecycle, and LCC access gated on billing status
@@ -90,7 +90,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 3/4 | In Progress|  |
+| 1. Foundation | 4/4 | Complete   | 2026-03-15 |
 | 2. Lead Capture and Automation | 0/? | Not started | - |
 | 3. LCC Dashboard | 0/? | Not started | - |
 | 4. Operator Admin and Billing | 0/? | Not started | - |
