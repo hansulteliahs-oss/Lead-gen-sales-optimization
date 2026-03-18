@@ -20,7 +20,7 @@
 - [x] **LEAD-02**: Family can submit name, email, phone, and optional message via the form
 - [x] **LEAD-03**: Form captures TCPA consent (explicit opt-in checkbox with consent text and timestamp stored)
 - [x] **LEAD-04**: On form submit, lead is instantly created in the LCC's pipeline as "Interested"
-- [ ] **LEAD-05**: On form submit, Make.com webhook is triggered with lead data to start nurture sequence
+- [x] **LEAD-05**: On form submit, Make.com webhook is triggered with lead data to start nurture sequence
 - [x] **LEAD-06**: Lead source (landing page, ad UTM, referral) is captured and stored
 
 ### Pipeline Management
@@ -121,7 +121,7 @@
 | LEAD-02 | Phase 2 | Complete |
 | LEAD-03 | Phase 2 | Complete |
 | LEAD-04 | Phase 2 | Complete |
-| LEAD-05 | Phase 2 | Pending |
+| LEAD-05 | Phase 2 | Complete |
 | LEAD-06 | Phase 2 | Complete |
 | PIPE-01 | Phase 2 | Complete |
 | PIPE-02 | Phase 2 | Complete |
