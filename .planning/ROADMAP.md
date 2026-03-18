@@ -48,7 +48,13 @@ Plans:
   3. The family receives an SMS and email from the LCC's automation within 60 seconds of form submission
   4. A three-or-more-touchpoint nurture sequence fires over the following days; each send updates `last_contacted_at` on the lead record via Make.com callback
   5. Submitting the same form twice (webhook retry simulation) does not create a duplicate lead record; when a family's stage moves to Signed, Make.com triggers a referral request SMS/email to that family
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Phase 2 schema migration (lccs + leads column additions) + Wave 0 test stubs
+- [ ] 02-02-PLAN.md — Public landing page /[lccSlug], TCPA form, server action (upsert + webhook trigger), thank-you page
+- [ ] 02-03-PLAN.md — Make.com API routes: GET /api/leads/[id] (lead fetch) + POST /api/leads/[id]/callback (stage update + referral trigger)
+- [ ] 02-04-PLAN.md — Live automation checkpoint: SMS/email within 60s, 3+ nurture touchpoints verified
 
 ### Phase 3: LCC Dashboard
 **Goal**: An authenticated LCC can log in and see their live pipeline, understand where each family stands, and track their commission progress — without operator involvement
@@ -91,7 +97,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 4/4 | Complete   | 2026-03-15 |
-| 2. Lead Capture and Automation | 0/? | Not started | - |
+| 2. Lead Capture and Automation | 0/4 | Not started | - |
 | 3. LCC Dashboard | 0/? | Not started | - |
 | 4. Operator Admin and Billing | 0/? | Not started | - |
 | 5. AI Personalization | 0/? | Not started | - |
