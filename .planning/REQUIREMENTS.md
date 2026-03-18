@@ -26,18 +26,18 @@
 ### Pipeline Management
 
 - [x] **PIPE-01**: Leads move through stages: Interested → Contacted → Qualified → Signed
-- [ ] **PIPE-02**: Pipeline stage updates when Make.com automation callback fires (confirming contact was made)
+- [x] **PIPE-02**: Pipeline stage updates when Make.com automation callback fires (confirming contact was made)
 - [x] **PIPE-03**: Lead record stores: family name, email, phone, source, stage, last contacted date, created date
-- [ ] **PIPE-04**: Operator can manually update a lead's pipeline stage
+- [x] **PIPE-04**: Operator can manually update a lead's pipeline stage
 - [x] **PIPE-05**: Signed leads are marked with sign-up date for commission tracking
 
 ### Automation (Make.com)
 
-- [ ] **AUTO-01**: On new lead: Make.com triggers immediate SMS to family within 60 seconds
-- [ ] **AUTO-02**: On new lead: Make.com triggers immediate email to family within 60 seconds
-- [ ] **AUTO-03**: Make.com runs a nurture sequence (at minimum 3 follow-up touchpoints) over the following days
-- [ ] **AUTO-04**: Make.com callbacks update lead's `last_contacted_at` and stage in the database
-- [ ] **AUTO-05**: On family sign-up (stage = Signed): Make.com triggers referral request SMS/email to that family
+- [x] **AUTO-01**: On new lead: Make.com triggers immediate SMS to family within 60 seconds
+- [x] **AUTO-02**: On new lead: Make.com triggers immediate email to family within 60 seconds
+- [x] **AUTO-03**: Make.com runs a nurture sequence (at minimum 3 follow-up touchpoints) over the following days
+- [x] **AUTO-04**: Make.com callbacks update lead's `last_contacted_at` and stage in the database
+- [x] **AUTO-05**: On family sign-up (stage = Signed): Make.com triggers referral request SMS/email to that family
 - [x] **AUTO-06**: Each LCC has their own Make.com webhook URLs stored in the database (not shared)
 
 ### AI Personalization
@@ -124,15 +124,15 @@
 | LEAD-05 | Phase 2 | Pending |
 | LEAD-06 | Phase 2 | Complete |
 | PIPE-01 | Phase 2 | Complete |
-| PIPE-02 | Phase 2 | Pending |
+| PIPE-02 | Phase 2 | Complete |
 | PIPE-03 | Phase 2 | Complete |
-| PIPE-04 | Phase 2 | Pending |
+| PIPE-04 | Phase 2 | Complete |
 | PIPE-05 | Phase 2 | Complete |
-| AUTO-01 | Phase 2 | Pending |
-| AUTO-02 | Phase 2 | Pending |
-| AUTO-03 | Phase 2 | Pending |
-| AUTO-04 | Phase 2 | Pending |
-| AUTO-05 | Phase 2 | Pending |
+| AUTO-01 | Phase 2 | Complete |
+| AUTO-02 | Phase 2 | Complete |
+| AUTO-03 | Phase 2 | Complete |
+| AUTO-04 | Phase 2 | Complete |
+| AUTO-05 | Phase 2 | Complete |
 | AUTO-06 | Phase 2 | Complete |
 | DASH-01 | Phase 3 | Pending |
 | DASH-02 | Phase 3 | Pending |
