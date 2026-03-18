@@ -97,7 +97,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 4/4 | Complete   | 2026-03-15 |
-| 2. Lead Capture and Automation | 0/4 | Not started | - |
+| 2. Lead Capture and Automation | 3/4 | In Progress|  |
 | 3. LCC Dashboard | 0/? | Not started | - |
 | 4. Operator Admin and Billing | 0/? | Not started | - |
 | 5. AI Personalization | 0/? | Not started | - |

@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 02-lead-capture-and-automation-03-PLAN.md
-last_updated: "2026-03-18T03:51:47.212Z"
+stopped_at: Completed 02-lead-capture-and-automation-02-PLAN.md
+last_updated: "2026-03-18T03:55:05.574Z"
 last_activity: 2026-03-14 — Roadmap created from requirements and research
 progress:
   total_phases: 5
   completed_phases: 1
   total_plans: 8
-  completed_plans: 6
+  completed_plans: 7
   percent: 0
 ---
 
@@ -56,6 +56,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 01-foundation P04 | 6 | 2 tasks | 9 files |
 | Phase 02-lead-capture-and-automation P01 | 144 | 2 tasks | 8 files |
 | Phase 02-lead-capture-and-automation P03 | 3 | 2 tasks | 4 files |
+| Phase 02-lead-capture-and-automation P02 | 5 | 2 tasks | 11 files |
 
 ## Accumulated Context
 
@@ -80,6 +81,8 @@ Recent decisions affecting current work:
 - [Phase 02-lead-capture-and-automation]: Playwright 1.58.2 lacks test.todo() inside describe blocks — used test.skip(true, reason) as Wave 0 stub pattern
 - [Phase 02-lead-capture-and-automation]: CALLBACK_ALLOWED_STAGES=['Contacted','Signed'] — Qualified is operator-only (Phase 3+); Signed IS allowed via callback for AUTO-05 referral trigger
 - [Phase 02-lead-capture-and-automation]: Referral webhook on Signed is fire-and-forget with 10s timeout — failure logged but does not fail the 200 response
+- [Phase 02-lead-capture-and-automation]: Middleware public route check: regex /^/[a-z0-9][a-z0-9-]*(?:/thank-you)?$/ before !claims auth redirect allows /[slug] and /[slug]/thank-you through without auth
+- [Phase 02-lead-capture-and-automation]: New-lead detection via created_at < 5s timing in upsert — avoids pre-upsert query round-trip; webhook fires on new lead only, not on duplicate upsert
 
 ### Pending Todos
 
@@ -93,6 +96,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-18T03:51:47.211Z
-Stopped at: Completed 02-lead-capture-and-automation-03-PLAN.md
+Last session: 2026-03-18T03:55:05.572Z
+Stopped at: Completed 02-lead-capture-and-automation-02-PLAN.md
 Resume file: None
