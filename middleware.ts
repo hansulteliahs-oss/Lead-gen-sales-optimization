@@ -40,6 +40,14 @@ export async function middleware(request: NextRequest) {
     return supabaseResponse
   }
 
+  // Public family landing pages — no auth required
+  // Matches: /any-slug and /any-slug/thank-you (slug format: lowercase letters, digits, hyphens)
+  // Does NOT match /dashboard, /lcc/..., /operator/... (those start with known prefixes)
+  const isPublicLandingPage = /^\/[a-z0-9][a-z0-9-]*(?:\/thank-you)?$/.test(pathname)
+  if (isPublicLandingPage) {
+    return supabaseResponse
+  }
+
   // Not authenticated — redirect to login
   if (!claims) {
     return NextResponse.redirect(new URL('/login', request.url))
