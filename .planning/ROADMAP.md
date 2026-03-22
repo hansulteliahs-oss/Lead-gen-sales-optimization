@@ -59,13 +59,19 @@ Plans:
 ### Phase 3: LCC Dashboard
 **Goal**: An authenticated LCC can log in and see their live pipeline, understand where each family stands, and track their commission progress — without operator involvement
 **Depends on**: Phase 2
-**Requirements**: DASH-01, DASH-02, DASH-03, DASH-04, DASH-05
+**Requirements**: DASH-01, DASH-02, DASH-03, DASH-04, DASH-05, PIPE-04
 **Success Criteria** (what must be TRUE):
   1. LCC can view their leads grouped by stage (Interested / Contacted / Qualified / Signed) with counts per stage
   2. LCC can click any lead to see full detail: family name, email, phone, source, all activity timestamps
   3. LCC can see total signed families and an estimated commission progress figure on their dashboard
   4. LCC can see which automations are active on their account
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — Wave 0: tailwind.config.ts brand colors + Playwright/Vitest test stubs (RED)
+- [ ] 03-02-PLAN.md — LCC layout + dashboard pipeline view with stage grouping and commission section
+- [ ] 03-03-PLAN.md — Lead detail page + automation status section
+- [ ] 03-04-PLAN.md — PIPE-04: PATCH /api/leads/[id]/stage — operator-only stage update API
 
 ### Phase 4: Operator Admin and Billing
 **Goal**: The operator can provision new LCC clients from a dashboard, manage all accounts in one view, and Stripe subscription status gates LCC access to the system
@@ -98,6 +104,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 |-------|----------------|--------|-----------|
 | 1. Foundation | 4/4 | Complete   | 2026-03-15 |
 | 2. Lead Capture and Automation | 4/4 | Complete   | 2026-03-18 |
-| 3. LCC Dashboard | 0/? | Not started | - |
+| 3. LCC Dashboard | 0/4 | Not started | - |
 | 4. Operator Admin and Billing | 0/? | Not started | - |
 | 5. AI Personalization | 0/? | Not started | - |
