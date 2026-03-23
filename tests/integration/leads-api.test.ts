@@ -6,7 +6,7 @@ describe('Leads API: GET /api/leads/[id] shape', () => {
   const supabase = createAdminClient()
   const testEmail = `leads-api-test-${Date.now()}@example.com`
   let testLccId: string
-  let createdLeadId: string
+  let createdLeadId: string | undefined
 
   beforeAll(async () => {
     const { data: lcc } = await supabase.from('lccs').select('id').limit(1).single()
@@ -21,5 +21,5 @@ describe('Leads API: GET /api/leads/[id] shape', () => {
     await supabase.from('leads').delete().eq('email', testEmail).eq('lcc_id', testLccId)
   })
 
-  it.skip(true, 'Wave 0 stub — implement in Plan 02: AI-03 GET response includes generated_intro_message')
+  it.skip('Wave 0 stub — implement in Plan 02: AI-03 GET response includes generated_intro_message')
 })

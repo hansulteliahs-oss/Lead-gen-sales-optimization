@@ -21,7 +21,7 @@ describe('AI personalization: generation and caching', () => {
   const supabase = createAdminClient()
   const testEmail = `ai-gen-test-${Date.now()}@example.com`
   let testLccId: string
-  let createdLeadId: string
+  let createdLeadId: string | undefined
 
   beforeAll(async () => {
     const { data: lcc } = await supabase.from('lccs').select('id').limit(1).single()
@@ -36,6 +36,6 @@ describe('AI personalization: generation and caching', () => {
     await supabase.from('leads').delete().eq('email', testEmail).eq('lcc_id', testLccId)
   })
 
-  it.skip(true, 'Wave 0 stub — implement in Plan 02: AI-01 generated_intro_message populated on new lead')
-  it.skip(true, 'Wave 0 stub — implement in Plan 02: AI-02 duplicate lead does not overwrite cached message')
+  it.skip('Wave 0 stub — implement in Plan 02: AI-01 generated_intro_message populated on new lead')
+  it.skip('Wave 0 stub — implement in Plan 02: AI-02 duplicate lead does not overwrite cached message')
 })
