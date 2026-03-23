@@ -1,12 +1,12 @@
 import { describe, it, expect, beforeAll, afterAll } from 'vitest'
 import { createAdminClient } from '@/utils/supabase/admin'
 
-// AI-03: GET /api/leads/[id] response includes generated_intro_message field
-describe('Leads API: GET /api/leads/[id] shape', () => {
+// AI-03: GET /api/leads/[id] SELECT includes generated_intro_message
+describe('Leads API: GET /api/leads/[id] shape includes generated_intro_message', () => {
   const supabase = createAdminClient()
   const testEmail = `leads-api-test-${Date.now()}@example.com`
   let testLccId: string
-  let createdLeadId: string | undefined
+  let createdLeadId: string
 
   beforeAll(async () => {
     const { data: lcc } = await supabase.from('lccs').select('id').limit(1).single()
@@ -15,11 +15,60 @@ describe('Leads API: GET /api/leads/[id] shape', () => {
   })
 
   afterAll(async () => {
-    if (createdLeadId) {
-      await supabase.from('leads').delete().eq('id', createdLeadId)
-    }
+    if (createdLeadId) await supabase.from('leads').delete().eq('id', createdLeadId)
     await supabase.from('leads').delete().eq('email', testEmail).eq('lcc_id', testLccId)
   })
 
-  it.skip('Wave 0 stub — implement in Plan 02: AI-03 GET response includes generated_intro_message')
+  it('AI-03: leads table SELECT includes generated_intro_message column', async () => {
+    // Insert a lead
+    const { data: lead, error } = await supabase
+      .from('leads')
+      .upsert(
+        {
+          lcc_id: testLccId,
+          family_name: 'API Test Family',
+          email: testEmail,
+          phone: '5551234567',
+          stage: 'Interested',
+          consent_text: 'Test consent',
+          consent_timestamp: new Date().toISOString(),
+          consent_ip: '127.0.0.1',
+        },
+        { onConflict: 'email,lcc_id', ignoreDuplicates: false }
+      )
+      .select('id')
+      .single()
+
+    expect(error).toBeNull()
+    createdLeadId = lead!.id
+
+    // Read back with the same SELECT shape used by GET /api/leads/[id]
+    const { data: fetched, error: fetchError } = await supabase
+      .from('leads')
+      .select(`
+        id,
+        family_name,
+        email,
+        phone,
+        message,
+        stage,
+        utm_source,
+        utm_medium,
+        utm_campaign,
+        utm_content,
+        consent_timestamp,
+        last_contacted_at,
+        signed_at,
+        created_at,
+        generated_intro_message,
+        lcc:lccs ( id, name, slug )
+      `)
+      .eq('id', lead!.id)
+      .single()
+
+    expect(fetchError).toBeNull()
+    expect(fetched).not.toBeNull()
+    // Field must be present in response (null is acceptable — not yet generated)
+    expect('generated_intro_message' in fetched!).toBe(true)
+  })
 })
