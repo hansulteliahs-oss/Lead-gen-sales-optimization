@@ -42,9 +42,9 @@
 
 ### AI Personalization
 
-- [ ] **AI-01**: Claude API generates personalized follow-up message text per lead (based on family name, source, LCC name)
-- [ ] **AI-02**: Generated message text is cached per lead to prevent redundant API calls
-- [ ] **AI-03**: Personalized message text is passed to Make.com webhook payload for use in SMS/email templates
+- [x] **AI-01**: Claude API generates personalized follow-up message text per lead (based on family name, source, LCC name)
+- [x] **AI-02**: Generated message text is cached per lead to prevent redundant API calls
+- [x] **AI-03**: Personalized message text is passed to Make.com webhook payload for use in SMS/email templates
 
 ### LCC Dashboard
 
@@ -148,9 +148,9 @@
 | BILL-02 | Phase 4 | Pending |
 | BILL-03 | Phase 4 | Pending |
 | BILL-04 | Phase 4 | Pending |
-| AI-01 | Phase 5 | Pending |
-| AI-02 | Phase 5 | Pending |
-| AI-03 | Phase 5 | Pending |
+| AI-01 | Phase 5 | Complete |
+| AI-02 | Phase 5 | Complete |
+| AI-03 | Phase 5 | Complete |
 
 **Coverage:**
 - v1 requirements: 38 total
