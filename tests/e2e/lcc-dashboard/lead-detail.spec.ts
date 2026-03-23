@@ -33,8 +33,8 @@ test.describe('Lead Detail Navigation (DASH-02)', () => {
   test('DASH-02 RLS: lcc1 accessing a lcc2 lead gets a 404 page', async ({ page }) => {
     await loginAsLcc1(page)
 
-    // TODO: replace with a known lcc2 lead UUID from seed data before running
-    const lcc2LeadId = 'TODO: replace with seeded lcc2 lead ID'
+    // lcc2 lead from seed data — belongs to lcc2@test.com, not lcc1
+    const lcc2LeadId = 'd9e7ff0e-88e2-44ba-8ca4-e160119633de'
     await page.goto(`/lcc/dashboard/leads/${lcc2LeadId}`)
 
     // Expect the Next.js 404 page (not-found)

@@ -42,8 +42,12 @@ export async function middleware(request: NextRequest) {
 
   // Public family landing pages — no auth required
   // Matches: /any-slug and /any-slug/thank-you (slug format: lowercase letters, digits, hyphens)
-  // Does NOT match /dashboard, /lcc/..., /operator/... (those start with known prefixes)
-  const isPublicLandingPage = /^\/[a-z0-9][a-z0-9-]*(?:\/thank-you)?$/.test(pathname)
+  // Explicitly excludes known app prefixes: /dashboard, /lcc, /operator
+  const isPublicLandingPage =
+    /^\/[a-z0-9][a-z0-9-]*(?:\/thank-you)?$/.test(pathname) &&
+    !pathname.startsWith('/dashboard') &&
+    !pathname.startsWith('/lcc') &&
+    !pathname.startsWith('/operator')
   if (isPublicLandingPage) {
     return supabaseResponse
   }
