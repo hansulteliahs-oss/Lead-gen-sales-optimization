@@ -34,7 +34,7 @@ describe('Stage Update API (PIPE-04)', () => {
     vi.resetAllMocks()
   })
 
-  it.skip('returns 403 when caller JWT role is not operator', async () => {
+  it('returns 403 when caller JWT role is not operator', async () => {
     // lcc role should be rejected
     vi.mocked(createServerClient).mockReturnValue({
       auth: {
@@ -52,7 +52,7 @@ describe('Stage Update API (PIPE-04)', () => {
     expect(body.error).toBeTruthy()
   })
 
-  it.skip('returns 422 for invalid stage value', async () => {
+  it('returns 422 for invalid stage value', async () => {
     vi.mocked(createServerClient).mockReturnValue({
       auth: {
         getClaims: vi.fn().mockResolvedValue({
@@ -69,7 +69,7 @@ describe('Stage Update API (PIPE-04)', () => {
     expect(body.error).toBeTruthy()
   })
 
-  it.skip('returns 200 and updates stage for valid operator request', async () => {
+  it('returns 200 and updated lead for valid operator request', async () => {
     vi.mocked(createServerClient).mockReturnValue({
       auth: {
         getClaims: vi.fn().mockResolvedValue({
@@ -78,10 +78,15 @@ describe('Stage Update API (PIPE-04)', () => {
       },
     } as any)
 
+    const mockLead = { id: LEAD_ID, stage: 'Qualified', signed_at: null }
     const mockSupabase = {
       from: vi.fn().mockReturnValue({
         update: vi.fn().mockReturnValue({
-          eq: vi.fn().mockResolvedValue({ error: null }),
+          eq: vi.fn().mockReturnValue({
+            select: vi.fn().mockReturnValue({
+              single: vi.fn().mockResolvedValue({ data: mockLead, error: null }),
+            }),
+          }),
         }),
       }),
     }
@@ -92,10 +97,10 @@ describe('Stage Update API (PIPE-04)', () => {
     const res = await PATCH(req, { params: { id: LEAD_ID } })
     expect(res.status).toBe(200)
     const body = await res.json()
-    expect(body.success).toBe(true)
+    expect(body.id).toBe(LEAD_ID)
   })
 
-  it.skip('sets signed_at when stage is set to Signed', async () => {
+  it('sets signed_at when stage is set to Signed', async () => {
     vi.mocked(createServerClient).mockReturnValue({
       auth: {
         getClaims: vi.fn().mockResolvedValue({
@@ -105,7 +110,14 @@ describe('Stage Update API (PIPE-04)', () => {
     } as any)
 
     const updateMock = vi.fn().mockReturnValue({
-      eq: vi.fn().mockResolvedValue({ error: null }),
+      eq: vi.fn().mockReturnValue({
+        select: vi.fn().mockReturnValue({
+          single: vi.fn().mockResolvedValue({
+            data: { id: LEAD_ID, stage: 'Signed', signed_at: new Date().toISOString() },
+            error: null,
+          }),
+        }),
+      }),
     })
     const mockSupabase = {
       from: vi.fn().mockReturnValue({
@@ -125,7 +137,7 @@ describe('Stage Update API (PIPE-04)', () => {
     expect(updateCallArg.signed_at).toBeTruthy()
   })
 
-  it.skip('does NOT set signed_at when stage is not Signed', async () => {
+  it('does NOT set signed_at when stage is not Signed', async () => {
     vi.mocked(createServerClient).mockReturnValue({
       auth: {
         getClaims: vi.fn().mockResolvedValue({
@@ -135,7 +147,14 @@ describe('Stage Update API (PIPE-04)', () => {
     } as any)
 
     const updateMock = vi.fn().mockReturnValue({
-      eq: vi.fn().mockResolvedValue({ error: null }),
+      eq: vi.fn().mockReturnValue({
+        select: vi.fn().mockReturnValue({
+          single: vi.fn().mockResolvedValue({
+            data: { id: LEAD_ID, stage: 'Contacted', signed_at: null },
+            error: null,
+          }),
+        }),
+      }),
     })
     const mockSupabase = {
       from: vi.fn().mockReturnValue({
