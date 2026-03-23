@@ -30,6 +30,7 @@ export async function GET(
       last_contacted_at,
       signed_at,
       created_at,
+      generated_intro_message,
       lcc:lccs (
         id,
         name,
