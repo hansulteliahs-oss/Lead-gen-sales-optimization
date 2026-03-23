@@ -12,8 +12,6 @@ async function loginAsLcc1(page: import('@playwright/test').Page) {
 }
 
 test.describe('Lead Detail Navigation (DASH-02)', () => {
-  test.skip(true, 'Wave 0 stub — implementation pending')
-
   test('DASH-02: clicking a lead card navigates to /lcc/dashboard/leads/[uuid] and shows lead fields', async ({ page }) => {
     await loginAsLcc1(page)
 

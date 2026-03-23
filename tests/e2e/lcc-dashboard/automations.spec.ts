@@ -12,8 +12,6 @@ async function loginAsLcc1(page: import('@playwright/test').Page) {
 }
 
 test.describe('Automations Section (DASH-05)', () => {
-  test.skip(true, 'Wave 0 stub — implementation pending')
-
   test('DASH-05: automations section is visible with at least one webhook status indicator', async ({ page }) => {
     await loginAsLcc1(page)
 
