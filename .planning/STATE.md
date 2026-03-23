@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 05-ai-personalization 05-01-PLAN.md
-last_updated: "2026-03-23T13:14:19.824Z"
+stopped_at: Completed 05-ai-personalization 05-02-PLAN.md
+last_updated: "2026-03-23T13:26:00.570Z"
 last_activity: 2026-03-14 — Roadmap created from requirements and research
 progress:
   total_phases: 5
-  completed_phases: 3
+  completed_phases: 4
   total_plans: 15
-  completed_plans: 14
+  completed_plans: 15
   percent: 0
 ---
 
@@ -63,6 +63,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 03-lcc-dashboard P03 | 3 | 1 tasks | 3 files |
 | Phase 03-lcc-dashboard P04 | 3 | 1 tasks | 2 files |
 | Phase 05-ai-personalization P01 | 3 | 2 tasks | 8 files |
+| Phase 05-ai-personalization P02 | 3 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -99,6 +100,9 @@ Recent decisions affecting current work:
 - [Phase 03-lcc-dashboard]: Route handler JWT auth uses createServerClient with request.cookies.getAll() — server.ts helper uses next/headers which is unavailable in route handlers
 - [Phase 05-ai-personalization]: it.skip('reason') used for Vitest Wave 0 stubs — it.skip(true, reason) rejected by tsc (boolean not assignable to string | Function)
 - [Phase 05-ai-personalization]: maxRetries:0 on Anthropic client — fire-and-forget; SDK default of 2 retries causes silent delays on failure
+- [Phase 05-ai-personalization]: IIFE placed inside existing isNewLead block shared with webhook — cleaner than a separate guard
+- [Phase 05-ai-personalization]: Anthropic.APIError instanceof narrowing works without type cast in TypeScript catch blocks
+- [Phase 05-ai-personalization]: vi.mock exports APIConnectionTimeoutError and APIError as named class exports matching SDK shape for Vitest integration tests
 
 ### Pending Todos
 
@@ -112,6 +116,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-23T13:14:19.820Z
-Stopped at: Completed 05-ai-personalization 05-01-PLAN.md
+Last session: 2026-03-23T13:26:00.566Z
+Stopped at: Completed 05-ai-personalization 05-02-PLAN.md
 Resume file: None
