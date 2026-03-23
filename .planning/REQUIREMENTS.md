@@ -48,11 +48,11 @@
 
 ### LCC Dashboard
 
-- [ ] **DASH-01**: LCC can view their full lead pipeline grouped by stage
-- [ ] **DASH-02**: LCC can click a lead to see full details (family info, source, all activity timestamps)
-- [ ] **DASH-03**: LCC can see count of leads at each pipeline stage
-- [ ] **DASH-04**: LCC can see total signed families and estimated commission progress
-- [ ] **DASH-05**: LCC can see which automations are active on their account
+- [x] **DASH-01**: LCC can view their full lead pipeline grouped by stage
+- [x] **DASH-02**: LCC can click a lead to see full details (family info, source, all activity timestamps)
+- [x] **DASH-03**: LCC can see count of leads at each pipeline stage
+- [x] **DASH-04**: LCC can see total signed families and estimated commission progress
+- [x] **DASH-05**: LCC can see which automations are active on their account
 
 ### Operator Admin
 
@@ -126,7 +126,7 @@
 | PIPE-01 | Phase 2 | Complete |
 | PIPE-02 | Phase 2 | Complete |
 | PIPE-03 | Phase 2 | Complete |
-| PIPE-04 | Phase 2 | Complete |
+| PIPE-04 | Phase 3 | Complete |
 | PIPE-05 | Phase 2 | Complete |
 | AUTO-01 | Phase 2 | Complete |
 | AUTO-02 | Phase 2 | Complete |
@@ -134,11 +134,11 @@
 | AUTO-04 | Phase 2 | Complete |
 | AUTO-05 | Phase 2 | Complete |
 | AUTO-06 | Phase 2 | Complete |
-| DASH-01 | Phase 3 | Pending |
-| DASH-02 | Phase 3 | Pending |
-| DASH-03 | Phase 3 | Pending |
-| DASH-04 | Phase 3 | Pending |
-| DASH-05 | Phase 3 | Pending |
+| DASH-01 | Phase 3 | Complete |
+| DASH-02 | Phase 3 | Complete |
+| DASH-03 | Phase 3 | Complete |
+| DASH-04 | Phase 3 | Complete |
+| DASH-05 | Phase 3 | Complete |
 | OPS-01 | Phase 4 | Pending |
 | OPS-02 | Phase 4 | Pending |
 | OPS-03 | Phase 4 | Pending |
@@ -159,4 +159,4 @@
 
 ---
 *Requirements defined: 2026-03-14*
-*Last updated: 2026-03-14 after roadmap creation*
+*Last updated: 2026-03-19 — PIPE-04 deferred to Phase 3 (dashboard UI scope; no Phase 2 implementation exists)*
