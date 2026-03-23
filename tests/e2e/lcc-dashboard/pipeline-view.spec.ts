@@ -12,8 +12,6 @@ async function loginAsLcc1(page: import('@playwright/test').Page) {
 }
 
 test.describe('Pipeline View (DASH-01, DASH-03)', () => {
-  test.skip(true, 'Wave 0 stub — implementation pending')
-
   test('DASH-01: shows all four pipeline stage columns after lcc1 login', async ({ page }) => {
     await loginAsLcc1(page)
 

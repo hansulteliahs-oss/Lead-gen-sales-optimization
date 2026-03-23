@@ -12,8 +12,6 @@ async function loginAsLcc1(page: import('@playwright/test').Page) {
 }
 
 test.describe('Commission Section (DASH-04)', () => {
-  test.skip(true, 'Wave 0 stub — implementation pending')
-
   test('DASH-04: commission section is visible with signed count and no dollar amounts', async ({ page }) => {
     await loginAsLcc1(page)
 
