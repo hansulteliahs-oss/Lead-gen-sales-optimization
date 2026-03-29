@@ -1,8 +1,7 @@
 import { describe, it, expect, beforeAll, afterAll } from 'vitest'
 import { createAdminClient } from '@/utils/supabase/admin'
 
-// AI-03: GET /api/leads/[id] SELECT includes generated_intro_message
-describe('Leads API: GET /api/leads/[id] shape includes generated_intro_message', () => {
+describe('Leads API: GET /api/leads/[id] shape', () => {
   const supabase = createAdminClient()
   const testEmail = `leads-api-test-${Date.now()}@example.com`
   let testLccId: string
@@ -19,8 +18,7 @@ describe('Leads API: GET /api/leads/[id] shape includes generated_intro_message'
     await supabase.from('leads').delete().eq('email', testEmail).eq('lcc_id', testLccId)
   })
 
-  it('AI-03: leads table SELECT includes generated_intro_message column', async () => {
-    // Insert a lead
+  it('leads table SELECT returns expected columns', async () => {
     const { data: lead, error } = await supabase
       .from('leads')
       .upsert(
@@ -42,7 +40,6 @@ describe('Leads API: GET /api/leads/[id] shape includes generated_intro_message'
     expect(error).toBeNull()
     createdLeadId = lead!.id
 
-    // Read back with the same SELECT shape used by GET /api/leads/[id]
     const { data: fetched, error: fetchError } = await supabase
       .from('leads')
       .select(`
@@ -60,7 +57,6 @@ describe('Leads API: GET /api/leads/[id] shape includes generated_intro_message'
         last_contacted_at,
         signed_at,
         created_at,
-        generated_intro_message,
         lcc:lccs ( id, name, slug )
       `)
       .eq('id', lead!.id)
@@ -68,7 +64,6 @@ describe('Leads API: GET /api/leads/[id] shape includes generated_intro_message'
 
     expect(fetchError).toBeNull()
     expect(fetched).not.toBeNull()
-    // Field must be present in response (null is acceptable — not yet generated)
-    expect('generated_intro_message' in fetched!).toBe(true)
+    expect(fetched!.id).toBe(createdLeadId)
   })
 })

@@ -41,20 +41,34 @@ ALTER TABLE public.leads
 -- Deduplication constraint (LEAD-04 — silent upsert)
 -- One lead per email per LCC; duplicates use ON CONFLICT DO UPDATE
 -- ---------------------------------------------------------------
-ALTER TABLE public.leads
-  ADD CONSTRAINT IF NOT EXISTS leads_email_lcc_unique UNIQUE (email, lcc_id);
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_constraint WHERE conname = 'leads_email_lcc_unique'
+  ) THEN
+    ALTER TABLE public.leads ADD CONSTRAINT leads_email_lcc_unique UNIQUE (email, lcc_id);
+  END IF;
+END $$;
 
 -- ---------------------------------------------------------------
 -- RLS policy: operator SELECT access for future dashboard reads
 -- (service role bypasses RLS in API routes; this policy enables
 -- operator JWT reads via their authenticated session)
 -- ---------------------------------------------------------------
-CREATE POLICY IF NOT EXISTS "leads_select_operator"
-ON public.leads FOR SELECT
-TO authenticated
-USING (
-  (SELECT auth.jwt()) -> 'app_metadata' ->> 'role' = 'operator'
-);
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies
+    WHERE tablename = 'leads' AND policyname = 'leads_select_operator'
+  ) THEN
+    CREATE POLICY "leads_select_operator"
+    ON public.leads FOR SELECT
+    TO authenticated
+    USING (
+      (SELECT auth.jwt()) -> 'app_metadata' ->> 'role' = 'operator'
+    );
+  END IF;
+END $$;
 
 -- ---------------------------------------------------------------
 -- Performance indexes

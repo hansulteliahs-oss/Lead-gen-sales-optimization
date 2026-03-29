@@ -20,11 +20,11 @@ export default async function LccDashboardPage() {
   ) as Record<Stage, typeof allLeads>
 
   return (
-    <div className="px-6 py-8">
+    <div className="px-4 py-4">
       <h1 className="text-2xl font-semibold text-brand-body mb-6">Your Pipeline</h1>
 
       {/* Pipeline stage columns */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
         {STAGES.map((stage) => (
           <div key={stage} data-testid={`stage-${stage}`}>
             {/* Stage header with count badge */}
@@ -47,7 +47,7 @@ export default async function LccDashboardPage() {
                   key={lead.id}
                   href={`/lcc/dashboard/leads/${lead.id}`}
                   data-testid="lead-card"
-                  className="bg-white border border-brand-gold/30 rounded-lg p-3 mb-2 hover:border-brand-gold block"
+                  className="bg-white border border-brand-gold/30 rounded-lg p-4 mb-2 hover:border-brand-gold block"
                 >
                   <p className="text-brand-body font-medium">{lead.family_name}</p>
                   <p className="text-brand-muted text-sm">{lead.email}</p>
@@ -61,12 +61,12 @@ export default async function LccDashboardPage() {
       {/* Commission section — signed count only, no dollar amounts */}
       <div
         data-testid="commission-section"
-        className="bg-white border border-brand-gold/30 rounded-lg p-4 mt-8 inline-block"
+        className="bg-white border border-brand-gold/30 rounded-lg p-6 mt-8 inline-block"
       >
-        <p className="text-brand-muted text-sm mb-1">Signed Families</p>
+        <p className="text-brand-muted text-base mb-2">Signed Families</p>
         <span
           data-testid="signed-count"
-          className="text-2xl font-semibold text-brand-body"
+          className="text-4xl font-bold text-brand-body"
         >
           {byStage.Signed.length}
         </span>

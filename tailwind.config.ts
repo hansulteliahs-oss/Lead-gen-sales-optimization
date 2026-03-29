@@ -12,12 +12,12 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         brand: {
-          navy:   '#1a1a2e',   // bg-brand-navy — header/primary background
-          pageBg: '#f5f5f5',   // bg-brand-pageBg — page background
-          cardBg: '#f8f4f0',   // bg-brand-cardBg — warm card background
-          gold:   '#c9a96e',   // border-brand-gold, text-brand-gold — accent
-          body:   '#444444',   // text-brand-body — body text
-          muted:  '#999999',   // text-brand-muted — muted/secondary text
+          navy:   '#fdfaf9',   // bg-brand-navy — header/primary background
+          pageBg: '#f7f1ef',   // bg-brand-pageBg — page background
+          cardBg: '#fdfaf9',   // bg-brand-cardBg — warm card background
+          gold:   '#8fac94',   // border-brand-gold, text-brand-gold — accent (sage green)
+          body:   '#3d3535',   // text-brand-body — body text
+          muted:  '#9e8a82',   // text-brand-muted — muted/secondary text
         },
       },
     },
