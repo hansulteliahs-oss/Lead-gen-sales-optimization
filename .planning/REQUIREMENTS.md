@@ -159,30 +159,30 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SITE-01 | TBD | Pending |
-| SITE-02 | TBD | Pending |
-| SITE-03 | TBD | Pending |
-| SITE-04 | TBD | Pending |
-| SITE-05 | TBD | Pending |
-| SITE-06 | TBD | Pending |
-| SITE-07 | TBD | Pending |
-| PAGE-01 | TBD | Pending |
-| PAGE-02 | TBD | Pending |
-| PAGE-03 | TBD | Pending |
-| PAGE-04 | TBD | Pending |
-| PAGE-05 | TBD | Pending |
-| PAGE-06 | TBD | Pending |
-| CONT-01 | TBD | Pending |
-| CONT-02 | TBD | Pending |
-| CONT-03 | TBD | Pending |
-| SEO-01 | TBD | Pending |
-| SEO-02 | TBD | Pending |
+| SITE-01 | Phase 6 | Pending |
+| SITE-02 | Phase 6 | Pending |
+| SITE-03 | Phase 6 | Pending |
+| SITE-04 | Phase 6 | Pending |
+| SITE-05 | Phase 6 | Pending |
+| SITE-06 | Phase 6 | Pending |
+| SITE-07 | Phase 6 | Pending |
+| PAGE-01 | Phase 7 | Pending |
+| PAGE-02 | Phase 7 | Pending |
+| PAGE-03 | Phase 7 | Pending |
+| PAGE-04 | Phase 7 | Pending |
+| PAGE-05 | Phase 7 | Pending |
+| PAGE-06 | Phase 7 | Pending |
+| CONT-01 | Phase 7 | Pending |
+| CONT-02 | Phase 7 | Pending |
+| CONT-03 | Phase 7 | Pending |
+| SEO-01 | Phase 8 | Pending |
+| SEO-02 | Phase 8 | Pending |
 
 **Coverage:**
 - v2.0 requirements: 18 total
-- Mapped to phases: TBD (roadmapper pending)
-- Unmapped: 18 ⚠️
+- Mapped to phases: 18
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-14*
-*Last updated: 2026-04-04 — v2.0 milestone requirements added*
+*Last updated: 2026-04-04 — v2.0 traceability completed after roadmap creation*

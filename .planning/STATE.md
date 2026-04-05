@@ -2,12 +2,12 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: LCC Personal Website
-status: planning
-stopped_at: Defining requirements
+status: ready_to_plan
+stopped_at: Roadmap created — v2.0 phases 6-8 defined
 last_updated: "2026-04-04T00:00:00.000Z"
-last_activity: 2026-04-04 — Milestone v2.0 started
+last_activity: 2026-04-04 — v2.0 roadmap created (phases 6, 7, 8)
 progress:
-  total_phases: 0
+  total_phases: 3
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -18,24 +18,24 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-14)
+See: .planning/PROJECT.md (updated 2026-04-04)
 
 **Core value:** More families signed for each LCC — a fully automated lead generation and nurture system that turns family interest into au pair sign-ups, without the LCC lifting a finger.
-**Current focus:** Phase 5 complete — Milestone v1.0 ready for audit
+**Current focus:** v2.0 — Phase 6: Website Infrastructure (ready to plan)
 
 ## Current Position
 
-Phase: Not started (defining requirements)
-Plan: —
-Status: Defining requirements for v2.0
-Last activity: 2026-04-04 — Milestone v2.0 started
+Phase: 6 of 8 for v2.0 (Website Infrastructure)
+Plan: Not started
+Status: Ready to plan Phase 6
+Last activity: 2026-04-04 — v2.0 roadmap created; 18 requirements mapped across phases 6-8
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [░░░░░░░░░░] 0% (v2.0 milestone)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 0
+- Total plans completed: 0 (v2.0)
 - Average duration: —
 - Total execution time: 0 hours
 
@@ -45,25 +45,7 @@ Progress: [░░░░░░░░░░] 0%
 |-------|-------|-------|----------|
 | - | - | - | - |
 
-**Recent Trend:**
-- Last 5 plans: —
-- Trend: —
-
 *Updated after each plan completion*
-| Phase 01-foundation P01 | 4 | 2 tasks | 18 files |
-| Phase 01-foundation P02 | 3 | 2 tasks | 2 files |
-| Phase 01-foundation P03 | 123 | 2 tasks | 6 files |
-| Phase 01-foundation P04 | 6 | 2 tasks | 9 files |
-| Phase 02-lead-capture-and-automation P01 | 144 | 2 tasks | 8 files |
-| Phase 02-lead-capture-and-automation P03 | 3 | 2 tasks | 4 files |
-| Phase 02-lead-capture-and-automation P02 | 5 | 2 tasks | 11 files |
-| Phase 02-lead-capture-and-automation P04 | 2 | 1 tasks | 0 files |
-| Phase 03-lcc-dashboard P01 | 3 | 3 tasks | 6 files |
-| Phase 03-lcc-dashboard PP02 | 4 | 2 tasks | 4 files |
-| Phase 03-lcc-dashboard P03 | 3 | 1 tasks | 3 files |
-| Phase 03-lcc-dashboard P04 | 3 | 1 tasks | 2 files |
-| Phase 05-ai-personalization P01 | 3 | 2 tasks | 8 files |
-| Phase 05-ai-personalization P02 | 3 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -72,37 +54,12 @@ Progress: [░░░░░░░░░░] 0%
 Decisions are logged in PROJECT.md Key Decisions table.
 Recent decisions affecting current work:
 
-- [Init]: Next.js 14 App Router + Supabase + Stripe + Make.com + Claude API stack confirmed
-- [Init]: Operator-run model — LCCs get read-only pipeline view; operator manages all accounts
-- [Init]: YOLO mode — maximum automation, ship fast
-- [Phase 01-foundation]: Supabase three-tier client pattern: browser/server/admin utilities in utils/supabase/ with service role key using SUPABASE_SERVICE_ROLE_KEY (no NEXT_PUBLIC_ prefix)
-- [Phase 01-foundation]: Server Supabase client is async (awaits cookies()) matching Next.js 14 App Router cookie API
-- [Phase 01-foundation]: INSERT policy uses WITH CHECK (not USING) for write-side tenant isolation on leads table
-- [Phase 01-foundation]: Custom Access Token Hook reads profiles table at JWT issuance to inject role and lcc_id into app_metadata
-- [Phase 01-foundation]: Migration and hook registration require manual steps in Supabase Dashboard (SQL editor + Auth > Hooks)
-- [Phase 01-foundation]: getClaims() used for JWT validation in middleware — validates cryptographic signature server-side; getSession() explicitly avoided as it trusts unverified cookie data
-- [Phase 01-foundation]: Route groups (auth), (operator), (lcc) used for URL-transparent layout isolation
-- [Phase 01-foundation]: /dashboard serves as post-login routing hub — middleware redirects by role before page renders
-- [Phase 01-foundation]: vitest.config.ts parses .env.local synchronously via readFileSync — Vitest does not auto-load Next.js env files; required for SUPABASE_SERVICE_ROLE_KEY to be available in integration tests
-- [Phase 01-foundation]: rls-isolation.spec.ts uses page.evaluate with dynamic import of createBrowserClient — tests RLS from real browser context with lcc1 session cookies, not from Node.js server context
-- [Phase 02-lead-capture-and-automation]: Playwright 1.58.2 lacks test.todo() inside describe blocks — used test.skip(true, reason) as Wave 0 stub pattern
-- [Phase 02-lead-capture-and-automation]: CALLBACK_ALLOWED_STAGES=['Contacted','Signed'] — Qualified is operator-only (Phase 3+); Signed IS allowed via callback for AUTO-05 referral trigger
-- [Phase 02-lead-capture-and-automation]: Referral webhook on Signed is fire-and-forget with 10s timeout — failure logged but does not fail the 200 response
-- [Phase 02-lead-capture-and-automation]: Middleware public route check: regex /^/[a-z0-9][a-z0-9-]*(?:/thank-you)?$/ before !claims auth redirect allows /[slug] and /[slug]/thank-you through without auth
-- [Phase 02-lead-capture-and-automation]: New-lead detection via created_at < 5s timing in upsert — avoids pre-upsert query round-trip; webhook fires on new lead only, not on duplicate upsert
-- [Phase 02-lead-capture-and-automation]: AUTO-01, AUTO-02, AUTO-03 are manual-only verifications requiring live Make.com + Twilio A2P 10DLC — cannot be automated in tests
-- [Phase 03-lcc-dashboard]: Wave 0 test.skip(true) for Playwright describe blocks, it.skip() for Vitest — pattern matches Phase 2 convention
-- [Phase 03-lcc-dashboard]: Brand color palette in tailwind.config.ts as single source of truth — 6 tokens: navy, pageBg, cardBg, gold, body, muted
-- [Phase 03-lcc-dashboard]: Server action for logout is inline in layout.tsx — no separate client component needed
-- [Phase 03-lcc-dashboard]: Pipeline stage grouping uses single Supabase query + JS filter — avoids four round-trips at LCC data volumes
-- [Phase 03-lcc-dashboard]: notFound() called when RLS returns null lead — prevents cross-tenant URL access without explicit auth check
-- [Phase 03-lcc-dashboard]: Automation labels fixed as 'Webhook configured' / 'Not configured' — cannot verify live Make.com status, only URL presence
-- [Phase 03-lcc-dashboard]: Route handler JWT auth uses createServerClient with request.cookies.getAll() — server.ts helper uses next/headers which is unavailable in route handlers
-- [Phase 05-ai-personalization]: it.skip('reason') used for Vitest Wave 0 stubs — it.skip(true, reason) rejected by tsc (boolean not assignable to string | Function)
-- [Phase 05-ai-personalization]: maxRetries:0 on Anthropic client — fire-and-forget; SDK default of 2 retries causes silent delays on failure
-- [Phase 05-ai-personalization]: IIFE placed inside existing isNewLead block shared with webhook — cleaner than a separate guard
-- [Phase 05-ai-personalization]: Anthropic.APIError instanceof narrowing works without type cast in TypeScript catch blocks
-- [Phase 05-ai-personalization]: vi.mock exports APIConnectionTimeoutError and APIError as named class exports matching SDK shape for Vitest integration tests
+- [v2.0 Init]: Expand /[lccSlug]/ route (not a separate site) — keeps form, auth, and DB in one codebase
+- [v2.0 Init]: DB-driven content from day one — schema must exist now to support v2.1 LCC self-editing
+- [v2.0 Init]: Custom domain routing deferred to v2.1 — custom_domain column exists but routing logic is future scope
+- [v2.0 Init]: File upload UI deferred — operator uploads to Supabase Storage directly for v2.0
+- [Phase 02-lead-capture-and-automation]: Middleware public route check: regex /^\/[a-z0-9][a-z0-9-]*(?:\/thank-you)?$/ — Phase 6 must extend this to cover /about, /au-pairs, /faq, /testimonials sub-routes
+- [Phase 03-lcc-dashboard]: Brand color palette in tailwind.config.ts as single source of truth — website pages should reuse same tokens
 
 ### Pending Todos
 
@@ -110,12 +67,12 @@ None yet.
 
 ### Blockers/Concerns
 
-- [Phase 2]: Make.com webhook authentication headers and callback format are MEDIUM confidence — verify exact header names and payload format against Make.com docs during Phase 2 planning
-- [Phase 2]: Twilio A2P 10DLC registration (brand + campaign) is an ops prerequisite that must be completed before production SMS sends — not a code task but blocks Phase 2 going live
-- [Phase 4]: Au pair LCC commission structure assumes a single per-LCC commission rate — validate variable vs. fixed rate with operator before building commission tracker
+- [Phase 6]: Middleware regex currently only allows /[slug] and /[slug]/thank-you — extending to 4 new sub-paths is a must-have in Phase 6 plan 1
+- [Phase 7]: Kim's photo URL will be a placeholder at seed time — real photo swap is an operator task, not a code task
+- [Phase 4]: Operator admin and billing (Phase 4) is not blocking v2.0 website phases — Phase 6 depends only on Phase 1 schema patterns and Phase 2 middleware patterns
 
 ## Session Continuity
 
-Last session: 2026-03-23T13:26:00.566Z
-Stopped at: Completed 05-ai-personalization 05-02-PLAN.md
+Last session: 2026-04-04
+Stopped at: v2.0 roadmap created — phases 6, 7, 8 written to ROADMAP.md
 Resume file: None

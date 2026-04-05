@@ -4,6 +4,8 @@
 
 The LCC Lead Engine builds in strict dependency order: tenant security must be airtight before any lead data is written; lead capture and automation must work before the dashboard has anything to show; the LCC dashboard must exist before billing can gate access to it; and AI personalization is an enhancement layer added only after the base system is proven in production. Five phases, each delivering one complete and verifiable capability.
 
+v2.0 adds a full personal website per LCC, built on top of the v1.0 foundation. Three phases extend the existing route structure: infrastructure first (schema, storage, middleware, nav), then pages and seeded content, then SEO as the final layer.
+
 ## Phases
 
 **Phase Numbering:**
@@ -17,6 +19,9 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [ ] **Phase 3: LCC Dashboard** - Authenticated LCC pipeline view by stage, lead detail records, conversion metrics, and commission progress tracker
 - [ ] **Phase 4: Operator Admin and Billing** - Operator dashboard, atomic LCC provisioning, Stripe subscription lifecycle, and LCC access gated on billing status
 - [x] **Phase 5: AI Personalization** - Claude API personalized message generation per lead with per-lead caching, passed through to Make.com nurture sequences (completed 2026-03-23)
+- [ ] **Phase 6: Website Infrastructure** - DB schema extensions, Supabase Storage bucket, middleware public-route expansion, and shared sticky nav layout — enabling all LCC sub-pages
+- [ ] **Phase 7: Public Pages and Content** - Full redesigned landing page, four sub-pages (/about, /au-pairs, /faq, /testimonials), and Kim's content seeded via migration
+- [ ] **Phase 8: SEO** - Unique title, meta description, and Open Graph tags on every public LCC website page, generated from DB content
 
 ## Phase Details
 
@@ -99,10 +104,44 @@ Plans:
 - [ ] 05-01-PLAN.md — DB migration (generated_intro_message column) + Anthropic client factory + Wave 0 test stubs
 - [ ] 05-02-PLAN.md — Fire-and-forget Claude generation in submitLeadForm + GET route extension + GREEN tests
 
+### Phase 6: Website Infrastructure
+**Goal**: The database has the columns and tables needed to store per-LCC website content, photo storage is live, middleware allows the new sub-pages publicly, and every LCC page shares a sticky navigation layout
+**Depends on**: Phase 1 (schema migrations), Phase 2 (middleware pattern)
+**Requirements**: SITE-01, SITE-02, SITE-03, SITE-04, SITE-05, SITE-06, SITE-07
+**Success Criteria** (what must be TRUE):
+  1. The `lccs` table has `headline`, `subheadline`, `bio`, `bio_teaser`, `photo_url`, and `custom_domain` columns; `lcc_testimonials` and `lcc_faqs` tables exist with the correct schema and FK constraints
+  2. The `lcc-photos` Supabase Storage bucket exists with public read access; a file uploaded to it is reachable via its public URL from a browser without authentication
+  3. Visiting `/[lccSlug]/about`, `/[lccSlug]/au-pairs`, `/[lccSlug]/faq`, and `/[lccSlug]/testimonials` as an unauthenticated user returns 200 (not a redirect to login)
+  4. Every LCC website page renders a sticky navigation bar showing the LCC's name, nav links to all sub-pages, and a "Get Started" CTA
+  5. On a mobile-width viewport, the navigation collapses to a hamburger menu that opens and closes correctly
+**Plans**: TBD
+
+### Phase 7: Public Pages and Content
+**Goal**: A visitor to any LCC's URL sees a full personal website — a rich landing page, four educational/credibility sub-pages, and Kim's seeded copy and testimonials ready to demo
+**Depends on**: Phase 6
+**Requirements**: PAGE-01, PAGE-02, PAGE-03, PAGE-04, PAGE-05, PAGE-06, CONT-01, CONT-02, CONT-03
+**Success Criteria** (what must be TRUE):
+  1. The landing page at `/[lccSlug]/` has a hero section (LCC photo, headline, CTA button), an about teaser, an au pair teaser, a testimonials snippet (up to 3), and the lead capture form — all scrollable on a single page
+  2. Clicking "Get Started" in the nav or hero scrolls to the lead form without a page reload (anchor navigation via `id="form"`)
+  3. `/[lccSlug]/about` displays the LCC's full bio and photo pulled from the database
+  4. `/[lccSlug]/au-pairs` displays a static educational explainer covering program costs, how it works, visa requirements, and the au pair vs. nanny comparison — shared content for all LCCs
+  5. `/[lccSlug]/faq` displays the LCC's FAQ entries in order from the database; `/[lccSlug]/testimonials` displays all testimonials in order from the database
+  6. Kim's slug URL renders with seeded headline, bio, bio teaser, photo URL, at least 3 testimonials, and at least 5 FAQ entries — all served from the database with no hardcoded copy in the page components
+**Plans**: TBD
+
+### Phase 8: SEO
+**Goal**: Every public LCC website page is individually discoverable by search engines, with accurate titles, descriptions, and social sharing previews driven by database content
+**Depends on**: Phase 7
+**Requirements**: SEO-01, SEO-02
+**Success Criteria** (what must be TRUE):
+  1. Each LCC website page (`/`, `/about`, `/au-pairs`, `/faq`, `/testimonials`) has a unique `<title>` and `<meta name="description">` that includes the LCC's name and page-specific context — verified by inspecting page source
+  2. Each LCC website page has `og:title`, `og:description`, and `og:image` Open Graph tags — `og:image` uses the LCC's `photo_url` from the database; sharing the URL on a social platform renders the correct preview card
+**Plans**: TBD
+
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
+Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -111,3 +150,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 3. LCC Dashboard | 3/4 | In Progress|  |
 | 4. Operator Admin and Billing | 0/? | Not started | - |
 | 5. AI Personalization | 2/2 | Complete   | 2026-03-23 |
+| 6. Website Infrastructure | 0/? | Not started | - |
+| 7. Public Pages and Content | 0/? | Not started | - |
+| 8. SEO | 0/? | Not started | - |
