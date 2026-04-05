@@ -1,9 +1,12 @@
 # Requirements: LCC Lead Engine
 
 **Defined:** 2026-03-14
+**Updated for v2.0:** 2026-04-04
 **Core Value:** More families signed for each LCC — a fully automated lead generation and nurture system that turns family interest into au pair sign-ups, without the LCC lifting a finger.
 
-## v1 Requirements
+---
+
+## v1.0 Requirements (Complete)
 
 ### Authentication & Multi-Tenancy
 
@@ -54,40 +57,71 @@
 - [x] **DASH-04**: LCC can see total signed families and estimated commission progress
 - [x] **DASH-05**: LCC can see which automations are active on their account
 
-### Operator Admin
+---
 
-- [ ] **OPS-01**: Operator can view all LCC accounts and their pipeline summaries in one view
-- [ ] **OPS-02**: Operator can create a new LCC account (provisions Supabase auth user + RLS tenant)
-- [ ] **OPS-03**: Operator can configure Make.com webhook URLs for each LCC's automations
-- [ ] **OPS-04**: Operator can view any individual LCC's full pipeline (bypassing RLS)
-- [ ] **OPS-05**: Operator can manually move leads through stages for any LCC
+## v2.0 Requirements — LCC Personal Website
 
-### Billing
+### Website Infrastructure
 
-- [ ] **BILL-01**: Stripe subscription product exists for monthly retainer ($500–$1,500/month tier)
-- [ ] **BILL-02**: LCC account is linked to a Stripe subscription customer
-- [ ] **BILL-03**: Failed payment or subscription cancellation disables LCC's active automations
-- [ ] **BILL-04**: Stripe webhook handles: subscription created, payment failed, subscription cancelled
+- [ ] **SITE-01**: The `lccs` table has new columns: `headline`, `subheadline`, `bio`, `bio_teaser`, `photo_url`, `custom_domain` (nullable, for future use)
+- [ ] **SITE-02**: New `lcc_testimonials` table exists with columns: `id`, `lcc_id` (FK), `family_name`, `quote`, `order_index`, `created_at`
+- [ ] **SITE-03**: New `lcc_faqs` table exists with columns: `id`, `lcc_id` (FK), `question`, `answer`, `order_index`, `created_at`
+- [ ] **SITE-04**: A Supabase Storage bucket (`lcc-photos`) exists with public read access for LCC photo assets
+- [ ] **SITE-05**: Middleware allows unauthenticated access to `/[lccSlug]/about`, `/[lccSlug]/au-pairs`, `/[lccSlug]/faq`, and `/[lccSlug]/testimonials`
+- [ ] **SITE-06**: All LCC website pages share a sticky navigation layout (LCC name + nav links + "Get Started" CTA)
+- [ ] **SITE-07**: The navigation collapses to a hamburger menu on mobile viewports
+
+### Public Pages
+
+- [ ] **PAGE-01**: The LCC landing page (`/[lccSlug]/`) is a full scrollable page with: Hero (photo, headline, CTA), About teaser, Au Pair teaser, Testimonials snippet (up to 3), and the lead capture form
+- [ ] **PAGE-02**: The "Get Started" nav CTA scrolls to the lead capture form on the landing page (via `id="form"` anchor)
+- [ ] **PAGE-03**: The `/[lccSlug]/about` page displays the LCC's full bio and photo (from DB)
+- [ ] **PAGE-04**: The `/[lccSlug]/au-pairs` page displays a static educational explainer about the au pair program (costs, how it works, visa, vs. nanny — shared content for all LCCs)
+- [ ] **PAGE-05**: The `/[lccSlug]/faq` page displays the LCC's FAQ entries in order (from DB)
+- [ ] **PAGE-06**: The `/[lccSlug]/testimonials` page displays all of the LCC's testimonials in order (from DB)
+
+### Content Seeding (Kim)
+
+- [ ] **CONT-01**: Kim's website content is seeded via migration: `headline`, `subheadline`, `bio`, `bio_teaser`, `photo_url` (AI-drafted copy, placeholder photo URL)
+- [ ] **CONT-02**: At least 3 placeholder testimonials are seeded for Kim via migration (AI-drafted, to be replaced with real ones)
+- [ ] **CONT-03**: At least 5 FAQ entries are seeded for Kim via migration (AI-drafted, covering common family questions)
+
+### SEO
+
+- [ ] **SEO-01**: Each public LCC website page has a unique `<title>` and `<meta name="description">` tag generated from DB content
+- [ ] **SEO-02**: Each public LCC website page has Open Graph tags (`og:title`, `og:description`, `og:image`) using the LCC's `photo_url`
 
 ---
 
-## v2 Requirements
+## Future Requirements
 
-### Enhanced Analytics
+### Custom Domain Support (v2.1)
 
-- **ANLT-01**: Monthly automated report generated via Claude API summarizing LCC's pipeline performance
-- **ANLT-02**: Conversion rate by lead source (ad vs landing page vs referral)
-- **ANLT-03**: Average days-to-sign tracking
+- **DOM-01**: Middleware detects incoming hostname and maps it to the correct LCC slug (via `custom_domain` column)
+- **DOM-02**: When an LCC has a `custom_domain` set, visiting `/[lccSlug]/` redirects (301) to their custom domain
+- **DOM-03**: LCC setup flow: buy domain → point DNS to Vercel → operator sets `custom_domain` in DB
 
-### Advanced Automation
+### LCC Self-Editing (v2.1)
 
-- **AUTO-07**: Operator can duplicate a Make.com scenario for a new LCC from within the app UI
-- **AUTO-08**: A/B testing of follow-up message variants
+- **EDIT-01**: LCC can edit their bio and bio teaser from the dashboard
+- **EDIT-02**: LCC can add, edit, and delete testimonials from the dashboard
+- **EDIT-03**: LCC can add, edit, and delete FAQ entries from the dashboard
+- **EDIT-04**: LCC can update their photo URL from the dashboard
 
-### Family-Facing
+### Operator Admin (Carried from v1.0)
 
-- **FAM-01**: Facebook Lead Ads integration (leads ingested directly from FB without a landing page visit)
-- **FAM-02**: Referral tracking link (unique URL per referring family)
+- **OPS-01**: Operator can view all LCC accounts and their pipeline summaries in one view
+- **OPS-02**: Operator can create a new LCC account (provisions Supabase auth user + RLS tenant)
+- **OPS-03**: Operator can configure Make.com webhook URLs for each LCC's automations
+- **OPS-04**: Operator can view any individual LCC's full pipeline (bypassing RLS)
+- **OPS-05**: Operator can manually move leads through stages for any LCC
+
+### Billing (Carried from v1.0)
+
+- **BILL-01**: Stripe subscription product exists for monthly retainer ($500–$1,500/month tier)
+- **BILL-02**: LCC account is linked to a Stripe subscription customer
+- **BILL-03**: Failed payment or subscription cancellation disables LCC's active automations
+- **BILL-04**: Stripe webhook handles: subscription created, payment failed, subscription cancelled
 
 ---
 
@@ -95,68 +129,60 @@
 
 | Feature | Reason |
 |---------|--------|
-| Mobile native app | Web-first; mobile-responsive sufficient for v1 |
-| LCC self-service signup | Operator-managed onboarding — done-for-you model requires manual setup |
-| In-app messaging (LCC ↔ family) | SMS/email via Make.com handles all communication; in-app messaging adds complexity without retainer value |
-| LCC-editable automation sequences | Done-for-you means operator controls sequences; LCC editing undermines the model |
-| White-labeling per LCC | Single brand for v1 |
-| OAuth / magic link login | Email/password sufficient for operator + LCC login volume |
-| Real-time chat | Out of scope — see in-app messaging above |
+| Mobile native app | Web-first; mobile-responsive sufficient |
+| LCC self-service signup | Operator-managed onboarding — done-for-you model |
+| In-app messaging (LCC ↔ family) | SMS/email via Make.com handles all communication |
+| LCC-editable automation sequences | Done-for-you means operator controls sequences |
+| Custom domain routing | Deferred to v2.1 — build site first, domain infra later |
+| LCC self-editing dashboard UI | Deferred to v2.1 — site ships with operator-seeded content |
+| File upload UI for photos | Operator uploads to Supabase Storage directly; no UI needed for v2.0 |
+| Analytics / reporting | Deferred |
 
 ---
 
 ## Traceability
 
-*Updated after roadmap creation — 2026-03-14*
+*Updated after roadmap creation*
+
+### v1.0 (Complete)
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AUTH-01 | Phase 1 | Complete |
-| AUTH-02 | Phase 1 | Complete |
-| AUTH-03 | Phase 1 | Complete |
-| AUTH-04 | Phase 1 | Complete |
-| AUTH-05 | Phase 1 | Complete |
-| AUTH-06 | Phase 1 | Complete |
-| LEAD-01 | Phase 2 | Complete |
-| LEAD-02 | Phase 2 | Complete |
-| LEAD-03 | Phase 2 | Complete |
-| LEAD-04 | Phase 2 | Complete |
-| LEAD-05 | Phase 2 | Complete |
-| LEAD-06 | Phase 2 | Complete |
-| PIPE-01 | Phase 2 | Complete |
-| PIPE-02 | Phase 2 | Complete |
-| PIPE-03 | Phase 2 | Complete |
-| PIPE-04 | Phase 3 | Complete |
-| PIPE-05 | Phase 2 | Complete |
-| AUTO-01 | Phase 2 | Complete |
-| AUTO-02 | Phase 2 | Complete |
-| AUTO-03 | Phase 2 | Complete |
-| AUTO-04 | Phase 2 | Complete |
-| AUTO-05 | Phase 2 | Complete |
-| AUTO-06 | Phase 2 | Complete |
-| DASH-01 | Phase 3 | Complete |
-| DASH-02 | Phase 3 | Complete |
-| DASH-03 | Phase 3 | Complete |
-| DASH-04 | Phase 3 | Complete |
-| DASH-05 | Phase 3 | Complete |
-| OPS-01 | Phase 4 | Pending |
-| OPS-02 | Phase 4 | Pending |
-| OPS-03 | Phase 4 | Pending |
-| OPS-04 | Phase 4 | Pending |
-| OPS-05 | Phase 4 | Pending |
-| BILL-01 | Phase 4 | Pending |
-| BILL-02 | Phase 4 | Pending |
-| BILL-03 | Phase 4 | Pending |
-| BILL-04 | Phase 4 | Pending |
-| AI-01 | Phase 5 | Complete |
-| AI-02 | Phase 5 | Complete |
-| AI-03 | Phase 5 | Complete |
+| AUTH-01–06 | Phase 1 | Complete |
+| LEAD-01–06 | Phase 2 | Complete |
+| PIPE-01–05 | Phase 2–3 | Complete |
+| AUTO-01–06 | Phase 2 | Complete |
+| DASH-01–05 | Phase 3 | Complete |
+| AI-01–03 | Phase 5 | Complete |
+
+### v2.0 (This Milestone)
+
+| Requirement | Phase | Status |
+|-------------|-------|--------|
+| SITE-01 | TBD | Pending |
+| SITE-02 | TBD | Pending |
+| SITE-03 | TBD | Pending |
+| SITE-04 | TBD | Pending |
+| SITE-05 | TBD | Pending |
+| SITE-06 | TBD | Pending |
+| SITE-07 | TBD | Pending |
+| PAGE-01 | TBD | Pending |
+| PAGE-02 | TBD | Pending |
+| PAGE-03 | TBD | Pending |
+| PAGE-04 | TBD | Pending |
+| PAGE-05 | TBD | Pending |
+| PAGE-06 | TBD | Pending |
+| CONT-01 | TBD | Pending |
+| CONT-02 | TBD | Pending |
+| CONT-03 | TBD | Pending |
+| SEO-01 | TBD | Pending |
+| SEO-02 | TBD | Pending |
 
 **Coverage:**
-- v1 requirements: 38 total
-- Mapped to phases: 38
-- Unmapped: 0 ✓
+- v2.0 requirements: 18 total
+- Mapped to phases: TBD (roadmapper pending)
+- Unmapped: 18 ⚠️
 
 ---
 *Requirements defined: 2026-03-14*
-*Last updated: 2026-03-19 — PIPE-04 deferred to Phase 3 (dashboard UI scope; no Phase 2 implementation exists)*
+*Last updated: 2026-04-04 — v2.0 milestone requirements added*
