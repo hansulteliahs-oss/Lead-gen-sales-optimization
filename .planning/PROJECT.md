@@ -2,7 +2,19 @@
 
 ## What This Is
 
-A done-for-you lead generation system for au pair LCCs (Local Childcare Coordinators). The operator (the builder) runs the full system; each LCC client gets a simple dashboard login to see their pipeline. The system captures, nurtures, and converts families interested in au pairs on autopilot — delivered as a retainer service priced at $1,000–2,000 setup + $500–1,500/month.
+A done-for-you lead generation system for au pair LCCs (Local Childcare Coordinators). The operator (the builder) runs the full system; each LCC client gets a personal website for family discovery, a simple dashboard login to see their pipeline, and fully automated lead nurture. The system captures, nurtures, and converts families interested in au pairs on autopilot — delivered as a retainer service priced at $1,000–2,000 setup + $500–1,500/month.
+
+## Current Milestone: v2.0 — LCC Personal Website
+
+**Goal:** Transform each LCC's public URL into a full personal website — a multi-page, DB-driven site with bio, au pair education, testimonials, and FAQ — turning the SaaS pitch from "lead pipeline tool" to "your own personal website + automated lead capture + dashboard."
+
+**Target features:**
+- Full scrollable landing page with hero, about teaser, au pair teaser, testimonials snippet, and lead form
+- Sub-pages: /about, /au-pairs (static), /faq, /testimonials
+- Sticky navigation with hamburger menu on mobile
+- DB-driven content per LCC (bio, testimonials, FAQs) seeded for Kim
+- Supabase Storage bucket for LCC photos
+- Basic SEO (meta tags, Open Graph) on every page
 
 ## Core Value
 
@@ -12,22 +24,25 @@ More families signed for each LCC — a fully automated lead generation and nurt
 
 ### Validated
 
-(None yet — ship to validate)
+- ✓ Multi-tenant data isolation via Supabase RLS — v1.0
+- ✓ Families can submit interest via LCC-specific landing pages/forms — v1.0
+- ✓ Leads instantly captured and routed to the correct LCC's pipeline — v1.0
+- ✓ Make.com webhook triggered on new lead for SMS/email nurture sequence — v1.0
+- ✓ Claude API generates personalized follow-up message per lead — v1.0
+- ✓ Referral automation triggers on family sign-up — v1.0
+- ✓ LCCs can log in and view their pipeline by stage — v1.0
+- ✓ LCCs can see lead details and conversion metrics — v1.0
 
-### Active
+### Active (v2.0)
 
-- [ ] Families can submit interest via LCC-specific landing pages/forms
-- [ ] Leads are instantly captured and routed to the correct LCC's pipeline
-- [ ] System sends automated SMS/email follow-up sequences via Make.com
-- [ ] Claude API generates personalized follow-up messages per family
-- [ ] After family signs up, referral automation triggers to request referrals
-- [ ] LCCs can log in and view their own pipeline (interested → contacted → qualified → signed)
-- [ ] LCCs can see lead details (family info, source, last contacted date)
-- [ ] LCCs can see conversion metrics and commission progress
-- [ ] Operator can view all LCCs and their clients in a single dashboard
-- [ ] Operator can onboard new LCC clients and provision their pipeline
-- [ ] Stripe subscription billing handles setup fees and monthly retainers
-- [ ] Multi-tenant data isolation: each LCC only sees their own leads
+- [ ] Each LCC has a full personal website (landing + sub-pages) at their slug URL
+- [ ] Website has sticky navigation with hamburger on mobile
+- [ ] DB-driven content per LCC: bio, testimonials, FAQs
+- [ ] Supabase Storage bucket for LCC photos
+- [ ] Kim's content seeded (bio, testimonials, FAQs, photo)
+- [ ] Basic SEO on all public website pages
+- [ ] Operator admin dashboard and LCC provisioning
+- [ ] Stripe subscription billing
 
 ### Out of Scope
 
@@ -65,6 +80,10 @@ More families signed for each LCC — a fully automated lead generation and nurt
 | YOLO mode | Maximum automation, ship fast | — Pending |
 | LCC login (not operator-only) | Perceived value for LCCs = retention; they see their pipeline working | — Pending |
 | Done-for-you delivery | Higher ticket, retainer-friendly, matches existing LCC relationships | — Pending |
+| Website as SaaS template | Each LCC gets same website template — Kim is v1; scales to all future LCCs | — Pending |
+| Expand /[lccSlug]/ route (not separate site) | Keeps form integration, auth, and DB in one codebase; zero extra hosting cost | — Pending |
+| Custom domain routing deferred | Build public site first; add hostname-based routing in a future milestone when Kim has a domain | — Pending |
+| DB-driven content from day one | LCC self-editing dashboard planned for v2.1; DB schema must exist now to support it | — Pending |
 
 ---
-*Last updated: 2026-03-14 after initialization*
+*Last updated: 2026-04-04 after v2.0 milestone start*
