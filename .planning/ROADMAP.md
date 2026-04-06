@@ -114,7 +114,12 @@ Plans:
   3. Visiting `/[lccSlug]/about`, `/[lccSlug]/au-pairs`, `/[lccSlug]/faq`, and `/[lccSlug]/testimonials` as an unauthenticated user returns 200 (not a redirect to login)
   4. Every LCC website page renders a sticky navigation bar showing the LCC's name, nav links to all sub-pages, and a "Get Started" CTA
   5. On a mobile-width viewport, the navigation collapses to a hamburger menu that opens and closes correctly
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 06-01-PLAN.md — DB schema extensions (lccs columns, testimonials/FAQs tables) + Storage bucket + integration tests
+- [ ] 06-02-PLAN.md — Middleware regex expansion + stub pages for 4 sub-routes + E2E tests
+- [ ] 06-03-PLAN.md — Shared sticky nav layout + hamburger mobile menu + E2E tests
 
 ### Phase 7: Public Pages and Content
 **Goal**: A visitor to any LCC's URL sees a full personal website — a rich landing page, four educational/credibility sub-pages, and Kim's seeded copy and testimonials ready to demo
@@ -141,7 +146,7 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -150,6 +155,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8
 | 3. LCC Dashboard | 3/4 | In Progress|  |
 | 4. Operator Admin and Billing | 0/? | Not started | - |
 | 5. AI Personalization | 2/2 | Complete   | 2026-03-23 |
-| 6. Website Infrastructure | 0/? | Not started | - |
+| 6. Website Infrastructure | 0/3 | Not started | - |
 | 7. Public Pages and Content | 0/? | Not started | - |
 | 8. SEO | 0/? | Not started | - |
