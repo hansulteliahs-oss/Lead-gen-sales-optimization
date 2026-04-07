@@ -4,13 +4,13 @@ milestone: v2.0
 milestone_name: milestone
 status: planning
 stopped_at: Completed 06-01-PLAN.md
-last_updated: "2026-04-07T22:06:07.602Z"
+last_updated: "2026-04-07T22:07:00.337Z"
 last_activity: 2026-04-04 — v2.0 roadmap created; 18 requirements mapped across phases 6-8
 progress:
   total_phases: 8
   completed_phases: 4
   total_plans: 18
-  completed_plans: 16
+  completed_plans: 17
   percent: 0
 ---
 
@@ -47,6 +47,8 @@ Progress: [░░░░░░░░░░] 0% (v2.0 milestone)
 
 *Updated after each plan completion*
 | Phase 06-website-infrastructure P01 | 2 | 2 tasks | 2 files |
+| Phase 06-website-infrastructure P02 | 15 | 2 tasks | 6 files |
+| Phase 06-website-infrastructure P01 | 3 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -64,6 +66,10 @@ Recent decisions affecting current work:
 - [Phase 06-01]: All 6 new lccs columns are nullable — LCCs without website content must not break
 - [Phase 06-01]: Storage bucket and RLS policies use ON CONFLICT / IF NOT EXISTS wrappers for idempotency
 - [Phase 06-01]: TDD approach: tests written first (RED), migration applied second (GREEN)
+- [Phase 06-website-infrastructure]: Middleware variable renamed from isPublicLandingPage to isPublicLccPage to reflect broader scope covering 4 sub-routes beyond the landing page
+- [Phase 06-website-infrastructure]: All 6 new lccs columns are nullable — LCCs without website content must not break
+- [Phase 06-website-infrastructure]: lcc-photos Storage bucket is public=true for unauthenticated image reads on website pages
+- [Phase 06-website-infrastructure]: TDD approach: integration tests written RED first, migration applied second for GREEN
 
 ### Pending Todos
 
@@ -77,6 +83,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-07T22:06:07.600Z
+Last session: 2026-04-07T22:07:00.335Z
 Stopped at: Completed 06-01-PLAN.md
 Resume file: None
