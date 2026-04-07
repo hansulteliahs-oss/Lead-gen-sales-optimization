@@ -63,10 +63,10 @@
 
 ### Website Infrastructure
 
-- [ ] **SITE-01**: The `lccs` table has new columns: `headline`, `subheadline`, `bio`, `bio_teaser`, `photo_url`, `custom_domain` (nullable, for future use)
-- [ ] **SITE-02**: New `lcc_testimonials` table exists with columns: `id`, `lcc_id` (FK), `family_name`, `quote`, `order_index`, `created_at`
-- [ ] **SITE-03**: New `lcc_faqs` table exists with columns: `id`, `lcc_id` (FK), `question`, `answer`, `order_index`, `created_at`
-- [ ] **SITE-04**: A Supabase Storage bucket (`lcc-photos`) exists with public read access for LCC photo assets
+- [x] **SITE-01**: The `lccs` table has new columns: `headline`, `subheadline`, `bio`, `bio_teaser`, `photo_url`, `custom_domain` (nullable, for future use)
+- [x] **SITE-02**: New `lcc_testimonials` table exists with columns: `id`, `lcc_id` (FK), `family_name`, `quote`, `order_index`, `created_at`
+- [x] **SITE-03**: New `lcc_faqs` table exists with columns: `id`, `lcc_id` (FK), `question`, `answer`, `order_index`, `created_at`
+- [x] **SITE-04**: A Supabase Storage bucket (`lcc-photos`) exists with public read access for LCC photo assets
 - [ ] **SITE-05**: Middleware allows unauthenticated access to `/[lccSlug]/about`, `/[lccSlug]/au-pairs`, `/[lccSlug]/faq`, and `/[lccSlug]/testimonials`
 - [ ] **SITE-06**: All LCC website pages share a sticky navigation layout (LCC name + nav links + "Get Started" CTA)
 - [ ] **SITE-07**: The navigation collapses to a hamburger menu on mobile viewports
@@ -159,10 +159,10 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SITE-01 | Phase 6 | Pending |
-| SITE-02 | Phase 6 | Pending |
-| SITE-03 | Phase 6 | Pending |
-| SITE-04 | Phase 6 | Pending |
+| SITE-01 | Phase 6 | Complete |
+| SITE-02 | Phase 6 | Complete |
+| SITE-03 | Phase 6 | Complete |
+| SITE-04 | Phase 6 | Complete |
 | SITE-05 | Phase 6 | Pending |
 | SITE-06 | Phase 6 | Pending |
 | SITE-07 | Phase 6 | Pending |

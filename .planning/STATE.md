@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
 status: planning
-stopped_at: Phase 6 context gathered
-last_updated: "2026-04-05T02:04:43.485Z"
+stopped_at: Completed 06-01-PLAN.md
+last_updated: "2026-04-07T22:06:07.602Z"
 last_activity: 2026-04-04 — v2.0 roadmap created; 18 requirements mapped across phases 6-8
 progress:
   total_phases: 8
   completed_phases: 4
-  total_plans: 15
-  completed_plans: 15
+  total_plans: 18
+  completed_plans: 16
   percent: 0
 ---
 
@@ -46,6 +46,7 @@ Progress: [░░░░░░░░░░] 0% (v2.0 milestone)
 | - | - | - | - |
 
 *Updated after each plan completion*
+| Phase 06-website-infrastructure P01 | 2 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -60,6 +61,9 @@ Recent decisions affecting current work:
 - [v2.0 Init]: File upload UI deferred — operator uploads to Supabase Storage directly for v2.0
 - [Phase 02-lead-capture-and-automation]: Middleware public route check: regex /^\/[a-z0-9][a-z0-9-]*(?:\/thank-you)?$/ — Phase 6 must extend this to cover /about, /au-pairs, /faq, /testimonials sub-routes
 - [Phase 03-lcc-dashboard]: Brand color palette in tailwind.config.ts as single source of truth — website pages should reuse same tokens
+- [Phase 06-01]: All 6 new lccs columns are nullable — LCCs without website content must not break
+- [Phase 06-01]: Storage bucket and RLS policies use ON CONFLICT / IF NOT EXISTS wrappers for idempotency
+- [Phase 06-01]: TDD approach: tests written first (RED), migration applied second (GREEN)
 
 ### Pending Todos
 
@@ -73,6 +77,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-05T02:04:43.482Z
-Stopped at: Phase 6 context gathered
-Resume file: .planning/phases/06-website-infrastructure/06-CONTEXT.md
+Last session: 2026-04-07T22:06:07.600Z
+Stopped at: Completed 06-01-PLAN.md
+Resume file: None
