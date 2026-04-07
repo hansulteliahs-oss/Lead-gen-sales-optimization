@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 06-website-infrastructure-02-PLAN.md
-last_updated: "2026-04-07T22:07:42.377Z"
+stopped_at: Completed 06-website-infrastructure-03-PLAN.md
+last_updated: "2026-04-07T22:12:01.378Z"
 last_activity: 2026-04-04 — v2.0 roadmap created; 18 requirements mapped across phases 6-8
 progress:
   total_phases: 8
-  completed_phases: 4
+  completed_phases: 5
   total_plans: 18
-  completed_plans: 17
+  completed_plans: 18
   percent: 0
 ---
 
@@ -50,6 +50,7 @@ Progress: [░░░░░░░░░░] 0% (v2.0 milestone)
 | Phase 06-website-infrastructure P02 | 15 | 2 tasks | 6 files |
 | Phase 06-website-infrastructure P01 | 3 | 2 tasks | 2 files |
 | Phase 06-website-infrastructure P02 | 15 | 2 tasks | 6 files |
+| Phase 06-website-infrastructure P03 | 2 | 2 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -73,6 +74,8 @@ Recent decisions affecting current work:
 - [Phase 06-website-infrastructure]: TDD approach: integration tests written RED first, migration applied second for GREEN
 - [Phase 06-website-infrastructure]: Renamed isPublicLandingPage to isPublicLccPage to reflect broader coverage of new sub-routes
 - [Phase 06-website-infrastructure]: Middleware regex uses explicit allowlist (not wildcard) so only named sub-paths are public; unrecognized paths remain gated
+- [Phase 06-website-infrastructure]: Nav uses <a> tag for CTA Get Started (not Next.js Link) to allow #fragment anchor scroll — fragment-only hrefs require <a> for reliable scroll behavior
+- [Phase 06-website-infrastructure]: Server layout passes lccName/lccSlug as props to Client nav component — keeps SUPABASE_SERVICE_ROLE_KEY server-side only
 
 ### Pending Todos
 
@@ -86,6 +89,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-07T22:07:42.375Z
-Stopped at: Completed 06-website-infrastructure-02-PLAN.md
+Last session: 2026-04-07T22:12:01.376Z
+Stopped at: Completed 06-website-infrastructure-03-PLAN.md
 Resume file: None

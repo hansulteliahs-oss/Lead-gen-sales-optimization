@@ -68,8 +68,8 @@
 - [x] **SITE-03**: New `lcc_faqs` table exists with columns: `id`, `lcc_id` (FK), `question`, `answer`, `order_index`, `created_at`
 - [x] **SITE-04**: A Supabase Storage bucket (`lcc-photos`) exists with public read access for LCC photo assets
 - [x] **SITE-05**: Middleware allows unauthenticated access to `/[lccSlug]/about`, `/[lccSlug]/au-pairs`, `/[lccSlug]/faq`, and `/[lccSlug]/testimonials`
-- [ ] **SITE-06**: All LCC website pages share a sticky navigation layout (LCC name + nav links + "Get Started" CTA)
-- [ ] **SITE-07**: The navigation collapses to a hamburger menu on mobile viewports
+- [x] **SITE-06**: All LCC website pages share a sticky navigation layout (LCC name + nav links + "Get Started" CTA)
+- [x] **SITE-07**: The navigation collapses to a hamburger menu on mobile viewports
 
 ### Public Pages
 
@@ -164,8 +164,8 @@
 | SITE-03 | Phase 6 | Complete |
 | SITE-04 | Phase 6 | Complete |
 | SITE-05 | Phase 6 | Complete |
-| SITE-06 | Phase 6 | Pending |
-| SITE-07 | Phase 6 | Pending |
+| SITE-06 | Phase 6 | Complete |
+| SITE-07 | Phase 6 | Complete |
 | PAGE-01 | Phase 7 | Pending |
 | PAGE-02 | Phase 7 | Pending |
 | PAGE-03 | Phase 7 | Pending |
