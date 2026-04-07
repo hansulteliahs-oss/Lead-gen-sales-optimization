@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 06-01-PLAN.md
-last_updated: "2026-04-07T22:07:00.337Z"
+stopped_at: Completed 06-website-infrastructure-02-PLAN.md
+last_updated: "2026-04-07T22:07:42.377Z"
 last_activity: 2026-04-04 — v2.0 roadmap created; 18 requirements mapped across phases 6-8
 progress:
   total_phases: 8
@@ -49,6 +49,7 @@ Progress: [░░░░░░░░░░] 0% (v2.0 milestone)
 | Phase 06-website-infrastructure P01 | 2 | 2 tasks | 2 files |
 | Phase 06-website-infrastructure P02 | 15 | 2 tasks | 6 files |
 | Phase 06-website-infrastructure P01 | 3 | 2 tasks | 2 files |
+| Phase 06-website-infrastructure P02 | 15 | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -70,6 +71,8 @@ Recent decisions affecting current work:
 - [Phase 06-website-infrastructure]: All 6 new lccs columns are nullable — LCCs without website content must not break
 - [Phase 06-website-infrastructure]: lcc-photos Storage bucket is public=true for unauthenticated image reads on website pages
 - [Phase 06-website-infrastructure]: TDD approach: integration tests written RED first, migration applied second for GREEN
+- [Phase 06-website-infrastructure]: Renamed isPublicLandingPage to isPublicLccPage to reflect broader coverage of new sub-routes
+- [Phase 06-website-infrastructure]: Middleware regex uses explicit allowlist (not wildcard) so only named sub-paths are public; unrecognized paths remain gated
 
 ### Pending Todos
 
@@ -83,6 +86,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-07T22:07:00.335Z
-Stopped at: Completed 06-01-PLAN.md
+Last session: 2026-04-07T22:07:42.375Z
+Stopped at: Completed 06-website-infrastructure-02-PLAN.md
 Resume file: None
