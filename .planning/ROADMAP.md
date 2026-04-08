@@ -129,7 +129,7 @@ Plans:
   1. The landing page at `/[lccSlug]/` has a hero section (LCC photo, headline, CTA button), an about teaser, an au pair teaser, a testimonials snippet (up to 3), and the lead capture form — all scrollable on a single page
   2. Clicking "Get Started" in the nav or hero scrolls to the lead form without a page reload (anchor navigation via `id="form"`)
   3. `/[lccSlug]/about` displays the LCC's full bio and photo pulled from the database
-  4. `/[lccSlug]/au-pairs` displays a static educational explainer covering program costs, how it works, visa requirements, and the au pair vs. nanny comparison — shared content for all LCCs
+  4. `/[lccSlug]/au-pairs` displays a static educational explainer covering program costs, how it works, and the au pair vs. nanny comparison — shared content for all LCCs (visa questions addressed in Kim's FAQ seed instead)
   5. `/[lccSlug]/faq` displays the LCC's FAQ entries in order from the database; `/[lccSlug]/testimonials` displays all testimonials in order from the database
   6. Kim's slug URL renders with seeded headline, bio, bio teaser, photo URL, at least 3 testimonials, and at least 5 FAQ entries — all served from the database with no hardcoded copy in the page components
 **Plans**: 4 plans
