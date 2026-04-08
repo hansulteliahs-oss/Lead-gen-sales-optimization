@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
 status: planning
-stopped_at: Phase 7 context gathered
-last_updated: "2026-04-08T00:21:43.571Z"
+stopped_at: Completed 07-02-PLAN.md
+last_updated: "2026-04-08T00:49:25.731Z"
 last_activity: 2026-04-04 — v2.0 roadmap created; 18 requirements mapped across phases 6-8
 progress:
   total_phases: 8
   completed_phases: 5
-  total_plans: 18
-  completed_plans: 18
+  total_plans: 22
+  completed_plans: 19
   percent: 0
 ---
 
@@ -52,6 +52,7 @@ Progress: [░░░░░░░░░░] 0% (v2.0 milestone)
 | Phase 06-website-infrastructure P02 | 15 | 2 tasks | 6 files |
 | Phase 06-website-infrastructure P03 | 2 | 2 tasks | 5 files |
 | Phase 06-website-infrastructure P03 | 20 | 2 tasks | 5 files |
+| Phase 07-public-pages-and-content P02 | 2 | 1 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -79,6 +80,8 @@ Recent decisions affecting current work:
 - [Phase 06-website-infrastructure]: Server layout passes lccName/lccSlug as props to Client nav component — keeps SUPABASE_SERVICE_ROLE_KEY server-side only
 - [Phase 06-website-infrastructure]: Nav uses <a> (not Link) for CTA to allow #fragment anchor scroll; CTA href switches between #form and /[slug]/#form based on usePathname()
 - [Phase 06-website-infrastructure]: kim-johnson LCC row inserted into remote Supabase DB — seed.sql only had lcc1/lcc2 but all Phase 6 E2E tests use kim-johnson slug
+- [Phase 07-public-pages-and-content]: DELETE-before-INSERT chosen for testimonials/FAQs seed so re-running migration replaces content cleanly rather than silently skipping updates
+- [Phase 07-public-pages-and-content]: photo_url explicitly set to NULL in kim-johnson seed to document intentional absence and exercise page null-fallback logic
 
 ### Pending Todos
 
@@ -92,6 +95,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-08T00:21:43.567Z
-Stopped at: Phase 7 context gathered
-Resume file: .planning/phases/07-public-pages-and-content/07-CONTEXT.md
+Last session: 2026-04-08T00:49:25.727Z
+Stopped at: Completed 07-02-PLAN.md
+Resume file: None

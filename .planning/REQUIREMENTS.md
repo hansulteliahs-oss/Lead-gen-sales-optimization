@@ -82,9 +82,9 @@
 
 ### Content Seeding (Kim)
 
-- [ ] **CONT-01**: Kim's website content is seeded via migration: `headline`, `subheadline`, `bio`, `bio_teaser`, `photo_url` (AI-drafted copy, placeholder photo URL)
-- [ ] **CONT-02**: At least 3 placeholder testimonials are seeded for Kim via migration (AI-drafted, to be replaced with real ones)
-- [ ] **CONT-03**: At least 5 FAQ entries are seeded for Kim via migration (AI-drafted, covering common family questions)
+- [x] **CONT-01**: Kim's website content is seeded via migration: `headline`, `subheadline`, `bio`, `bio_teaser`, `photo_url` (AI-drafted copy, placeholder photo URL)
+- [x] **CONT-02**: At least 3 placeholder testimonials are seeded for Kim via migration (AI-drafted, to be replaced with real ones)
+- [x] **CONT-03**: At least 5 FAQ entries are seeded for Kim via migration (AI-drafted, covering common family questions)
 
 ### SEO
 
@@ -172,9 +172,9 @@
 | PAGE-04 | Phase 7 | Pending |
 | PAGE-05 | Phase 7 | Pending |
 | PAGE-06 | Phase 7 | Pending |
-| CONT-01 | Phase 7 | Pending |
-| CONT-02 | Phase 7 | Pending |
-| CONT-03 | Phase 7 | Pending |
+| CONT-01 | Phase 7 | Complete |
+| CONT-02 | Phase 7 | Complete |
+| CONT-03 | Phase 7 | Complete |
 | SEO-01 | Phase 8 | Pending |
 | SEO-02 | Phase 8 | Pending |
 
