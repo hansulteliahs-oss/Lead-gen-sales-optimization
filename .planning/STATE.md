@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 07-02-PLAN.md
-last_updated: "2026-04-08T00:49:25.731Z"
+stopped_at: Completed 07-01-PLAN.md — Wave 0 RED tests
+last_updated: "2026-04-08T00:52:22.245Z"
 last_activity: 2026-04-04 — v2.0 roadmap created; 18 requirements mapped across phases 6-8
 progress:
   total_phases: 8
   completed_phases: 5
   total_plans: 22
-  completed_plans: 19
+  completed_plans: 20
   percent: 0
 ---
 
@@ -53,6 +53,7 @@ Progress: [░░░░░░░░░░] 0% (v2.0 milestone)
 | Phase 06-website-infrastructure P03 | 2 | 2 tasks | 5 files |
 | Phase 06-website-infrastructure P03 | 20 | 2 tasks | 5 files |
 | Phase 07-public-pages-and-content P02 | 2 | 1 tasks | 2 files |
+| Phase 07-public-pages-and-content P01 | 4 | 3 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -82,6 +83,9 @@ Recent decisions affecting current work:
 - [Phase 06-website-infrastructure]: kim-johnson LCC row inserted into remote Supabase DB — seed.sql only had lcc1/lcc2 but all Phase 6 E2E tests use kim-johnson slug
 - [Phase 07-public-pages-and-content]: DELETE-before-INSERT chosen for testimonials/FAQs seed so re-running migration replaces content cleanly rather than silently skipping updates
 - [Phase 07-public-pages-and-content]: photo_url explicitly set to NULL in kim-johnson seed to document intentional absence and exercise page null-fallback logic
+- [Phase 07-public-pages-and-content]: landing-page.spec.ts uses data-testid selectors for hero and CTA to distinguish page sections from nav elements
+- [Phase 07-public-pages-and-content]: details element chosen as accordion selector for au-pairs page (4 items required by test)
+- [Phase 07-public-pages-and-content]: Empty state tests for FAQ and testimonials skipped — kim-johnson already has seeded content from Plan 02 applied out of order
 
 ### Pending Todos
 
@@ -95,6 +99,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-08T00:49:25.727Z
-Stopped at: Completed 07-02-PLAN.md
+Last session: 2026-04-08T00:52:22.242Z
+Stopped at: Completed 07-01-PLAN.md — Wave 0 RED tests
 Resume file: None

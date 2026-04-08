@@ -73,12 +73,12 @@
 
 ### Public Pages
 
-- [ ] **PAGE-01**: The LCC landing page (`/[lccSlug]/`) is a full scrollable page with: Hero (photo, headline, CTA), About teaser, Au Pair teaser, Testimonials snippet (up to 3), and the lead capture form
-- [ ] **PAGE-02**: The "Get Started" nav CTA scrolls to the lead capture form on the landing page (via `id="form"` anchor)
-- [ ] **PAGE-03**: The `/[lccSlug]/about` page displays the LCC's full bio and photo (from DB)
-- [ ] **PAGE-04**: The `/[lccSlug]/au-pairs` page displays a static educational explainer about the au pair program (costs, how it works, visa, vs. nanny — shared content for all LCCs)
-- [ ] **PAGE-05**: The `/[lccSlug]/faq` page displays the LCC's FAQ entries in order (from DB)
-- [ ] **PAGE-06**: The `/[lccSlug]/testimonials` page displays all of the LCC's testimonials in order (from DB)
+- [x] **PAGE-01**: The LCC landing page (`/[lccSlug]/`) is a full scrollable page with: Hero (photo, headline, CTA), About teaser, Au Pair teaser, Testimonials snippet (up to 3), and the lead capture form
+- [x] **PAGE-02**: The "Get Started" nav CTA scrolls to the lead capture form on the landing page (via `id="form"` anchor)
+- [x] **PAGE-03**: The `/[lccSlug]/about` page displays the LCC's full bio and photo (from DB)
+- [x] **PAGE-04**: The `/[lccSlug]/au-pairs` page displays a static educational explainer about the au pair program (costs, how it works, visa, vs. nanny — shared content for all LCCs)
+- [x] **PAGE-05**: The `/[lccSlug]/faq` page displays the LCC's FAQ entries in order (from DB)
+- [x] **PAGE-06**: The `/[lccSlug]/testimonials` page displays all of the LCC's testimonials in order (from DB)
 
 ### Content Seeding (Kim)
 
@@ -166,12 +166,12 @@
 | SITE-05 | Phase 6 | Complete |
 | SITE-06 | Phase 6 | Complete |
 | SITE-07 | Phase 6 | Complete |
-| PAGE-01 | Phase 7 | Pending |
-| PAGE-02 | Phase 7 | Pending |
-| PAGE-03 | Phase 7 | Pending |
-| PAGE-04 | Phase 7 | Pending |
-| PAGE-05 | Phase 7 | Pending |
-| PAGE-06 | Phase 7 | Pending |
+| PAGE-01 | Phase 7 | Complete |
+| PAGE-02 | Phase 7 | Complete |
+| PAGE-03 | Phase 7 | Complete |
+| PAGE-04 | Phase 7 | Complete |
+| PAGE-05 | Phase 7 | Complete |
+| PAGE-06 | Phase 7 | Complete |
 | CONT-01 | Phase 7 | Complete |
 | CONT-02 | Phase 7 | Complete |
 | CONT-03 | Phase 7 | Complete |
