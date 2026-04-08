@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 07-01-PLAN.md — Wave 0 RED tests
-last_updated: "2026-04-08T00:52:22.245Z"
+stopped_at: Completed 07-03-PLAN.md — Landing page rewrite
+last_updated: "2026-04-08T00:55:16.603Z"
 last_activity: 2026-04-04 — v2.0 roadmap created; 18 requirements mapped across phases 6-8
 progress:
   total_phases: 8
   completed_phases: 5
   total_plans: 22
-  completed_plans: 20
+  completed_plans: 21
   percent: 0
 ---
 
@@ -54,6 +54,7 @@ Progress: [░░░░░░░░░░] 0% (v2.0 milestone)
 | Phase 06-website-infrastructure P03 | 20 | 2 tasks | 5 files |
 | Phase 07-public-pages-and-content P02 | 2 | 1 tasks | 2 files |
 | Phase 07-public-pages-and-content P01 | 4 | 3 tasks | 2 files |
+| Phase 07-public-pages-and-content P03 | 1 | 1 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -86,6 +87,8 @@ Recent decisions affecting current work:
 - [Phase 07-public-pages-and-content]: landing-page.spec.ts uses data-testid selectors for hero and CTA to distinguish page sections from nav elements
 - [Phase 07-public-pages-and-content]: details element chosen as accordion selector for au-pairs page (4 items required by test)
 - [Phase 07-public-pages-and-content]: Empty state tests for FAQ and testimonials skipped — kim-johnson already has seeded content from Plan 02 applied out of order
+- [Phase 07-public-pages-and-content]: Plain img tag used instead of next/image — no remotePatterns configured for Supabase Storage CDN URLs
+- [Phase 07-public-pages-and-content]: data-testid attributes on hero-section, hero-cta, about-teaser, au-pairs-teaser match test selectors from 07-01 landing-page.spec.ts
 
 ### Pending Todos
 
@@ -99,6 +102,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-08T00:52:22.242Z
-Stopped at: Completed 07-01-PLAN.md — Wave 0 RED tests
+Last session: 2026-04-08T00:55:16.600Z
+Stopped at: Completed 07-03-PLAN.md — Landing page rewrite
 Resume file: None
