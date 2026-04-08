@@ -132,7 +132,13 @@ Plans:
   4. `/[lccSlug]/au-pairs` displays a static educational explainer covering program costs, how it works, visa requirements, and the au pair vs. nanny comparison — shared content for all LCCs
   5. `/[lccSlug]/faq` displays the LCC's FAQ entries in order from the database; `/[lccSlug]/testimonials` displays all testimonials in order from the database
   6. Kim's slug URL renders with seeded headline, bio, bio teaser, photo URL, at least 3 testimonials, and at least 5 FAQ entries — all served from the database with no hardcoded copy in the page components
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 07-01-PLAN.md — Wave 0: E2E test stubs (landing page + sub-pages) + integration test stubs (kim seed) — RED
+- [ ] 07-02-PLAN.md — Kim Johnson seed migration (headline, bio, testimonials, FAQs via SQL)
+- [ ] 07-03-PLAN.md — Landing page rewrite (hero, about teaser, au pairs teaser, testimonials snippet, form section)
+- [ ] 07-04-PLAN.md — Sub-pages: /about, /au-pairs (accordion), /faq, /testimonials
 
 ### Phase 8: SEO
 **Goal**: Every public LCC website page is individually discoverable by search engines, with accurate titles, descriptions, and social sharing previews driven by database content
@@ -156,5 +162,5 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 4. Operator Admin and Billing | 0/? | Not started | - |
 | 5. AI Personalization | 2/2 | Complete   | 2026-03-23 |
 | 6. Website Infrastructure | 3/3 | Complete   | 2026-04-07 |
-| 7. Public Pages and Content | 0/? | Not started | - |
+| 7. Public Pages and Content | 0/4 | Not started | - |
 | 8. SEO | 0/? | Not started | - |
