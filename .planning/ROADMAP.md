@@ -20,7 +20,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [ ] **Phase 4: Operator Admin and Billing** - Operator dashboard, atomic LCC provisioning, Stripe subscription lifecycle, and LCC access gated on billing status
 - [x] **Phase 5: AI Personalization** - Claude API personalized message generation per lead with per-lead caching, passed through to Make.com nurture sequences (completed 2026-03-23)
 - [x] **Phase 6: Website Infrastructure** - DB schema extensions, Supabase Storage bucket, middleware public-route expansion, and shared sticky nav layout — enabling all LCC sub-pages (completed 2026-04-07)
-- [ ] **Phase 7: Public Pages and Content** - Full redesigned landing page, four sub-pages (/about, /au-pairs, /faq, /testimonials), and Kim's content seeded via migration
+- [x] **Phase 7: Public Pages and Content** - Full redesigned landing page, four sub-pages (/about, /au-pairs, /faq, /testimonials), and Kim's content seeded via migration (completed 2026-04-08)
 - [ ] **Phase 8: SEO** - Unique title, meta description, and Open Graph tags on every public LCC website page, generated from DB content
 
 ## Phase Details
@@ -162,5 +162,5 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 4. Operator Admin and Billing | 0/? | Not started | - |
 | 5. AI Personalization | 2/2 | Complete   | 2026-03-23 |
 | 6. Website Infrastructure | 3/3 | Complete   | 2026-04-07 |
-| 7. Public Pages and Content | 3/4 | In Progress|  |
+| 7. Public Pages and Content | 4/4 | Complete   | 2026-04-08 |
 | 8. SEO | 0/? | Not started | - |
