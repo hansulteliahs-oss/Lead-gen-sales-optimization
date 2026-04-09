@@ -1,8 +1,34 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { createAdminClient } from '@/utils/supabase/admin'
 
 interface Props {
   params: { lccSlug: string }
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const supabase = createAdminClient()
+  const { data: lcc } = await supabase
+    .from('lccs')
+    .select('name, photo_url')
+    .eq('slug', params.lccSlug)
+    .single()
+
+  if (!lcc) return {}
+
+  const title = `${lcc.name} | Testimonials`
+  const description = `Read stories from families who worked with ${lcc.name} to welcome an au pair into their home and transform their childcare experience.`
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      ...(lcc.photo_url ? { images: [{ url: lcc.photo_url }] } : {}),
+    },
+  }
 }
 
 export default async function TestimonialsPage({ params }: Props) {

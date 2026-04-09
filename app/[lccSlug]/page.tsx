@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { createAdminClient } from '@/utils/supabase/admin'
 import LeadCaptureForm from './LeadCaptureForm'
@@ -5,6 +6,31 @@ import LeadCaptureForm from './LeadCaptureForm'
 interface Props {
   params: { lccSlug: string }
   searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const supabase = createAdminClient()
+  const { data: lcc } = await supabase
+    .from('lccs')
+    .select('name, photo_url')
+    .eq('slug', params.lccSlug)
+    .single()
+
+  if (!lcc) return {}
+
+  const title = `${lcc.name} | Local Childcare Consultant`
+  const description = `${lcc.name} is a certified Local Childcare Consultant with Cultural Care Au Pair, helping families in your area find flexible, affordable live-in childcare through the au pair program.`
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      ...(lcc.photo_url ? { images: [{ url: lcc.photo_url }] } : {}),
+    },
+  }
 }
 
 export default async function LandingPage({ params, searchParams }: Props) {

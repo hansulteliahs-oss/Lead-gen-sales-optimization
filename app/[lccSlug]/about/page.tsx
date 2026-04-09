@@ -1,8 +1,34 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { createAdminClient } from '@/utils/supabase/admin'
 
 interface Props {
   params: { lccSlug: string }
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const supabase = createAdminClient()
+  const { data: lcc } = await supabase
+    .from('lccs')
+    .select('name, photo_url')
+    .eq('slug', params.lccSlug)
+    .single()
+
+  if (!lcc) return {}
+
+  const title = `${lcc.name} | About`
+  const description = `Learn about ${lcc.name}'s background, experience, and personal approach to guiding families through the au pair placement process.`
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      ...(lcc.photo_url ? { images: [{ url: lcc.photo_url }] } : {}),
+    },
+  }
 }
 
 export default async function AboutPage({ params }: Props) {
