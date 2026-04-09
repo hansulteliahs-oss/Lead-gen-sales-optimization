@@ -88,7 +88,11 @@ Plans:
   3. Operator can configure Make.com webhook URLs for each LCC's automations from the operator dashboard
   4. When a Stripe subscription is cancelled or payment fails, the affected LCC's active automations are disabled and their dashboard reflects suspended status
   5. Stripe webhook signature verification rejects unauthenticated payloads; all four lifecycle events (created, updated, payment failed, cancelled) update the LCC's subscription status in the database
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 08-01-PLAN.md — Kim Arvdalen seed rename + Wave 0 RED metadata E2E tests
+- [ ] 08-02-PLAN.md — generateMetadata on all 5 LCC pages + root layout metadata fallback
 
 ### Phase 5: AI Personalization
 **Goal**: Every new lead receives a Claude-generated personalized follow-up message that is passed to Make.com for use in SMS and email sequences, with per-lead caching to prevent redundant API calls
@@ -147,7 +151,11 @@ Plans:
 **Success Criteria** (what must be TRUE):
   1. Each LCC website page (`/`, `/about`, `/au-pairs`, `/faq`, `/testimonials`) has a unique `<title>` and `<meta name="description">` that includes the LCC's name and page-specific context — verified by inspecting page source
   2. Each LCC website page has `og:title`, `og:description`, and `og:image` Open Graph tags — `og:image` uses the LCC's `photo_url` from the database; sharing the URL on a social platform renders the correct preview card
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 08-01-PLAN.md — Kim Arvdalen seed rename + Wave 0 RED metadata E2E tests
+- [ ] 08-02-PLAN.md — generateMetadata on all 5 LCC pages + root layout metadata fallback
 
 ## Progress
 
