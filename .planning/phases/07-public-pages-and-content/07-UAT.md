@@ -1,9 +1,9 @@
 ---
-status: complete
+status: resolved
 phase: 07-public-pages-and-content
 source: [07-01-SUMMARY.md, 07-02-SUMMARY.md, 07-03-SUMMARY.md, 07-04-SUMMARY.md]
 started: 2026-04-08T01:00:00Z
-updated: 2026-04-08T01:00:00Z
+updated: 2026-04-08T02:00:00Z
 ---
 
 ## Current Test
@@ -65,11 +65,20 @@ skipped: 0
 ## Gaps
 
 - truth: "Sub-pages (/about, /au-pairs, /faq, /testimonials) should have a cream/light background matching the landing page"
-  status: failed
+  status: resolved
   reason: "User reported: all the pages have a black background with lighter text, I would like for the background to be the same cream color as on the landing page"
   severity: cosmetic
   test: 7
-  root_cause: ""
-  artifacts: []
-  missing: []
+  root_cause: "globals.css sets --background: #0a0a0a in dark mode via prefers-color-scheme media query; body consumes this CSS variable. Sub-pages have no background class on their root div, exposing the dark body. Landing page is immune because every section has explicit bg-brand-pageBg or bg-white classes covering the full viewport."
+  artifacts:
+    - path: "app/[lccSlug]/about/page.tsx"
+      issue: "Root div has no background class"
+    - path: "app/[lccSlug]/au-pairs/page.tsx"
+      issue: "Root div has no background class"
+    - path: "app/[lccSlug]/faq/page.tsx"
+      issue: "Root div has no background class"
+    - path: "app/[lccSlug]/testimonials/page.tsx"
+      issue: "Root div has no background class"
+  missing:
+    - "Create app/[lccSlug]/layout.tsx with min-h-screen bg-brand-pageBg wrapper to fix all sub-pages in one place"
   debug_session: ""
