@@ -1,6 +1,6 @@
 -- =============================================================
--- Phase 7: Kim Johnson Seed Migration
--- Seeds website copy, testimonials, and FAQs for the kim-johnson LCC row.
+-- Phase 7: Kim Arvdalen Seed Migration
+-- Seeds website copy, testimonials, and FAQs for the kim-arvdalen LCC row.
 -- All AI-drafted placeholder copy — operator swaps with real content before live demo.
 -- Idempotent: DELETE before INSERT for testimonials and FAQs.
 -- =============================================================

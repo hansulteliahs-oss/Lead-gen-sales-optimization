@@ -9,16 +9,29 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
         brand: {
-          navy:   '#fdfaf9',   // bg-brand-navy — header/primary background
-          pageBg: '#f7f1ef',   // bg-brand-pageBg — page background
-          cardBg: '#fdfaf9',   // bg-brand-cardBg — warm card background
-          gold:   '#8fac94',   // border-brand-gold, text-brand-gold — accent (sage green)
-          body:   '#3d3535',   // text-brand-body — body text
-          muted:  '#9e8a82',   // text-brand-muted — muted/secondary text
+          primary:      '#C9637A',  // dusty rose — CTAs, accents, links
+          primaryHover: '#B5566C',  // darker rose on hover
+          surface:      '#FFF5F7',  // light pink tint — alternate section backgrounds
+          border:       '#F3E6E9',  // soft pink border
+          body:         '#111827',  // dark charcoal — primary text
+          muted:        '#6B7280',  // medium gray — secondary text
+          card:         '#FFFFFF',  // white — card backgrounds
         },
+      },
+      keyframes: {
+        'accordion-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
       },
     },
   },

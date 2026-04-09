@@ -6,7 +6,7 @@ import { createAdminClient } from '@/utils/supabase/admin'
 // CONT-03: At least 5 FAQ entries exist in lcc_faqs for kim-arvdalen
 // RED until migration 20260407000000_phase7_kim_seed.sql is applied
 
-describe('Kim Johnson seed content', () => {
+describe('Kim Arvdalen seed content', () => {
   it('CONT-01: kim-arvdalen has headline, subheadline, bio, bio_teaser', async () => {
     const supabase = createAdminClient()
     const { data: lcc, error } = await supabase

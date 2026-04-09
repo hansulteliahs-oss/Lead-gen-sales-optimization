@@ -18,7 +18,7 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="w-full py-3 px-4 bg-amber-500 hover:bg-amber-600 disabled:bg-amber-300 text-white font-semibold rounded-lg text-base transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2"
+      className="w-full py-3.5 px-4 bg-brand-primary hover:bg-brand-primaryHover disabled:opacity-60 text-white font-semibold rounded-full text-base transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2"
     >
       {pending ? 'Submitting...' : 'Get in Touch'}
     </button>
@@ -38,7 +38,7 @@ export default function LeadCaptureForm({
 
   return (
     <form action={submitLeadForm} className="space-y-5">
-      {/* Hidden fields — passed to server action via FormData */}
+      {/* Hidden fields */}
       <input type="hidden" name="lccId" value={lccId} />
       <input type="hidden" name="lccSlug" value={lccSlug} />
       <input type="hidden" name="lccName" value={lccName} />
@@ -49,7 +49,7 @@ export default function LeadCaptureForm({
 
       {/* Family name */}
       <div>
-        <label htmlFor="familyName" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="familyName" className="block text-sm font-semibold text-brand-body mb-1.5">
           Your Name <span className="text-red-500">*</span>
         </label>
         <input
@@ -59,13 +59,13 @@ export default function LeadCaptureForm({
           required
           autoComplete="name"
           placeholder="Jane Smith"
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent"
+          className="w-full px-4 py-3 border border-brand-border rounded-xl text-base focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-colors"
         />
       </div>
 
       {/* Email */}
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="email" className="block text-sm font-semibold text-brand-body mb-1.5">
           Email Address <span className="text-red-500">*</span>
         </label>
         <input
@@ -75,13 +75,13 @@ export default function LeadCaptureForm({
           required
           autoComplete="email"
           placeholder="jane@example.com"
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent"
+          className="w-full px-4 py-3 border border-brand-border rounded-xl text-base focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-colors"
         />
       </div>
 
       {/* Phone */}
       <div>
-        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="phone" className="block text-sm font-semibold text-brand-body mb-1.5">
           Phone Number <span className="text-red-500">*</span>
         </label>
         <input
@@ -93,21 +93,21 @@ export default function LeadCaptureForm({
           placeholder="(555) 867-5309"
           pattern="[0-9]{10}"
           title="Please enter a 10-digit US phone number (digits only)"
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent"
+          className="w-full px-4 py-3 border border-brand-border rounded-xl text-base focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-colors"
         />
       </div>
 
       {/* Message (optional) */}
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-          Message <span className="text-gray-400 font-normal">(optional)</span>
+        <label htmlFor="message" className="block text-sm font-semibold text-brand-body mb-1.5">
+          Message <span className="text-brand-muted font-normal">(optional)</span>
         </label>
         <textarea
           id="message"
           name="message"
           rows={3}
           placeholder="Tell us a bit about your family and childcare needs..."
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent resize-none"
+          className="w-full px-4 py-3 border border-brand-border rounded-xl text-base focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent resize-none transition-colors"
         />
       </div>
 
@@ -118,9 +118,9 @@ export default function LeadCaptureForm({
           name="tcpaConsent"
           type="checkbox"
           required
-          className="mt-1 h-4 w-4 rounded border-gray-300 text-amber-500 focus:ring-amber-400 flex-shrink-0"
+          className="mt-1 h-4 w-4 rounded border-brand-border text-brand-primary focus:ring-brand-primary flex-shrink-0 accent-brand-primary"
         />
-        <label htmlFor="tcpaConsent" className="text-xs text-gray-500 leading-snug">
+        <label htmlFor="tcpaConsent" className="text-xs text-brand-muted leading-snug">
           {tcpaText}
         </label>
       </div>

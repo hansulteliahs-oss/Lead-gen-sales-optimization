@@ -14,7 +14,7 @@ describe('Website infrastructure schema', () => {
   let faqId: string | null = null
 
   beforeAll(async () => {
-    // Get Kim Johnson's LCC id from seed data
+    // Get Kim Arvdalen's LCC id from seed data
     const { data: lcc } = await supabase
       .from('lccs')
       .select('id')
