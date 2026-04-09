@@ -88,8 +88,8 @@
 
 ### SEO
 
-- [ ] **SEO-01**: Each public LCC website page has a unique `<title>` and `<meta name="description">` tag generated from DB content
-- [ ] **SEO-02**: Each public LCC website page has Open Graph tags (`og:title`, `og:description`, `og:image`) using the LCC's `photo_url`
+- [x] **SEO-01**: Each public LCC website page has a unique `<title>` and `<meta name="description">` tag generated from DB content
+- [x] **SEO-02**: Each public LCC website page has Open Graph tags (`og:title`, `og:description`, `og:image`) using the LCC's `photo_url`
 
 ---
 
@@ -175,8 +175,8 @@
 | CONT-01 | Phase 7 | Complete |
 | CONT-02 | Phase 7 | Complete |
 | CONT-03 | Phase 7 | Complete |
-| SEO-01 | Phase 8 | Pending |
-| SEO-02 | Phase 8 | Pending |
+| SEO-01 | Phase 8 | Complete |
+| SEO-02 | Phase 8 | Complete |
 
 **Coverage:**
 - v2.0 requirements: 18 total
