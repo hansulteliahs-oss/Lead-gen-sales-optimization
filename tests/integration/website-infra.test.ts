@@ -18,11 +18,11 @@ describe('Website infrastructure schema', () => {
     const { data: lcc } = await supabase
       .from('lccs')
       .select('id')
-      .eq('slug', 'kim-johnson')
+      .eq('slug', 'kim-arvdalen')
       .single()
 
     if (!lcc) {
-      // Fall back to any LCC if kim-johnson not found
+      // Fall back to any LCC if kim-arvdalen not found
       const { data: anyLcc } = await supabase
         .from('lccs')
         .select('id')

@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test'
 
-const SLUG = 'kim-johnson'
-const LCC_NAME = 'Kim Johnson'
+const SLUG = 'kim-arvdalen'
+const LCC_NAME = 'Kim Arvdalen'
 
 const ALL_PAGES = [
   { name: 'landing', path: `/${SLUG}` },

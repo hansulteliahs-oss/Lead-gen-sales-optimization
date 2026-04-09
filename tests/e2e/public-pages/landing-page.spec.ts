@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'
 
-const SLUG = 'kim-johnson'
+const SLUG = 'kim-arvdalen'
 
 // Wave 0 — RED state.
 // These tests define acceptance criteria for PAGE-01 and PAGE-02.

@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'
 
-const SLUG = 'kim-johnson'
+const SLUG = 'kim-arvdalen'
 const SUB_PAGES = ['about', 'au-pairs', 'faq', 'testimonials']
 
 test.describe('SITE-05: Public sub-routes accessible without auth', () => {
