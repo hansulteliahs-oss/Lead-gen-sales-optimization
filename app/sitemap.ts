@@ -1,28 +1,24 @@
 import type { MetadataRoute } from 'next'
-import { createAdminClient } from '@/utils/supabase/admin'
 
 const SUB_PAGES = ['about', 'au-pairs', 'faq', 'testimonials'] as const
+const KIM_SLUG = 'kim-arvdalen'
+const LAST_MODIFIED = new Date('2026-04-09')
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const supabase = createAdminClient()
-  const { data: lccs } = await supabase.from('lccs').select('slug, updated_at')
-
+export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://yourdomain.com'
 
-  const lccEntries: MetadataRoute.Sitemap = (lccs ?? []).flatMap((lcc) => [
+  return [
     {
-      url: `${baseUrl}/${lcc.slug}`,
-      lastModified: lcc.updated_at ? new Date(lcc.updated_at) : new Date(),
+      url: `${baseUrl}/${KIM_SLUG}`,
+      lastModified: LAST_MODIFIED,
       changeFrequency: 'weekly',
       priority: 1.0,
     },
     ...SUB_PAGES.map((page) => ({
-      url: `${baseUrl}/${lcc.slug}/${page}`,
-      lastModified: lcc.updated_at ? new Date(lcc.updated_at) : new Date(),
+      url: `${baseUrl}/${KIM_SLUG}/${page}`,
+      lastModified: LAST_MODIFIED,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     })),
-  ])
-
-  return lccEntries
+  ]
 }

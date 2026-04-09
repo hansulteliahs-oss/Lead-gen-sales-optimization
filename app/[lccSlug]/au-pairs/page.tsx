@@ -1,7 +1,5 @@
 import type { Metadata } from 'next'
-import { notFound } from 'next/navigation'
 import { headers } from 'next/headers'
-import { createAdminClient } from '@/utils/supabase/admin'
 import {
   Accordion,
   AccordionContent,
@@ -9,50 +7,28 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion'
 
-interface Props {
-  params: { lccSlug: string }
-}
+const CULTURAL_CARE_URL =
+  'https://www.culturalcare.com/lcc/karvdalen/?utm_source=ig&utm_medium=social&utm_content=link_in_bio#become-hf-form'
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const supabase = createAdminClient()
-  const { data: lcc } = await supabase
-    .from('lccs')
-    .select('name, photo_url')
-    .eq('slug', params.lccSlug)
-    .single()
+const KIM = { name: 'Kim Arvdalen', slug: 'kim-arvdalen' }
 
-  if (!lcc) return {}
-
-  const title = `${lcc.name} | Au Pairs`
-  const description = `Explore how the au pair program works — costs, the matching process, visa requirements, and how an au pair compares to a nanny. Guidance from ${lcc.name}.`
+export async function generateMetadata(): Promise<Metadata> {
+  const title = `${KIM.name} | Au Pairs`
+  const description = `Explore how the au pair program works — costs, the matching process, visa requirements, and how an au pair compares to a nanny. Guidance from ${KIM.name}.`
 
   return {
     title,
     description,
-    openGraph: {
-      title,
-      description,
-      type: 'website',
-      ...(lcc.photo_url ? { images: [{ url: lcc.photo_url }] } : {}),
-    },
+    openGraph: { title, description, type: 'website' },
   }
 }
 
-export default async function AuPairsPage({ params }: Props) {
-  const supabase = createAdminClient()
-  const { data: lcc } = await supabase
-    .from('lccs')
-    .select('name, slug')
-    .eq('slug', params.lccSlug)
-    .single()
-
-  if (!lcc) notFound()
-
+export default function AuPairsPage() {
   const headersList = headers()
   const host = headersList.get('host') ?? 'localhost:3000'
   const proto = host.startsWith('localhost') ? 'http' : 'https'
   const baseUrl = `${proto}://${host}`
-  const rootUrl = `${baseUrl}/${params.lccSlug}`
+  const rootUrl = `${baseUrl}/${KIM.slug}`
 
   const schema = {
     '@context': 'https://schema.org',
@@ -97,7 +73,7 @@ export default async function AuPairsPage({ params }: Props) {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: lcc.name, item: rootUrl },
+          { '@type': 'ListItem', position: 1, name: KIM.name, item: rootUrl },
           { '@type': 'ListItem', position: 2, name: 'Au Pairs', item: `${rootUrl}/au-pairs` },
         ],
       },
@@ -241,10 +217,12 @@ export default async function AuPairsPage({ params }: Props) {
         <div className="max-w-lg mx-auto text-center bg-white rounded-2xl border border-brand-border shadow-sm p-10">
           <h2 className="text-2xl font-bold text-brand-body mb-3">Still have questions?</h2>
           <p className="text-brand-muted mb-6">
-            {lcc.name} is happy to walk you through everything — no pressure.
+            {KIM.name} is happy to walk you through everything — no pressure.
           </p>
           <a
-            href={`/${lcc.slug}/#form`}
+            href={CULTURAL_CARE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-brand-primary text-white font-semibold px-8 py-3.5 rounded-full hover:bg-brand-primaryHover transition-colors"
           >
             Get in Touch

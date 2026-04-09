@@ -20,10 +20,8 @@ export default function LccWebNav({ lccName, lccSlug }: Props) {
   const [menuOpen, setMenuOpen] = useState(false)
   const pathname = usePathname()
 
-  const isLandingPage =
-    pathname === `/${lccSlug}` || pathname === `/${lccSlug}/`
-
-  const ctaHref = isLandingPage ? '#form' : `/${lccSlug}/#form`
+  const ctaHref =
+    'https://www.culturalcare.com/lcc/karvdalen/?utm_source=ig&utm_medium=social&utm_content=link_in_bio#become-hf-form'
 
   const isActive = (path: string) =>
     pathname === `/${lccSlug}/${path}` || pathname === `/${lccSlug}/${path}/`
@@ -62,6 +60,8 @@ export default function LccWebNav({ lccName, lccSlug }: Props) {
           {/* CTA */}
           <a
             href={ctaHref}
+            target="_blank"
+            rel="noopener noreferrer"
             className="ml-2 px-5 py-2 bg-brand-primary text-white rounded-full font-semibold hover:bg-brand-primaryHover transition-colors"
           >
             Get Started
@@ -111,6 +111,8 @@ export default function LccWebNav({ lccName, lccSlug }: Props) {
 
           <a
             href={ctaHref}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
             className="mt-1 px-5 py-2.5 bg-brand-primary text-white rounded-full font-semibold text-center hover:bg-brand-primaryHover transition-colors"
           >
