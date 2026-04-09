@@ -20,7 +20,7 @@ export default async function LccLayout({ params, children }: Props) {
   return (
     <>
       <LccWebNav lccName={lcc.name} lccSlug={lcc.slug} />
-      <main>{children}</main>
+      <main className="bg-brand-pageBg min-h-screen">{children}</main>
     </>
   )
 }
