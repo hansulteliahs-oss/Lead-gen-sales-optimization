@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 08-seo-01-PLAN.md
-last_updated: "2026-04-09T15:40:21.657Z"
+stopped_at: Completed 08-seo-02-PLAN.md
+last_updated: "2026-04-09T16:15:41.295Z"
 last_activity: 2026-04-04 — v2.0 roadmap created; 18 requirements mapped across phases 6-8
 progress:
   total_phases: 8
-  completed_phases: 6
+  completed_phases: 7
   total_plans: 25
-  completed_plans: 24
+  completed_plans: 25
   percent: 0
 ---
 
@@ -58,6 +58,7 @@ Progress: [░░░░░░░░░░] 0% (v2.0 milestone)
 | Phase 07-public-pages-and-content P04 | 12 | 2 tasks | 4 files |
 | Phase 07-public-pages-and-content P05 | 1 | 1 tasks | 1 files |
 | Phase 08-seo P01 | 15 | 2 tasks | 8 files |
+| Phase 08-seo P02 | 33 | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -97,6 +98,8 @@ Recent decisions affecting current work:
 - [Phase 07-public-pages-and-content]: Single layout.tsx change chosen over per-page fix — DRY approach covers all current and future sub-pages under [lccSlug] without per-file changes
 - [Phase 08-seo]: Rename migration is idempotent — WHERE slug = 'kim-johnson' affects 0 rows if already applied
 - [Phase 08-seo]: Wave 0 RED pattern: metadata spec written before generateMetadata added, drives Plan 02 GREEN
+- [Phase 08-seo]: generateMetadata named export pattern: each LCC page exports named generateMetadata with minimal DB query (name, photo_url) and conditional og:image via spread
+- [Phase 08-seo]: return {} when LCC slug not found in generateMetadata — page component handles notFound(); calling notFound() in generateMetadata causes duplicate 404 errors
 
 ### Pending Todos
 
@@ -110,6 +113,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-09T15:40:21.654Z
-Stopped at: Completed 08-seo-01-PLAN.md
+Last session: 2026-04-09T16:15:41.291Z
+Stopped at: Completed 08-seo-02-PLAN.md
 Resume file: None
