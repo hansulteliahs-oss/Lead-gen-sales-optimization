@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background: oklch(96.2% 0.022 78);
+    color: oklch(36% 0.105 32);
+    font-variation-settings: 'opsz' 14, 'SOFT' 50;
+    font-size: 18px;
+    line-height: 1.55;
+  }
+
+  ::selection {
+    background: oklch(62% 0.160 38);
+    color: oklch(96.2% 0.022 78);
+  }
+
+  .text-balance { text-wrap: balance; }
+}
+
+@layer utilities {
+  .fade-in-ready {
+    opacity: 0;
+    transform: translateY(0.75rem);
+    transition: opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
+                transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .fade-in-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Optical-size helpers for Fraunces variable axis */
+  .opsz-display { font-variation-settings: 'opsz' 144, 'SOFT' 0; }
+  .opsz-headline{ font-variation-settings: 'opsz' 96, 'SOFT' 0; }
+  .opsz-title   { font-variation-settings: 'opsz' 72, 'SOFT' 30; }
+  .opsz-body    { font-variation-settings: 'opsz' 24, 'SOFT' 60; }
+  .opsz-small   { font-variation-settings: 'opsz' 14, 'SOFT' 60; }
+}

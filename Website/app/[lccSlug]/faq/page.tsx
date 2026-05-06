@@ -23,7 +23,7 @@ const FAQS = [
     id: 'faq-1',
     question: 'How long does the matching process take?',
     answer:
-      'Most families complete their matching process in four to eight weeks, though timelines vary depending on how many profiles you review and how quickly you connect with au pair candidates. Cultural Care provides a dedicated matching platform where you can browse profiles, watch videos, and schedule video calls. As your Local Childcare Consultant, I\'m here to help you narrow down candidates and feel confident in your choice.',
+      "Most families complete their matching process in four to eight weeks, though timelines vary depending on how many profiles you review and how quickly you connect with au pair candidates. Cultural Care provides a dedicated matching platform where you can browse profiles, watch videos, and schedule video calls. As your Local Childcare Consultant, I'm here to help you narrow down candidates and feel confident in your choice.",
   },
   {
     id: 'faq-2',
@@ -45,6 +45,12 @@ const FAQS = [
   },
   {
     id: 'faq-5',
+    question: 'What areas does Kim serve?',
+    answer:
+      'Kim serves families throughout Southern California, with a primary focus on Newport Beach, Costa Mesa, Huntington Beach, Irvine, Laguna Beach, and greater Orange County. She also works with families in the Los Angeles area (including Santa Monica and West LA) and San Diego. Wherever you are in SoCal, Kim can guide you through the au pair program at no extra cost.',
+  },
+  {
+    id: 'faq-6',
     question: "What's the difference between an au pair and a nanny?",
     answer:
       'The main differences are cost, structure, and cultural exchange. A nanny is typically a local hired employee with market-rate wages ($40,000–$60,000 or more per year) and no cultural immersion component. An au pair is a young adult from abroad who lives with your family, earns a government-set stipend (currently $244.85/week), and participates in a structured cultural exchange program. Au pairs are ideal for families seeking affordable full-time childcare, flexibility across the week, and the enriching experience of welcoming someone from another culture into their home.',
@@ -52,14 +58,9 @@ const FAQS = [
 ]
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = `${KIM.name} | FAQ`
-  const description = `Common questions families ask about the au pair program, answered by ${KIM.name} — your Local Childcare Consultant.`
-
-  return {
-    title,
-    description,
-    openGraph: { title, description, type: 'website' },
-  }
+  const title = `Au Pair FAQ | ${KIM.name} — Newport Beach, Costa Mesa & SoCal`
+  const description = `Answers to common questions from families in Newport Beach, Costa Mesa, and greater Southern California about the au pair program.`
+  return { title, description, openGraph: { title, description, type: 'website' } }
 }
 
 export default function FAQPage() {
@@ -79,6 +80,7 @@ export default function FAQPage() {
           name: faq.question,
           acceptedAnswer: { '@type': 'Answer', text: faq.answer },
         })),
+        areaServed: 'Newport Beach, Costa Mesa, Huntington Beach, Irvine, and Southern California',
       },
       {
         '@type': 'BreadcrumbList',
@@ -97,44 +99,65 @@ export default function FAQPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      {/* Hero banner */}
-      <section className="bg-brand-surface py-16 px-6">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-semibold text-brand-primary uppercase tracking-widest mb-3">FAQ</p>
-          <h1 className="text-4xl font-extrabold text-brand-body">Frequently Asked Questions</h1>
-          <p className="text-brand-muted mt-2 text-lg">Answers from {KIM.name}, your Local Childcare Consultant.</p>
+      {/* HERO */}
+      <section className="pt-20 md:pt-24 pb-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6 md:gap-16">
+            <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-brand-bark pt-3.5">§ FAQ</div>
+            <div>
+              <h1 className="opsz-headline font-light text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.0] tracking-[-0.025em] text-brand-ink text-balance">
+                Frequently asked questions.
+              </h1>
+              <p className="opsz-body mt-6 text-lg text-brand-ink-soft max-w-[60ch]">
+                Answers from {KIM.name}, your Local Childcare Consultant.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* FAQ Accordion */}
-      <section className="bg-white py-16 px-6">
-        <div className="max-w-4xl mx-auto">
-          <Accordion type="single" collapsible>
-            {FAQS.map((faq) => (
-              <AccordionItem key={faq.id} value={faq.id}>
-                <AccordionTrigger className="text-left text-base">{faq.question}</AccordionTrigger>
-                <AccordionContent>{faq.answer}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="border-t border-brand-ink-rule" />
+      </div>
+
+      {/* FAQ ACCORDION */}
+      <section className="py-14 md:py-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6 md:gap-16">
+            <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-brand-bark pt-3.5">§ Questions</div>
+            <div>
+              <Accordion type="single" collapsible>
+                {FAQS.map((faq) => (
+                  <AccordionItem key={faq.id} value={faq.id}>
+                    <AccordionTrigger className="text-base md:text-lg">{faq.question}</AccordionTrigger>
+                    <AccordionContent>{faq.answer}</AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="bg-brand-surface py-16 px-6">
-        <div className="max-w-lg mx-auto text-center bg-white rounded-2xl border border-brand-border shadow-sm p-10">
-          <h2 className="text-2xl font-bold text-brand-body mb-3">Still have questions?</h2>
-          <p className="text-brand-muted mb-6">
-            Reach out and {KIM.name} will be happy to help.
-          </p>
-          <a
-            href={CULTURAL_CARE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-brand-primary text-white font-semibold px-8 py-3.5 rounded-full hover:bg-brand-primaryHover transition-colors"
-          >
-            Get in Touch
-          </a>
+      <section className="border-t border-brand-ink-rule py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-end">
+          <h2 className="opsz-headline font-light text-[clamp(2.25rem,5vw,3.75rem)] leading-[1.0] tracking-[-0.025em] text-brand-ink text-balance">
+            Still have questions?
+          </h2>
+          <div>
+            <p className="opsz-body text-lg text-brand-ink-soft max-w-[50ch] mb-7">
+              Reach out and {KIM.name} will be happy to help.
+            </p>
+            <a
+              href={CULTURAL_CARE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-brand-ink text-brand-paper px-8 py-4 rounded font-medium text-base hover:bg-brand-spot-deep transition-colors duration-200 ease-out-quart"
+            >
+              Get in touch
+            </a>
+          </div>
         </div>
       </section>
     </div>

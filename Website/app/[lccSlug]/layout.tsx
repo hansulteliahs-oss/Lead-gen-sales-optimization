@@ -14,7 +14,7 @@ export default function LccLayout({ params, children }: Props) {
   return (
     <>
       <LccWebNav lccName={KIM.name} lccSlug={KIM.slug} />
-      <main className="bg-brand-pageBg min-h-screen">{children}</main>
+      <main className="bg-brand-paper min-h-screen">{children}</main>
     </>
   )
 }
