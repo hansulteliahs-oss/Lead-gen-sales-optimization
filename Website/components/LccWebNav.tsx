@@ -6,25 +6,23 @@ import { usePathname } from 'next/navigation'
 
 interface Props {
   lccName: string
-  lccSlug: string
 }
 
 const NAV_LINKS = [
-  { label: 'About', path: 'about' },
-  { label: 'Au Pairs', path: 'au-pairs' },
-  { label: 'FAQ', path: 'faq' },
-  { label: 'Testimonials', path: 'testimonials' },
+  { label: 'About', path: '/about' },
+  { label: 'Au Pairs', path: '/au-pairs' },
+  { label: 'FAQ', path: '/faq' },
+  { label: 'Testimonials', path: '/testimonials' },
 ]
 
 const CTA_HREF =
   'https://www.culturalcare.com/lcc/karvdalen/?utm_source=ig&utm_medium=social&utm_content=link_in_bio#become-hf-form'
 
-export default function LccWebNav({ lccName, lccSlug }: Props) {
+export default function LccWebNav({ lccName }: Props) {
   const [menuOpen, setMenuOpen] = useState(false)
   const pathname = usePathname()
 
-  const isActive = (path: string) =>
-    pathname === `/${lccSlug}/${path}` || pathname === `/${lccSlug}/${path}/`
+  const isActive = (path: string) => pathname === path || pathname === `${path}/`
 
   return (
     <nav
@@ -34,7 +32,7 @@ export default function LccWebNav({ lccName, lccSlug }: Props) {
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-baseline justify-between gap-8">
         <Link
-          href={`/${lccSlug}`}
+          href="/"
           className="text-brand-ink font-medium text-lg tracking-tight self-center opsz-small hover:text-brand-spot-deep transition-colors duration-200 ease-out-quart"
         >
           {lccName}
@@ -44,7 +42,7 @@ export default function LccWebNav({ lccName, lccSlug }: Props) {
           {NAV_LINKS.map(({ label, path }) => (
             <Link
               key={path}
-              href={`/${lccSlug}/${path}`}
+              href={path}
               className={
                 isActive(path)
                   ? 'text-brand-ink font-medium text-sm'
@@ -95,7 +93,7 @@ export default function LccWebNav({ lccName, lccSlug }: Props) {
           {NAV_LINKS.map(({ label, path }) => (
             <Link
               key={path}
-              href={`/${lccSlug}/${path}`}
+              href={path}
               onClick={() => setMenuOpen(false)}
               className={
                 isActive(path)

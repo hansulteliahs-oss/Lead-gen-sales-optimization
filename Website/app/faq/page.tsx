@@ -10,7 +10,7 @@ import {
 const CULTURAL_CARE_URL =
   'https://www.culturalcare.com/lcc/karvdalen/?utm_source=ig&utm_medium=social&utm_content=link_in_bio#become-hf-form'
 
-const KIM = { name: 'Kim Arvdalen', slug: 'kim-arvdalen' }
+const KIM = { name: 'Kim Arvdalen' }
 
 const FAQS = [
   {
@@ -68,7 +68,7 @@ export default function FAQPage() {
   const host = headersList.get('host') ?? 'localhost:3000'
   const proto = host.startsWith('localhost') ? 'http' : 'https'
   const baseUrl = `${proto}://${host}`
-  const rootUrl = `${baseUrl}/${KIM.slug}`
+  const rootUrl = baseUrl
 
   const schema = {
     '@context': 'https://schema.org',

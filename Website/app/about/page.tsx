@@ -6,7 +6,6 @@ const CULTURAL_CARE_URL =
 
 const KIM = {
   name: 'Kim Arvdalen',
-  slug: 'kim-arvdalen',
   bio: `I grew up in a family that believed deeply in the power of community, and that belief has shaped everything I do as a Local Childcare Consultant. After years of working in early childhood education and family services, I joined Cultural Care Au Pair because I saw firsthand how transformative the right childcare arrangement could be — not just for the children, but for the entire family.
 
 Over the past several years I've helped dozens of families in our community navigate the au pair program from start to finish. I love the moments when a family realizes how much more affordable and flexible an au pair can be compared to traditional daycare, and I especially love hearing about the friendships and cultural exchanges that blossom long after the initial placement.
@@ -25,7 +24,7 @@ export default function AboutPage() {
   const host = headersList.get('host') ?? 'localhost:3000'
   const proto = host.startsWith('localhost') ? 'http' : 'https'
   const baseUrl = `${proto}://${host}`
-  const rootUrl = `${baseUrl}/${KIM.slug}`
+  const rootUrl = baseUrl
 
   const schema = {
     '@context': 'https://schema.org',

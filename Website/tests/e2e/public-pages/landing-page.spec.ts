@@ -1,14 +1,12 @@
 import { test, expect } from '@playwright/test'
 
-const SLUG = 'kim-arvdalen'
-
 test.describe('Landing Page', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto(`/${SLUG}/`)
+    await page.goto('/')
   })
 
-  test('returns 200 for /kim-arvdalen/', async ({ page }) => {
-    const response = await page.goto(`/${SLUG}/`)
+  test('returns 200 for /', async ({ page }) => {
+    const response = await page.goto('/')
     expect(response?.status()).toBe(200)
   })
 

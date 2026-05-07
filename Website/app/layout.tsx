@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Fraunces, JetBrains_Mono } from 'next/font/google'
+import LccWebNav from '@/components/LccWebNav'
 import './globals.css'
 
 const fraunces = Fraunces({
@@ -34,7 +35,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${fraunces.variable} ${jetbrains.variable} scroll-smooth`}>
-      <body className="font-serif antialiased">{children}</body>
+      <body className="font-serif antialiased">
+        <LccWebNav lccName="Kim Arvdalen" />
+        <main className="bg-brand-paper min-h-screen">{children}</main>
+      </body>
     </html>
   )
 }
