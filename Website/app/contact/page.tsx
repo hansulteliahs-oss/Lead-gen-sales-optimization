@@ -68,7 +68,7 @@ export default function ContactPage() {
                 Get in touch with {KIM.name.split(' ')[0]}.
               </h1>
               <p className="opsz-body mt-9 max-w-[56ch] text-xl leading-relaxed text-brand-ink-soft">
-                Questions about the Cultural Care Au Pair program, what hosting an au pair really looks like, or whether it's the right fit for your family? You can call directly or sign up through Cultural Care and {KIM.name.split(' ')[0]} will reach out personally.
+                Questions about the Cultural Care Au Pair program, what hosting an au pair really looks like, or whether it&rsquo;s the right fit for your family? You can call directly or sign up through Cultural Care and {KIM.name.split(' ')[0]} will reach out personally.
               </p>
             </div>
           </div>
