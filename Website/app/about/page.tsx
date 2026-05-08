@@ -16,7 +16,12 @@ When I'm not working with families, you'll find me volunteering at our local sch
 export async function generateMetadata(): Promise<Metadata> {
   const title = `About ${KIM.name} | Newport Beach & Costa Mesa Au Pair Consultant`
   const description = `Learn about ${KIM.name}, a Local Childcare Consultant serving Newport Beach, Costa Mesa, and greater SoCal — and how she guides families through the au pair placement process.`
-  return { title, description, openGraph: { title, description, type: 'website' } }
+  return {
+    title,
+    description,
+    alternates: { canonical: '/about' },
+    openGraph: { title, description, type: 'website' },
+  }
 }
 
 export default function AboutPage() {

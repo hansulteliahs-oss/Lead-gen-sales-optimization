@@ -42,7 +42,12 @@ const MYTHS = [
 export async function generateMetadata(): Promise<Metadata> {
   const title = `Au Pair Program Guide | ${KIM.name} — Newport Beach & Costa Mesa, CA`
   const description = `Everything Newport Beach, Costa Mesa, and Southern California families need to know about the au pair program — costs, matching, visa, and how it compares to a nanny.`
-  return { title, description, openGraph: { title, description, type: 'website' } }
+  return {
+    title,
+    description,
+    alternates: { canonical: '/au-pairs' },
+    openGraph: { title, description, type: 'website' },
+  }
 }
 
 export default function AuPairsPage() {

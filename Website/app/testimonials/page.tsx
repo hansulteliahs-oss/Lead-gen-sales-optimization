@@ -33,7 +33,12 @@ const TESTIMONIALS = [
 export async function generateMetadata(): Promise<Metadata> {
   const title = `Family Testimonials | ${KIM.name} — Newport Beach & Costa Mesa, CA`
   const description = `Stories from Southern California families who found their au pair through ${KIM.name}, serving Newport Beach, Costa Mesa, and greater SoCal.`
-  return { title, description, openGraph: { title, description, type: 'website' } }
+  return {
+    title,
+    description,
+    alternates: { canonical: '/testimonials' },
+    openGraph: { title, description, type: 'website' },
+  }
 }
 
 export default function TestimonialsPage() {

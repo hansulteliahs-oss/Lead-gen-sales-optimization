@@ -20,6 +20,9 @@ const jetbrains = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? 'https://theaupairchildcareconsultant.com'
+  ),
   title: 'Au Pair Consultant — Newport Beach & Southern California | Kim Arvdalen',
   description:
     'Connect with your Local Childcare Consultant and discover the au pair program.',
