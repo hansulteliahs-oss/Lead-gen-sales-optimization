@@ -46,7 +46,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title,
     description,
     alternates: { canonical: '/au-pairs' },
-    openGraph: { title, description, type: 'website' },
+    openGraph: { title, description, type: 'website', images: ['/og-default.png'] },
   }
 }
 

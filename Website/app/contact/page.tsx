@@ -30,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title,
     description,
     alternates: { canonical: '/contact' },
-    openGraph: { title, description, type: 'website' },
+    openGraph: { title, description, type: 'website', images: ['/og-default.png'] },
   }
 }
 

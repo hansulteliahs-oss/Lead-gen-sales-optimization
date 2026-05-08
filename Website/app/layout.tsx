@@ -26,6 +26,22 @@ export const metadata: Metadata = {
   title: 'Au Pair Consultant — Newport Beach & Southern California | Kim Arvdalen',
   description:
     'Connect with your Local Childcare Consultant and discover the au pair program.',
+  openGraph: {
+    type: 'website',
+    siteName: 'The Au Pair Childcare Consultant',
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'The Au Pair Childcare Consultant — Kim Arvdalen, Newport Beach',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/og-default.png'],
+  },
   other: {
     'geo.region': 'US-CA',
     'geo.placename': 'Newport Beach, California',
