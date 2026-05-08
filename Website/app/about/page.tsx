@@ -6,11 +6,11 @@ const CULTURAL_CARE_URL =
 
 const KIM = {
   name: 'Kim Arvdalen',
-  bio: `I grew up in a family that believed deeply in the power of community, and that belief has shaped everything I do as a Local Childcare Consultant. After years of working in early childhood education and family services, I joined Cultural Care Au Pair because I saw firsthand how transformative the right childcare arrangement could be — not just for the children, but for the entire family.
+  bio: `I grew up in southern Sweden and first came to the US in my late teens on a cultural exchange program. Now, I live in Newport Beach with my two sons, ages 12 and 14.
 
-Over the past several years I've helped dozens of families in our community navigate the au pair program from start to finish. I love the moments when a family realizes how much more affordable and flexible an au pair can be compared to traditional daycare, and I especially love hearing about the friendships and cultural exchanges that blossom long after the initial placement.
+I've successfully supported families with their childcare needs throughout Orange County since 2017. I relate to the au pair's experience of coming to the US as a young adult for the first time and adjusting to a new culture, language, and living situation. As a working mom, I also understand my families' needs for dependable childcare.
 
-When I'm not working with families, you'll find me volunteering at our local school, hiking with my own kids, and hosting neighbourhood get-togethers that more often than not turn into lively conversations about raising confident, curious children. I'd love to sit down with your family and explore whether the au pair program might be the right fit.`,
+In my nine years as an au pair childcare coordinator, I've seen firsthand how transformative the au pair program can be for host families and au pairs. Most of my host families have grown with the program over the years. As a trusted resource in the au pair community, I know what it takes to create successful relationships and guide you through the process. As a passionate advocate for the program, I'll ensure you have the tools you need for a rewarding hosting experience.`,
 }
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title,
     description,
     alternates: { canonical: '/about' },
-    openGraph: { title, description, type: 'website' },
+    openGraph: { title, description, type: 'website', images: ['/og-default.png'] },
   }
 }
 
@@ -95,9 +95,6 @@ export default function AboutPage() {
                 className="opsz-body text-[1.2rem] leading-[1.7] text-brand-ink-soft max-w-[64ch] whitespace-pre-wrap"
               >
                 {KIM.bio}
-              </p>
-              <p className="opsz-body text-[1.2rem] leading-[1.7] text-brand-ink-soft max-w-[64ch] mt-6">
-                Based in Newport Beach, I serve families across Orange County and greater Southern California — from Los Angeles down to San Diego.
               </p>
             </div>
           </div>

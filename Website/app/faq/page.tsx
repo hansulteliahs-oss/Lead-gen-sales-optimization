@@ -10,45 +10,56 @@ const KIM = { name: 'Kim Arvdalen' }
 const FAQS = [
   {
     id: 'faq-0',
-    question: 'How much does the au pair program cost?',
+    question: 'What is an au pair?',
     answer:
-      "The total annual cost of hosting an au pair with Cultural Care is typically between $20,000 and $25,000 — which includes the agency fee, the au pair's weekly stipend, and room and board. When you compare this to full-time daycare or a nanny, it is often significantly more affordable, especially for families with two or more children. I'm happy to walk you through a detailed cost comparison based on your specific situation.",
+      'An au pair is a young adult, ages 18–26, who lives with an American family and provides up to 45 hours of childcare per week as part of a cultural exchange. Regulated by the U.S. Department of State, au pairs come from 30+ countries on a legal visa, and share their language and culture while experiencing life in the U.S.',
   },
   {
     id: 'faq-1',
-    question: 'How long does the matching process take?',
+    question: 'How does the au pair program work?',
     answer:
-      "Most families complete their matching process in four to eight weeks, though timelines vary depending on how many profiles you review and how quickly you connect with au pair candidates. Cultural Care provides a dedicated matching platform where you can browse profiles, watch videos, and schedule video calls. As your Local Childcare Consultant, I'm here to help you narrow down candidates and feel confident in your choice.",
+      "Au pairs are between the ages of 18–26 and come to the US as part of a State Department Cultural Exchange program. They live with you as a member of the family, and provide childcare up to 45 hours per week / 10 hours per day. The au pair program offers families a wealth of cultural exchange benefits. It provides the opportunity to experience new languages and global traditions — from holidays and recipes to everyday routines — broadening children's perspective and sparking curiosity about the world around them.",
   },
   {
     id: 'faq-2',
-    question: 'What does a typical living arrangement look like?',
+    question: 'How long does it take to get an au pair?',
     answer:
-      'Au pairs live with your family as part of your household. They have their own private bedroom and access to shared living spaces. They receive a weekly stipend (set by the U.S. Department of State), meals, and use of a vehicle for childcare duties. In return, they provide up to 45 hours of childcare per week. Many families find this arrangement creates a warm, collaborative dynamic that benefits everyone — including the children.',
+      "The time it takes to get an au pair varies from family to family. As soon as an au pair matches with their future host family, our staff initiates the visa application process. Most au pairs looking for a host family are still living in their home countries and will need at least six to eight weeks to get their visa, complete Cultural Care's training program, and prepare to leave. If you have an immediate need for childcare, there is a smaller number of au pairs already in the U.S., and they can arrive to your home much faster.",
   },
   {
     id: 'faq-3',
-    question: "What happens if the au pair isn't the right fit?",
+    question: 'What are the benefits of hosting an au pair?',
     answer:
-      "Cultural Care has a formal rematch process for situations where the placement isn't working out. You are never locked into an arrangement that isn't right for your family. The agency supports both the host family and the au pair through the transition, and I will personally help you navigate the process and begin a new search as quickly as possible. Rematches are more common than people expect, and most families find a great fit on their second match.",
+      'Hosting an au pair offers flexible childcare on a schedule you decide; up to 45 hours per week (max 10 hours per day) of coverage; help with household chores related to the kids; an extra driver and homework helper; exposure to a new culture and a new language; and a lifelong global connection.',
+    bullets: [
+      'Flexible childcare on a schedule you decide',
+      'Up to 45 hrs/week (max 10 hrs/day) of coverage',
+      'Help with household chores related to the kids',
+      'An extra driver and homework helper',
+      'Exposure to a new culture and a new language',
+      'A lifelong global connection',
+    ],
   },
   {
     id: 'faq-4',
-    question: 'Does the au pair need a visa, and who handles it?',
-    answer:
-      'Yes — au pairs enter the United States on a J-1 Exchange Visitor visa, which is sponsored by Cultural Care Au Pair as a U.S. Department of State designated program. Cultural Care handles all visa paperwork, SEVIS registration, and compliance requirements on behalf of both the au pair and the host family. As a host family, you do not need to navigate the visa process yourself — it is fully managed by the agency.',
-  },
-  {
-    id: 'faq-5',
-    question: 'What areas does Kim serve?',
-    answer:
-      'Kim serves families throughout Southern California, with a primary focus on Newport Beach, Costa Mesa, Huntington Beach, Irvine, Laguna Beach, and greater Orange County. She also works with families in the Los Angeles area (including Santa Monica and West LA) and San Diego. Wherever you are in SoCal, Kim can guide you through the au pair program at no extra cost.',
-  },
-  {
-    id: 'faq-6',
     question: "What's the difference between an au pair and a nanny?",
     answer:
-      'The main differences are cost, structure, and cultural exchange. A nanny is typically a local hired employee with market-rate wages ($40,000–$60,000 or more per year) and no cultural immersion component. An au pair is a young adult from abroad who lives with your family, earns a government-set stipend (currently $244.85/week), and participates in a structured cultural exchange program. Au pairs are ideal for families seeking affordable full-time childcare, flexibility across the week, and the enriching experience of welcoming someone from another culture into their home.',
+      'Hosting an au pair offers greater flexibility and convenience than daycare, and is often more affordable than hiring a nanny. It also means welcoming a young adult from another country into your home as part of a meaningful, mutually enriching cultural exchange experience.',
+    table: {
+      headers: ['', 'Au Pair', 'Nanny', 'Daycare'],
+      rows: [
+        ['Monthly cost', '$1,785 (per family, not per child)', '$3,544 (increases per child)', '$788–$3,693 (increases per child)'],
+        ['Hours & scheduling', 'Highly flexible', 'Somewhat flexible; typically 9–5', '9–5 only; inflexible after-hours'],
+        ['Training', 'Certified, 200+ hours experience required; must complete Au Pair Training School', 'No formal training required', 'Licensed staff with relevant certifications'],
+        ['Availability', 'High across the country', 'Limited; agencies have waitlists', 'Often long waitlists; varies by location'],
+        ['Screening', 'Comprehensive multi-tiered process', 'Little to no screening', 'Varies'],
+        ['Selection & search', 'Hundreds of options available', 'Typically few choices', 'Location-based availability'],
+        ['Cultural exchange', 'Designed for cultural exchange', 'Not designed for exchange', 'Not designed for exchange'],
+        ['Waitlist', 'None', 'None', 'Common'],
+        ['Care style', 'Personalized', 'Personalized', 'Group care'],
+        ['Childcare duties', 'Wide range including meal prep and laundry', 'Childcare only', 'Limited'],
+      ],
+    },
   },
 ]
 
@@ -59,7 +70,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title,
     description,
     alternates: { canonical: '/faq' },
-    openGraph: { title, description, type: 'website' },
+    openGraph: { title, description, type: 'website', images: ['/og-default.png'] },
   }
 }
 
@@ -129,7 +140,52 @@ export default function FAQPage() {
               <div>
                 {FAQS.map((faq) => (
                   <Disclosure key={faq.id} question={faq.question}>
-                    {faq.answer}
+                    {'bullets' in faq && faq.bullets ? (
+                      <ul className="list-disc pl-5 space-y-1.5">
+                        {faq.bullets.map((b, i) => (
+                          <li key={i}>{b}</li>
+                        ))}
+                      </ul>
+                    ) : 'table' in faq && faq.table ? (
+                      <>
+                        <p className="mb-5">{faq.answer}</p>
+                        <div className="overflow-x-auto -mx-2">
+                          <table className="w-full text-sm border-collapse min-w-[600px]">
+                            <thead>
+                              <tr className="border-b border-brand-ink-rule">
+                                {faq.table.headers.map((h, i) => (
+                                  <th
+                                    key={i}
+                                    className="text-left font-medium text-brand-ink py-3 px-3 align-bottom"
+                                  >
+                                    {h}
+                                  </th>
+                                ))}
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {faq.table.rows.map((row, ri) => (
+                                <tr key={ri} className="border-b border-brand-ink-rule/60">
+                                  {row.map((cell, ci) => (
+                                    <td
+                                      key={ci}
+                                      className={`py-3 px-3 align-top ${ci === 0 ? 'font-medium text-brand-ink' : 'text-brand-ink-soft'}`}
+                                    >
+                                      {cell}
+                                    </td>
+                                  ))}
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                        <p className="mt-3 text-xs text-brand-bark">
+                          Source: Cultural Care Au Pair, 2025.
+                        </p>
+                      </>
+                    ) : (
+                      faq.answer
+                    )}
                   </Disclosure>
                 ))}
               </div>
