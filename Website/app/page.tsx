@@ -56,13 +56,18 @@ export default function LandingPage() {
         description: KIM.bio_teaser,
         url: pageUrl,
         worksFor: { '@type': 'Organization', name: 'Cultural Care Au Pair' },
+        sameAs: [
+          'https://www.linkedin.com/in/kim-arvdalen-b894ab13/',
+          'https://www.facebook.com/kim.arvdalen/',
+        ],
       },
       {
         '@type': 'LocalBusiness',
         '@id': `${pageUrl}#business`,
-        name: `${KIM.name} | Local Childcare Consultant`,
+        name: 'The Au Pair Childcare Consultant',
+        alternateName: `${KIM.name}, Local Childcare Consultant`,
         description:
-          'Au pair placement consultant helping families in Newport Beach, Costa Mesa, and across Southern California find live-in childcare through the Cultural Care Au Pair program.',
+          `${KIM.name} is a certified Local Childcare Consultant with Cultural Care Au Pair, helping families in Newport Beach, Orange County, and throughout Southern California find flexible, affordable live-in childcare. Kim guides families from their first inquiry through their au pair's arrival.`,
         url: pageUrl,
         telephone: '+17145100002',
         priceRange: '$$',
@@ -74,6 +79,22 @@ export default function LandingPage() {
           addressCountry: 'US',
         },
         geo: { '@type': 'GeoCoordinates', latitude: 33.6189, longitude: -117.9289 },
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: [
+              'Monday',
+              'Tuesday',
+              'Wednesday',
+              'Thursday',
+              'Friday',
+              'Saturday',
+              'Sunday',
+            ],
+            opens: '09:00',
+            closes: '17:00',
+          },
+        ],
         areaServed: [
           'Newport Beach, CA', 'Costa Mesa, CA', 'Huntington Beach, CA', 'Irvine, CA',
           'Tustin, CA', 'Laguna Beach, CA', 'Dana Point, CA', 'Laguna Niguel, CA',
@@ -85,6 +106,11 @@ export default function LandingPage() {
           geoMidpoint: { '@type': 'GeoCoordinates', latitude: 33.6189, longitude: -117.9289 },
           geoRadius: '160000',
         },
+        sameAs: [
+          'https://www.linkedin.com/in/kim-arvdalen-b894ab13/',
+          'https://www.facebook.com/kim.arvdalen/',
+          'https://www.instagram.com/theaupairchildcareconsultant/',
+        ],
         employee: { '@id': `${pageUrl}#person` },
       },
     ],

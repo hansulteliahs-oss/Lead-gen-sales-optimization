@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Fraunces, JetBrains_Mono } from 'next/font/google'
 import LccWebNav from '@/components/LccWebNav'
+import LccWebFooter from '@/components/LccWebFooter'
 import './globals.css'
 
 const fraunces = Fraunces({
@@ -38,6 +39,7 @@ export default function RootLayout({
       <body className="font-serif antialiased">
         <LccWebNav lccName="Kim Arvdalen" />
         <main className="bg-brand-paper min-h-screen">{children}</main>
+        <LccWebFooter lccName="Kim Arvdalen" />
       </body>
     </html>
   )

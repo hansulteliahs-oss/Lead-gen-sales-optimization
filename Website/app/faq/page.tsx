@@ -1,11 +1,6 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion'
+import { Disclosure } from '@/components/ui/disclosure'
 
 const CULTURAL_CARE_URL =
   'https://www.culturalcare.com/lcc/karvdalen/?utm_source=ig&utm_medium=social&utm_content=link_in_bio#become-hf-form'
@@ -126,14 +121,13 @@ export default function FAQPage() {
           <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6 md:gap-16">
             <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-brand-bark pt-3.5">§ Questions</div>
             <div>
-              <Accordion type="single" collapsible>
+              <div>
                 {FAQS.map((faq) => (
-                  <AccordionItem key={faq.id} value={faq.id}>
-                    <AccordionTrigger className="text-base md:text-lg">{faq.question}</AccordionTrigger>
-                    <AccordionContent>{faq.answer}</AccordionContent>
-                  </AccordionItem>
+                  <Disclosure key={faq.id} question={faq.question}>
+                    {faq.answer}
+                  </Disclosure>
                 ))}
-              </Accordion>
+              </div>
             </div>
           </div>
         </div>

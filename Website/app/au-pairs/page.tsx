@@ -1,11 +1,6 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion'
+import { Disclosure } from '@/components/ui/disclosure'
 
 const CULTURAL_CARE_URL =
   'https://www.culturalcare.com/lcc/karvdalen/?utm_source=ig&utm_medium=social&utm_content=link_in_bio#become-hf-form'
@@ -225,14 +220,17 @@ export default function AuPairsPage() {
               <h2 className="opsz-title font-normal text-[clamp(2rem,4.5vw,3rem)] leading-[1.05] tracking-[-0.02em] text-brand-ink mb-2 text-balance">
                 Things people get wrong.
               </h2>
-              <Accordion type="single" collapsible className="mt-6">
+              <div className="mt-6">
                 {MYTHS.map((m) => (
-                  <AccordionItem key={m.myth} value={m.myth}>
-                    <AccordionTrigger className="text-lg">{m.myth}</AccordionTrigger>
-                    <AccordionContent>{m.reality}</AccordionContent>
-                  </AccordionItem>
+                  <Disclosure
+                    key={m.myth}
+                    question={m.myth}
+                    triggerClassName="text-lg"
+                  >
+                    {m.reality}
+                  </Disclosure>
                 ))}
-              </Accordion>
+              </div>
             </div>
           </div>
         </div>

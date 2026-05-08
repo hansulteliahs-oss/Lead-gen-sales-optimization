@@ -2,6 +2,12 @@
 const nextConfig = {
   async redirects() {
     return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.theaupairchildcareconsultant.com' }],
+        destination: 'https://theaupairchildcareconsultant.com/:path*',
+        permanent: true,
+      },
       { source: '/kim-arvdalen', destination: '/', permanent: true },
       { source: '/kim-arvdalen/about', destination: '/about', permanent: true },
       { source: '/kim-arvdalen/au-pairs', destination: '/au-pairs', permanent: true },
