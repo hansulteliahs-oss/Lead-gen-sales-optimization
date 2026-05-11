@@ -107,23 +107,25 @@ export default function AuPairsPage() {
         <div className="border-t border-brand-ink-rule" />
       </div>
 
-      {/* IMAGE — daily life */}
-      <section className="py-10 md:py-12">
+      {/* PLATE — daily life */}
+      <section className="py-12 md:py-14">
         <div className="max-w-6xl mx-auto px-6">
-          <figure>
-            <div className="relative aspect-[3/2] w-full overflow-hidden rounded-sm bg-brand-ink-rule">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6 md:gap-16">
+            <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-brand-bark pt-3.5">§ Plate II</div>
+            <figure className="max-w-md">
               <Image
                 src="/photos/kitchen-play.jpg"
                 alt="An au pair sits on the kitchen floor playing a game with a young boy."
-                fill
-                sizes="(min-width: 1024px) 1024px, 100vw"
-                className="object-cover"
+                width={640}
+                height={427}
+                sizes="(min-width: 768px) 448px, 100vw"
+                className="w-full h-auto rounded-sm"
               />
-            </div>
-            <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
-              Plate III &middot; Daily life &middot; Morning at home, mid-week
-            </figcaption>
-          </figure>
+              <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
+                Daily life &middot; Morning at home, mid-week
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
@@ -241,23 +243,25 @@ export default function AuPairsPage() {
         <div className="border-t border-brand-ink-rule" />
       </div>
 
-      {/* IMAGE — beyond the math */}
-      <section className="py-10 md:py-12">
+      {/* PLATE — beyond the math */}
+      <section className="py-12 md:py-14">
         <div className="max-w-6xl mx-auto px-6">
-          <figure>
-            <div className="relative aspect-[3/2] w-full overflow-hidden rounded-sm bg-brand-ink-rule">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6 md:gap-16">
+            <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-brand-bark pt-3.5">§ Plate III</div>
+            <figure className="max-w-md md:ml-auto">
               <Image
                 src="/photos/reading-park.jpg"
                 alt="An au pair reads a picture book to a toddler on a park bench."
-                fill
-                sizes="(min-width: 1024px) 1024px, 100vw"
-                className="object-cover"
+                width={640}
+                height={427}
+                sizes="(min-width: 768px) 448px, 100vw"
+                className="w-full h-auto rounded-sm"
               />
-            </div>
-            <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
-              Plate IV &middot; Beyond the math &middot; A quiet afternoon in the park
-            </figcaption>
-          </figure>
+              <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
+                Beyond the math &middot; A quiet afternoon in the park
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 

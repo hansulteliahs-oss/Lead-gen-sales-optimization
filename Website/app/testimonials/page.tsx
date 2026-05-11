@@ -83,23 +83,25 @@ export default function TestimonialsPage() {
         <div className="border-t border-brand-ink-rule" />
       </div>
 
-      {/* IMAGE */}
-      <section className="py-10 md:py-12">
+      {/* PLATE */}
+      <section className="py-12 md:py-14">
         <div className="max-w-6xl mx-auto px-6">
-          <figure>
-            <div className="relative aspect-[3/2] w-full overflow-hidden rounded-sm bg-brand-ink-rule">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6 md:gap-16">
+            <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-brand-bark pt-3.5">§ Plate IV</div>
+            <figure className="max-w-md">
               <Image
                 src="/photos/park-fun.jpg"
                 alt="An au pair and a child hang upside down side-by-side on park playground bars, laughing."
-                fill
-                sizes="(min-width: 1024px) 1024px, 100vw"
-                className="object-cover"
+                width={640}
+                height={427}
+                sizes="(min-width: 768px) 448px, 100vw"
+                className="w-full h-auto rounded-sm"
               />
-            </div>
-            <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
-              Plate V &middot; The unscripted parts &middot; A Tuesday at the park
-            </figcaption>
-          </figure>
+              <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
+                The unscripted parts &middot; A Tuesday at the park
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 

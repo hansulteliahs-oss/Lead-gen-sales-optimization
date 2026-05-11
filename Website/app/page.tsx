@@ -168,25 +168,27 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* HERO IMAGE */}
+      {/* PLATE I — arrival day */}
       <FadeInSection>
-        <section className="pb-16 md:pb-20">
+        <section className="pb-14 md:pb-16">
           <div className="max-w-6xl mx-auto px-6">
-            <figure>
-              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-sm bg-brand-ink-rule">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6 md:gap-16">
+              <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-brand-bark pt-3.5">§ Plate I</div>
+              <figure className="max-w-md">
                 <Image
                   src="/photos/welcome-home.jpg"
                   alt="A host family welcomes their new au pair home with a hand-drawn 'Welcome to our family and the USA' sign."
-                  fill
-                  sizes="(min-width: 1024px) 1024px, 100vw"
-                  className="object-cover"
+                  width={640}
+                  height={428}
+                  sizes="(min-width: 768px) 448px, 100vw"
+                  className="w-full h-auto rounded-sm"
                   priority
                 />
-              </div>
-              <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
-                Plate I &middot; Arrival day &middot; A host family meets their new au pair
-              </figcaption>
-            </figure>
+                <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
+                  Arrival day &middot; A host family meets their new au pair
+                </figcaption>
+              </figure>
+            </div>
           </div>
         </section>
       </FadeInSection>
