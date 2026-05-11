@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
-import Image from 'next/image'
 
 const CULTURAL_CARE_URL =
   'https://www.culturalcare.com/lcc/karvdalen/?utm_source=ig&utm_medium=social&utm_content=link_in_bio#become-hf-form'
@@ -75,32 +74,6 @@ export default function TestimonialsPage() {
                 Real stories from families {KIM.name.split(' ')[0]} has helped.
               </h1>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="border-t border-brand-ink-rule" />
-      </div>
-
-      {/* PLATE */}
-      <section className="py-12 md:py-14">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6 md:gap-16">
-            <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-brand-bark pt-3.5">§ Plate IV</div>
-            <figure className="max-w-md">
-              <Image
-                src="/photos/park-fun.jpg"
-                alt="An au pair and a child hang upside down side-by-side on park playground bars, laughing."
-                width={640}
-                height={427}
-                sizes="(min-width: 768px) 448px, 100vw"
-                className="w-full h-auto rounded-sm"
-              />
-              <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
-                The unscripted parts &middot; A Tuesday at the park
-              </figcaption>
-            </figure>
           </div>
         </div>
       </section>

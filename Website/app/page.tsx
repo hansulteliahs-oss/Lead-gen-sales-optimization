@@ -168,31 +168,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* PLATE I — arrival day */}
-      <FadeInSection>
-        <section className="pb-14 md:pb-16">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6 md:gap-16">
-              <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-brand-bark pt-3.5">§ Plate I</div>
-              <figure className="max-w-md">
-                <Image
-                  src="/photos/welcome-home.jpg"
-                  alt="A host family welcomes their new au pair home with a hand-drawn 'Welcome to our family and the USA' sign."
-                  width={640}
-                  height={428}
-                  sizes="(min-width: 768px) 448px, 100vw"
-                  className="w-full h-auto rounded-sm"
-                  priority
-                />
-                <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
-                  Arrival day &middot; A host family meets their new au pair
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-        </section>
-      </FadeInSection>
-
       <div className="max-w-6xl mx-auto px-6">
         <div className="border-t border-brand-ink-rule" />
       </div>
@@ -203,19 +178,34 @@ export default function LandingPage() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6 md:gap-16">
               <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-brand-bark pt-3.5">§ About</div>
-              <div>
-                <h2 className="opsz-title font-normal text-[clamp(2rem,4.5vw,3.25rem)] leading-[1.05] tracking-[-0.02em] text-brand-ink mb-7 text-balance">
-                  Meet {KIM.name}.
-                </h2>
-                <p className="opsz-body text-[1.2rem] leading-[1.65] text-brand-ink-soft max-w-[64ch]">
-                  {KIM.bio_teaser}
-                </p>
-                <a
-                  href="/about"
-                  className="inline-block mt-4 font-medium text-brand-spot-deep border-b border-brand-spot-deep pb-0.5 hover:text-brand-ink hover:border-brand-ink transition-colors duration-200 ease-out-quart"
-                >
-                  Read more →
-                </a>
+              <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8 md:gap-12 items-start">
+                <div>
+                  <h2 className="opsz-title font-normal text-[clamp(2rem,4.5vw,3.25rem)] leading-[1.05] tracking-[-0.02em] text-brand-ink mb-7 text-balance">
+                    Meet {KIM.name}.
+                  </h2>
+                  <p className="opsz-body text-[1.2rem] leading-[1.65] text-brand-ink-soft">
+                    {KIM.bio_teaser}
+                  </p>
+                  <a
+                    href="/about"
+                    className="inline-block mt-4 font-medium text-brand-spot-deep border-b border-brand-spot-deep pb-0.5 hover:text-brand-ink hover:border-brand-ink transition-colors duration-200 ease-out-quart"
+                  >
+                    Read more →
+                  </a>
+                </div>
+                <figure className="md:pt-3">
+                  <Image
+                    src="/photos/welcome-home.jpg"
+                    alt="A host family welcomes their new au pair home with a hand-drawn 'Welcome to our family and the USA' sign."
+                    width={640}
+                    height={428}
+                    sizes="(min-width: 768px) 360px, 100vw"
+                    className="w-full h-auto rounded-sm"
+                  />
+                  <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
+                    Arrival day &middot; A host family meets their new au pair
+                  </figcaption>
+                </figure>
               </div>
             </div>
           </div>

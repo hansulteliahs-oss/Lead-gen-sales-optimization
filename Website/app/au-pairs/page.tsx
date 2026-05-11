@@ -107,47 +107,36 @@ export default function AuPairsPage() {
         <div className="border-t border-brand-ink-rule" />
       </div>
 
-      {/* PLATE — daily life */}
-      <section className="py-12 md:py-14">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6 md:gap-16">
-            <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-brand-bark pt-3.5">§ Plate II</div>
-            <figure className="max-w-md">
-              <Image
-                src="/photos/kitchen-play.jpg"
-                alt="An au pair sits on the kitchen floor playing a game with a young boy."
-                width={640}
-                height={427}
-                sizes="(min-width: 768px) 448px, 100vw"
-                className="w-full h-auto rounded-sm"
-              />
-              <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
-                Daily life &middot; Morning at home, mid-week
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="border-t border-brand-ink-rule" />
-      </div>
-
       {/* HOW IT WORKS */}
       <section className="py-14 md:py-16">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6 md:gap-16">
             <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-brand-bark pt-3.5">§ How it works</div>
-            <div>
-              <h2 className="opsz-title font-normal text-[clamp(2rem,4.5vw,3rem)] leading-[1.05] tracking-[-0.02em] text-brand-ink mb-7 text-balance">
-                What an au pair actually is.
-              </h2>
-              <p className="opsz-body text-[1.2rem] leading-[1.7] text-brand-ink-soft max-w-[64ch]">
-                Au pairs are young adults (ages 18–26) from abroad who live with a host family, providing up to 45 hours per week of childcare as part of a federally regulated cultural-exchange program. They become a true part of your family while sharing their language and culture with your children.
-              </p>
-              <p className="opsz-body text-[1.2rem] leading-[1.7] text-brand-ink-soft max-w-[64ch] mt-5">
-                Cultural Care Au Pair matches families with candidates, manages the J-1 visa process, and provides year-round support. As your Local Childcare Consultant, I&apos;m your local point of contact through matching and the full year together.
-              </p>
+            <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8 md:gap-12 items-start">
+              <div>
+                <h2 className="opsz-title font-normal text-[clamp(2rem,4.5vw,3rem)] leading-[1.05] tracking-[-0.02em] text-brand-ink mb-7 text-balance">
+                  What an au pair actually is.
+                </h2>
+                <p className="opsz-body text-[1.2rem] leading-[1.7] text-brand-ink-soft">
+                  Au pairs are young adults (ages 18–26) from abroad who live with a host family, providing up to 45 hours per week of childcare as part of a federally regulated cultural-exchange program. They become a true part of your family while sharing their language and culture with your children.
+                </p>
+                <p className="opsz-body text-[1.2rem] leading-[1.7] text-brand-ink-soft mt-5">
+                  Cultural Care Au Pair matches families with candidates, manages the J-1 visa process, and provides year-round support. As your Local Childcare Consultant, I&apos;m your local point of contact through matching and the full year together.
+                </p>
+              </div>
+              <figure className="md:pt-3">
+                <Image
+                  src="/photos/kitchen-play.jpg"
+                  alt="An au pair sits on the kitchen floor playing a game with a young boy."
+                  width={640}
+                  height={427}
+                  sizes="(min-width: 768px) 360px, 100vw"
+                  className="w-full h-auto rounded-sm"
+                />
+                <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
+                  Daily life &middot; Morning at home, mid-week
+                </figcaption>
+              </figure>
             </div>
           </div>
         </div>
@@ -243,42 +232,36 @@ export default function AuPairsPage() {
         <div className="border-t border-brand-ink-rule" />
       </div>
 
-      {/* PLATE — beyond the math */}
-      <section className="py-12 md:py-14">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6 md:gap-16">
-            <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-brand-bark pt-3.5">§ Plate III</div>
-            <figure className="max-w-md md:ml-auto">
-              <Image
-                src="/photos/reading-park.jpg"
-                alt="An au pair reads a picture book to a toddler on a park bench."
-                width={640}
-                height={427}
-                sizes="(min-width: 768px) 448px, 100vw"
-                className="w-full h-auto rounded-sm"
-              />
-              <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
-                Beyond the math &middot; A quiet afternoon in the park
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="border-t border-brand-ink-rule" />
-      </div>
-
       {/* MYTHS */}
       <section className="py-14 md:py-16">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6 md:gap-16">
             <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-brand-bark pt-3.5">§ Common questions</div>
             <div>
-              <h2 className="opsz-title font-normal text-[clamp(2rem,4.5vw,3rem)] leading-[1.05] tracking-[-0.02em] text-brand-ink mb-2 text-balance">
-                Things people get wrong.
-              </h2>
-              <div className="mt-6">
+              <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8 md:gap-12 items-start">
+                <div>
+                  <h2 className="opsz-title font-normal text-[clamp(2rem,4.5vw,3rem)] leading-[1.05] tracking-[-0.02em] text-brand-ink mb-4 text-balance">
+                    Things people get wrong.
+                  </h2>
+                  <p className="opsz-body text-[1.2rem] leading-[1.7] text-brand-ink-soft">
+                    The au pair program can sound complicated from the outside. Most of what families worry about going in turns out to be a myth — here are the ones that come up most.
+                  </p>
+                </div>
+                <figure className="md:pt-3">
+                  <Image
+                    src="/photos/reading-park.jpg"
+                    alt="An au pair reads a picture book to a toddler on a park bench."
+                    width={640}
+                    height={427}
+                    sizes="(min-width: 768px) 360px, 100vw"
+                    className="w-full h-auto rounded-sm"
+                  />
+                  <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
+                    Beyond the math &middot; A quiet afternoon in the park
+                  </figcaption>
+                </figure>
+              </div>
+              <div className="mt-10">
                 {MYTHS.map((m) => (
                   <Disclosure
                     key={m.myth}
