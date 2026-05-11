@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
+import Image from 'next/image'
 import FadeInSection from './FadeInSection'
 
 const CULTURAL_CARE_URL =
@@ -166,6 +167,29 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+
+      {/* HERO IMAGE */}
+      <FadeInSection>
+        <section className="pb-16 md:pb-20">
+          <div className="max-w-6xl mx-auto px-6">
+            <figure>
+              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-sm bg-brand-ink-rule">
+                <Image
+                  src="/photos/welcome-home.jpg"
+                  alt="A host family welcomes their new au pair home with a hand-drawn 'Welcome to our family and the USA' sign."
+                  fill
+                  sizes="(min-width: 1024px) 1024px, 100vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
+                Plate I &middot; Arrival day &middot; A host family meets their new au pair
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+      </FadeInSection>
 
       <div className="max-w-6xl mx-auto px-6">
         <div className="border-t border-brand-ink-rule" />

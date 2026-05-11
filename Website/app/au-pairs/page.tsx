@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
+import Image from 'next/image'
 import { Disclosure } from '@/components/ui/disclosure'
 
 const CULTURAL_CARE_URL =
@@ -99,6 +100,30 @@ export default function AuPairsPage() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="border-t border-brand-ink-rule" />
+      </div>
+
+      {/* IMAGE — daily life */}
+      <section className="py-10 md:py-12">
+        <div className="max-w-6xl mx-auto px-6">
+          <figure>
+            <div className="relative aspect-[3/2] w-full overflow-hidden rounded-sm bg-brand-ink-rule">
+              <Image
+                src="/photos/kitchen-play.jpg"
+                alt="An au pair sits on the kitchen floor playing a game with a young boy."
+                fill
+                sizes="(min-width: 1024px) 1024px, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
+              Plate III &middot; Daily life &middot; Morning at home, mid-week
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -209,6 +234,30 @@ export default function AuPairsPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="border-t border-brand-ink-rule" />
+      </div>
+
+      {/* IMAGE — beyond the math */}
+      <section className="py-10 md:py-12">
+        <div className="max-w-6xl mx-auto px-6">
+          <figure>
+            <div className="relative aspect-[3/2] w-full overflow-hidden rounded-sm bg-brand-ink-rule">
+              <Image
+                src="/photos/reading-park.jpg"
+                alt="An au pair reads a picture book to a toddler on a park bench."
+                fill
+                sizes="(min-width: 1024px) 1024px, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
+              Plate IV &middot; Beyond the math &middot; A quiet afternoon in the park
+            </figcaption>
+          </figure>
         </div>
       </section>
 

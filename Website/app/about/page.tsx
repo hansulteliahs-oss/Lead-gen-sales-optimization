@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
+import Image from 'next/image'
 
 const CULTURAL_CARE_URL =
   'https://www.culturalcare.com/lcc/karvdalen/?utm_source=ig&utm_medium=social&utm_content=link_in_bio#become-hf-form'
@@ -90,6 +91,20 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6 md:gap-16">
             <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-brand-bark pt-3.5">§ Bio</div>
             <div>
+              <figure className="mb-10">
+                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm bg-brand-ink-rule">
+                  <Image
+                    src="/photos/beach-hug.jpg"
+                    alt="An au pair embraces three children on a beach at sunset."
+                    fill
+                    sizes="(min-width: 768px) 720px, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
+                  Plate II &middot; What success looks like &middot; A host family, abroad
+                </figcaption>
+              </figure>
               <p
                 data-testid="bio"
                 className="opsz-body text-[1.2rem] leading-[1.7] text-brand-ink-soft max-w-[64ch] whitespace-pre-wrap"

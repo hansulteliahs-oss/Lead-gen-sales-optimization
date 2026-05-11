@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
+import Image from 'next/image'
 
 const CULTURAL_CARE_URL =
   'https://www.culturalcare.com/lcc/karvdalen/?utm_source=ig&utm_medium=social&utm_content=link_in_bio#become-hf-form'
@@ -75,6 +76,30 @@ export default function TestimonialsPage() {
               </h1>
             </div>
           </div>
+        </div>
+      </section>
+
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="border-t border-brand-ink-rule" />
+      </div>
+
+      {/* IMAGE */}
+      <section className="py-10 md:py-12">
+        <div className="max-w-6xl mx-auto px-6">
+          <figure>
+            <div className="relative aspect-[3/2] w-full overflow-hidden rounded-sm bg-brand-ink-rule">
+              <Image
+                src="/photos/park-fun.jpg"
+                alt="An au pair and a child hang upside down side-by-side on park playground bars, laughing."
+                fill
+                sizes="(min-width: 1024px) 1024px, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
+              Plate V &middot; The unscripted parts &middot; A Tuesday at the park
+            </figcaption>
+          </figure>
         </div>
       </section>
 
