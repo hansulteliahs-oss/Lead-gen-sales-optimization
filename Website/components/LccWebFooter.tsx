@@ -64,7 +64,7 @@ export default function LccWebFooter({ lccName }: { lccName: string }) {
             Service Area
           </div>
           <p className="mt-3 text-sm text-brand-ink-soft leading-relaxed">
-            Newport Beach &middot; Costa Mesa &middot; Huntington Beach &middot; Irvine &middot; Tustin &middot; Laguna Beach &middot; Dana Point &middot; greater Southern California
+            Based in Newport Beach, CA &middot; Serving families nationwide
           </p>
         </div>
       </div>

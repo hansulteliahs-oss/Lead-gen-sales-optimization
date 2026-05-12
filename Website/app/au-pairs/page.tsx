@@ -41,8 +41,8 @@ const MYTHS = [
 ]
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = `Au Pair Program Guide | ${KIM.name} — Newport Beach & Costa Mesa, CA`
-  const description = `Everything Newport Beach, Costa Mesa, and Southern California families need to know about the au pair program — costs, matching, visa, and how it compares to a nanny.`
+  const title = `Au Pair Program Guide | ${KIM.name} — Newport Beach, CA · Nationwide service`
+  const description = `Everything families nationwide need to know about the au pair program — costs, matching, visa, and how it compares to a nanny — from ${KIM.name}, a Newport Beach–based Local Childcare Consultant.`
   return {
     title,
     description,

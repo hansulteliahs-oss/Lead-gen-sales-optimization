@@ -64,8 +64,8 @@ const FAQS = [
 ]
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = `Au Pair FAQ | ${KIM.name} — Newport Beach, Costa Mesa & SoCal`
-  const description = `Answers to common questions from families in Newport Beach, Costa Mesa, and greater Southern California about the au pair program.`
+  const title = `Au Pair FAQ | ${KIM.name} — Newport Beach, CA · Nationwide service`
+  const description = `Answers to common questions from families nationwide about the au pair program, from ${KIM.name}, your Newport Beach–based Local Childcare Consultant.`
   return {
     title,
     description,

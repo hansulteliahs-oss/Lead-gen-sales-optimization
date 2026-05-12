@@ -14,8 +14,8 @@ In my nine years as an au pair childcare coordinator, I've seen firsthand how tr
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = `About ${KIM.name} | Newport Beach & Costa Mesa Au Pair Consultant`
-  const description = `Learn about ${KIM.name}, a Local Childcare Consultant serving Newport Beach, Costa Mesa, and greater SoCal — and how she guides families through the au pair placement process.`
+  const title = `About ${KIM.name} | Newport Beach, CA · Nationwide Au Pair Consultant`
+  const description = `Learn about ${KIM.name}, a Newport Beach–based Local Childcare Consultant serving families nationwide — and how she guides families through the au pair placement process.`
   return {
     title,
     description,
@@ -73,7 +73,7 @@ export default function AboutPage() {
                 Local Childcare Consultant &middot; Cultural Care Au Pair
               </p>
               <p className="opsz-small mt-1 text-sm text-brand-bark">
-                Serving Newport Beach &middot; Costa Mesa &middot; Huntington Beach &middot; Irvine &middot; Laguna Beach &middot; greater SoCal
+                Based in Newport Beach, CA &middot; Serving families nationwide
               </p>
             </div>
           </div>

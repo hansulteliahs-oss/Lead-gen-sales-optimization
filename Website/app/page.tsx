@@ -8,9 +8,9 @@ const CULTURAL_CARE_URL =
 
 const KIM = {
   name: 'Kim Arvdalen',
-  headline: "Newport Beach's Guide to Finding the Perfect Au Pair",
+  headline: 'Your Guide to Finding the Perfect Au Pair',
   subheadline:
-    'I help families in Newport Beach, Costa Mesa, and across Southern California discover the au pair program — a childcare solution that combines flexibility, cultural connection, and real affordability.',
+    'Based in Newport Beach, I help families across the country discover the au pair program — a childcare solution that combines flexibility, cultural connection, and real affordability.',
   bio_teaser:
     "As an experienced Local Childcare Consultant with Cultural Care Au Pair, I've spent years guiding families through the process of welcoming an au pair into their home. From your first question to your au pair's arrival, I'm here every step of the way — making a complex process feel personal and simple.",
 }
@@ -29,8 +29,8 @@ const TESTIMONIALS = [
 ]
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = `${KIM.name} | Au Pair Consultant — Newport Beach & Costa Mesa, CA`
-  const description = `${KIM.name} helps families in Newport Beach, Costa Mesa, Huntington Beach, Irvine, and across Southern California find affordable live-in childcare through the Cultural Care Au Pair program.`
+  const title = `${KIM.name} | Au Pair Consultant — Newport Beach, CA · Nationwide service`
+  const description = `${KIM.name} is based in Newport Beach and helps families nationwide find affordable live-in childcare through the Cultural Care Au Pair program.`
 
   return {
     title,
@@ -141,7 +141,7 @@ export default function LandingPage() {
                 {KIM.subheadline}
               </p>
               <p className="opsz-small mt-4 text-sm text-brand-bark">
-                Serving Newport Beach &middot; Costa Mesa &middot; Huntington Beach &middot; Irvine &middot; Laguna Beach &middot; greater SoCal
+                Based in Newport Beach, CA &middot; Serving families nationwide
               </p>
               <div className="mt-10 flex flex-wrap items-center gap-6">
                 <a

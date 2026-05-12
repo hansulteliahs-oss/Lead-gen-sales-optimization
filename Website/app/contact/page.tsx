@@ -9,23 +9,11 @@ const KIM = { name: 'Kim Arvdalen' }
 const PHONE_DISPLAY = '(714) 510-0002'
 const PHONE_TEL = '+17145100002'
 
-const SERVICE_AREA = [
-  'Newport Beach',
-  'Costa Mesa',
-  'Huntington Beach',
-  'Irvine',
-  'Tustin',
-  'Laguna Beach',
-  'Dana Point',
-  'Laguna Niguel',
-  'Mission Viejo',
-  'Greater Los Angeles',
-  'San Diego County',
-]
+const SERVICE_AREA = 'Based in Newport Beach, CA · Serving families nationwide'
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = `Contact ${KIM.name} — Au Pair Consultant in Newport Beach, CA`
-  const description = `Reach ${KIM.name}, your Local Childcare Consultant for the Cultural Care Au Pair program. Serving families across Southern California — call ${PHONE_DISPLAY}.`
+  const title = `Contact ${KIM.name} — Au Pair Consultant in Newport Beach, CA · Nationwide`
+  const description = `Reach ${KIM.name}, your Local Childcare Consultant for the Cultural Care Au Pair program. Based in Newport Beach, serving families nationwide — call ${PHONE_DISPLAY}.`
   return {
     title,
     description,
@@ -114,11 +102,9 @@ export default function ContactPage() {
             <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark leading-relaxed">
               Service Area
             </div>
-            <ul className="mt-3 space-y-1.5 text-base text-brand-ink-soft">
-              {SERVICE_AREA.map((city) => (
-                <li key={city}>{city}</li>
-              ))}
-            </ul>
+            <p className="mt-3 text-base text-brand-ink-soft leading-relaxed">
+              {SERVICE_AREA}
+            </p>
           </div>
         </div>
       </section>

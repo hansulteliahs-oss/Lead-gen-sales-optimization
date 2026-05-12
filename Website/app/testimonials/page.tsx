@@ -31,8 +31,8 @@ const TESTIMONIALS = [
 ]
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = `Family Testimonials | ${KIM.name} — Newport Beach & Costa Mesa, CA`
-  const description = `Stories from Southern California families who found their au pair through ${KIM.name}, serving Newport Beach, Costa Mesa, and greater SoCal.`
+  const title = `Family Testimonials | ${KIM.name} — Newport Beach, CA · Nationwide service`
+  const description = `Stories from families who found their au pair through ${KIM.name}, a Newport Beach–based Local Childcare Consultant serving families nationwide.`
   return {
     title,
     description,

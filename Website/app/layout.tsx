@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? 'https://theaupairchildcareconsultant.com'
   ),
-  title: 'Au Pair Consultant — Newport Beach & Southern California | Kim Arvdalen',
+  title: 'Au Pair Consultant — Newport Beach, CA · Nationwide service | Kim Arvdalen',
   description:
     'Connect with your Local Childcare Consultant and discover the au pair program.',
   openGraph: {
