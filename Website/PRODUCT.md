@@ -47,9 +47,9 @@ Voice: first-person from Kim where it makes sense. Conversational, never breezy.
 
 What this should explicitly **not** look or feel like:
 
-- **Corporate Cultural Care HQ pages.** Stock photography, generic gradients, "trusted by families" trust-bar treatments. We are the antidote to those, not a regional copy of them.
+- **Corporate Cultural Care HQ pages.** Stock photography, generic gradients, "trusted by families" trust-bar treatments. We are the personal-brand counterweight to those execution patterns, not a regional copy of the corporate template. A single restrained magenta accent is the only deliberate visual link to the Cultural Care brand; the rest of the system stays editorial-warm.
 - **Generic Wix/Squarespace au pair templates.** Cookie-cutter consultant sites with the same hero + 3-card services + testimonial slider + footer.
-- **Pinterest-mom / Etsy-shop kitsch.** Script fonts, watercolor flourishes, oversaturated pinks, "Hey Mama!" copy. Warm is not the same as cute.
+- **Pinterest-mom / Etsy-shop kitsch.** Script fonts, watercolor flourishes, oversaturated pastel pinks, "Hey Mama!" copy. Warm is not the same as cute. (The editorial magenta accent is bold and restrained, not pastel — this rule still has teeth.)
 - **Tech-startup SaaS landing pages.** Hero metric stat blocks, gradient buttons, identical icon-and-heading card grids, "Why families love us" feature lists. We are not a SaaS product.
 - **Over-the-top portrait worship.** Every section anchored by a giant photo of Kim. She's a person, not a brand mascot. Her presence should feel earned, not omnipresent.
 
@@ -65,7 +65,7 @@ These are the strategic rules that decide trade-offs when designing or auditing 
 
 4. **Warm without softening expertise.** Warmth is the entry point; competence is what closes. Kim is the local guide who has done this hundreds of times. The site should feel like a kitchen-table conversation with someone who knows exactly what to do, not a brochure.
 
-5. **Refuse the category template.** The au-pair / family-services category has a default look (warm pink, rounded cards, smiling stock families). When in doubt, do the opposite of the category and the site gets stronger. We are not a Cultural Care affiliate page in pink trim, we are a personal-brand editorial site that happens to market the au pair program.
+5. **Refuse the category template.** The au-pair / family-services category has a default look (pastel pink, rounded cards, smiling stock families). When in doubt, do the opposite of the category and the site gets stronger. We are a personal-brand editorial site that happens to market the au pair program. A single restrained magenta accent acknowledges the program we hand off to; the rest of the system stays warm-editorial, not corporate-affiliate.
 
 ## Accessibility & Inclusion
 

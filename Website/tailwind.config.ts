@@ -18,8 +18,8 @@ const config: Config = {
           'paper-deep': 'oklch(93% 0.028 74)',
           bark:         'oklch(46% 0.030 45)',
           'bark-soft':  'oklch(46% 0.030 45 / 0.72)',
-          spot:         'oklch(62% 0.160 38)',
-          'spot-deep':  'oklch(54% 0.170 36)',
+          spot:         'oklch(60% 0.190 358)',
+          'spot-deep':  'oklch(52% 0.200 358)',
         },
       },
       fontFamily: {

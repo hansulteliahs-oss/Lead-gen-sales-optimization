@@ -1,6 +1,6 @@
 ---
 name: LCC Lead Engine — Marketing Site
-description: Personal-brand editorial column for Local Childcare Consultants placing au pairs in SoCal families. Cinnamon ink on aged-cream paper, single Fraunces serif system, mono cost figures.
+description: Personal-brand editorial column for Local Childcare Consultants placing au pairs in SoCal families. Cinnamon ink on aged-cream paper, single Fraunces serif system, mono cost figures, editorial magenta accent as a calibrated nod to Cultural Care.
 colors:
   ink: "oklch(36% 0.105 32)"
   ink-soft: "oklch(36% 0.105 32 / 0.74)"
@@ -10,8 +10,8 @@ colors:
   paper-deep: "oklch(93% 0.028 74)"
   bark: "oklch(46% 0.030 45)"
   bark-soft: "oklch(46% 0.030 45 / 0.72)"
-  spot: "oklch(62% 0.160 38)"
-  spot-deep: "oklch(54% 0.170 36)"
+  spot: "oklch(60% 0.190 358)"
+  spot-deep: "oklch(52% 0.200 358)"
 typography:
   display:
     fontFamily: "Fraunces, Cormorant Garamond, Georgia, serif"
@@ -123,12 +123,12 @@ components:
 
 A personal-brand editorial column you'd find in a thoughtful local newsletter — cinnamon ink on aged cream paper, set in a single variable serif (Fraunces) with monospace accents reserved for cost figures and section labels. The site reads as if Kim wrote it herself, sat down at a desk, and laid out the column for a tired parent reading it at 10pm.
 
-The previous "Soft-Pink Welcome" system was the family-services category default that PRODUCT.md Principle 5 explicitly refuses. This system is the antidote: warm without being pink, serious without being corporate, place-grounded without using a single beach icon. Every color has a structural job. Every typographic move is editorial, not decorative.
+The previous "Soft-Pink Welcome" system was the family-services category default that PRODUCT.md Principle 5 explicitly refuses. This system is the antidote: warm, serious without being corporate, place-grounded without using a single beach icon. Every color has a structural job. Every typographic move is editorial, not decorative. The spot accent is a deliberate, restrained magenta — a single visual link to Cultural Care (the program we hand off to), not the category-default pastel pink the system rejects.
 
 **Key characteristics:**
 - Single Fraunces variable family carrying every text role through the optical-size axis (display→body)
 - JetBrains Mono used only for cost figures, section labels, and footer meta — three places, total
-- One ink hue (cinnamon-brick), one paper hue (aged cream), one bark hue (warm structural brown), one spot accent (terracotta-coral) — strict role assignment
+- One ink hue (cinnamon-brick), one paper hue (aged cream), one bark hue (warm structural brown), one spot accent (editorial magenta, a calibrated nod to Cultural Care) — strict role assignment
 - Squared 4-pixel buttons. Pill buttons are gone. Cards are gone.
 - Asymmetric grids (7/3, 1/3) replace the centered container-bound default
 - Section breaks are a single hairline rule plus a `§ Section` mono marginalia in the left margin — replacing the eyebrow→h2→body→card stack used 5× on the old home page
@@ -146,8 +146,8 @@ A **Committed** color strategy: one saturated ink carries 30–60% of the surfac
 - **Paper** `oklch(96.2% 0.022 78)` — aged-cream. Section background, page background, nav background. **No alternating stripes; the page is one paper.**
 - **Paper-deep** `oklch(93% 0.028 74)` — reserved. Currently unused; available for one future panel surface (e.g. a CTA overlay) without inventing a new token.
 - **Bark** `oklch(46% 0.030 45)` — warm dry-bark brown. **Structural, not content.** Used exclusively on: the mono `§ Section` marginalia labels, mono cost-block labels, footer mono text, the right-column hero meta. Replaces every "muted gray" in the old system. Body copy never uses bark — that's ink-soft's job.
-- **Spot** `oklch(62% 0.160 38)` — terracotta-coral. **Used ~6 places on a typical page**: the testimonial opening glyph, the inline-link underline color, the `→` prefix on the hero footnote.
-- **Spot-deep** `oklch(54% 0.170 36)` — link text, button hover state. The single hover color across the entire interactive vocabulary.
+- **Spot** `oklch(60% 0.190 358)` — editorial magenta. A calibrated nod to Cultural Care's brand color (`#DC0079`), pulled back ~15% in chroma so it reads editorial, not neon. **Used ~6 places on a typical page**: the testimonial opening glyph, the inline-link underline color, the `→` prefix on the hero footnote.
+- **Spot-deep** `oklch(52% 0.200 358)` — link text, button hover state. The single hover color across the entire interactive vocabulary. Contrast on paper ≈ 5.5:1 (AA).
 
 ### Named Rules
 
