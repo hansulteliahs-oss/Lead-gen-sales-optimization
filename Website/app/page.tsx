@@ -12,7 +12,7 @@ const KIM = {
   subheadline:
     'I help families in Newport Beach, Costa Mesa, and across Southern California discover the au pair program — a childcare solution that combines flexibility, cultural connection, and real affordability.',
   bio_teaser:
-    "As a certified Local Childcare Consultant with Cultural Care Au Pair, I've spent years guiding families through the process of welcoming an au pair into their home. From your first question to your au pair's arrival, I'm here every step of the way — making a complex process feel personal and simple.",
+    "As a Local Childcare Consultant with Cultural Care Au Pair, I've spent years guiding families through the process of welcoming an au pair into their home. From your first question to your au pair's arrival, I'm here every step of the way — making a complex process feel personal and simple.",
 }
 
 const TESTIMONIALS = [
@@ -69,7 +69,7 @@ export default function LandingPage() {
         name: 'The Au Pair Childcare Consultant',
         alternateName: `${KIM.name}, Local Childcare Consultant`,
         description:
-          `${KIM.name} is a certified Local Childcare Consultant with Cultural Care Au Pair, helping families in Newport Beach, Orange County, and throughout Southern California find flexible, affordable live-in childcare. Kim guides families from their first inquiry through their au pair's arrival.`,
+          `${KIM.name} is a Local Childcare Consultant with Cultural Care Au Pair, helping families in Newport Beach, Orange County, and throughout Southern California find flexible, affordable live-in childcare. Kim guides families from their first inquiry through their au pair's arrival.`,
         url: pageUrl,
         telephone: '+17145100002',
         priceRange: '$$',
