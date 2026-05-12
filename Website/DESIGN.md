@@ -1,11 +1,11 @@
 ---
 name: LCC Lead Engine — Marketing Site
-description: Personal-brand editorial column for Local Childcare Consultants placing au pairs in SoCal families. Cinnamon ink on aged-cream paper, single Fraunces serif system, mono cost figures, editorial magenta accent as a calibrated nod to Cultural Care.
+description: Personal-brand editorial column for Local Childcare Consultants placing au pairs in SoCal families. Deep wine-magenta ink on aged-cream paper (Cultural Care's brand hue rotated into the typographic system), single Fraunces serif system, mono cost figures, brighter magenta accent for hover and emphasis.
 colors:
-  ink: "oklch(36% 0.105 32)"
-  ink-soft: "oklch(36% 0.105 32 / 0.74)"
-  ink-rule: "oklch(36% 0.105 32 / 0.20)"
-  ink-faint: "oklch(36% 0.105 32 / 0.08)"
+  ink: "oklch(36% 0.105 358)"
+  ink-soft: "oklch(36% 0.105 358 / 0.74)"
+  ink-rule: "oklch(36% 0.105 358 / 0.20)"
+  ink-faint: "oklch(36% 0.105 358 / 0.08)"
   paper: "oklch(96.2% 0.022 78)"
   paper-deep: "oklch(93% 0.028 74)"
   bark: "oklch(46% 0.030 45)"
@@ -121,26 +121,26 @@ components:
 
 **Creative North Star: "The Hearth Letter"**
 
-A personal-brand editorial column you'd find in a thoughtful local newsletter — cinnamon ink on aged cream paper, set in a single variable serif (Fraunces) with monospace accents reserved for cost figures and section labels. The site reads as if Kim wrote it herself, sat down at a desk, and laid out the column for a tired parent reading it at 10pm.
+A personal-brand editorial column you'd find in a thoughtful local newsletter — deep wine-magenta ink on aged cream paper, set in a single variable serif (Fraunces) with monospace accents reserved for cost figures and section labels. The site reads as if Kim wrote it herself, sat down at a desk, and laid out the column for a tired parent reading it at 10pm.
 
-The previous "Soft-Pink Welcome" system was the family-services category default that PRODUCT.md Principle 5 explicitly refuses. This system is the antidote: warm, serious without being corporate, place-grounded without using a single beach icon. Every color has a structural job. Every typographic move is editorial, not decorative. The spot accent is a deliberate, restrained magenta — a single visual link to Cultural Care (the program we hand off to), not the category-default pastel pink the system rejects.
+The previous "Soft-Pink Welcome" system was the family-services category default that PRODUCT.md Principle 5 explicitly refuses. This system is the antidote: serious without being corporate, place-grounded without using a single beach icon. Every color has a structural job. Every typographic move is editorial, not decorative. The ink hue is rotated to magenta (hue 358) — the same family as Cultural Care's brand color, applied here as readable dark text rather than a saturated CTA fill. The brighter `spot` token (lighter L, higher chroma) handles hover and emphasis within the same hue family.
 
 **Key characteristics:**
 - Single Fraunces variable family carrying every text role through the optical-size axis (display→body)
 - JetBrains Mono used only for cost figures, section labels, and footer meta — three places, total
-- One ink hue (cinnamon-brick), one paper hue (aged cream), one bark hue (warm structural brown), one spot accent (editorial magenta, a calibrated nod to Cultural Care) — strict role assignment
+- One ink hue (deep wine-magenta, in Cultural Care's hue family), one paper hue (aged cream), one bark hue (warm structural brown for mono labels), one spot accent (brighter magenta for hover and emphasis, same hue as ink) — strict role assignment
 - Squared 4-pixel buttons. Pill buttons are gone. Cards are gone.
 - Asymmetric grids (7/3, 1/3) replace the centered container-bound default
 - Section breaks are a single hairline rule plus a `§ Section` mono marginalia in the left margin — replacing the eyebrow→h2→body→card stack used 5× on the old home page
 - Hover state is a single-color shift to spot-deep, plus a 200ms ease-out-quart transition. No translate, no shadow, no scale.
 
-## 2. Colors: Cinnamon-on-Cream, Strict Roles
+## 2. Colors: Wine-Magenta on Cream, Strict Roles
 
 A **Committed** color strategy: one saturated ink carries 30–60% of the surface (every word of body copy and every CTA). Bark is structural; spot is editorial; paper holds the page.
 
 ### Roles
 
-- **Ink** `oklch(36% 0.105 32)` — cinnamon-brick. **Every word of text on the site.** Body, headlines, links, footer, brand mark. Also the fill of every primary CTA. Contrast on paper: ~9:1. Comfortably AAA.
+- **Ink** `oklch(36% 0.105 358)` — deep wine-magenta, in the same hue family as Cultural Care's brand color (`#DC0079`) but pulled down to L=36% so it functions as readable dark text, not a saturated CTA fill. **Every word of text on the site.** Body, headlines, links, footer, brand mark. Also the fill of every primary CTA. Contrast on paper: ~9:1. Comfortably AAA.
 - **Ink-soft** (74% alpha) — secondary body copy, lede paragraphs, the ink-tinted muted that replaces the old slate gray.
 - **Ink-rule** (20% alpha) — every divider, table border, accordion separator, nav border. The site's only line color.
 - **Paper** `oklch(96.2% 0.022 78)` — aged-cream. Section background, page background, nav background. **No alternating stripes; the page is one paper.**

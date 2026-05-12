@@ -10,10 +10,10 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          ink:          'oklch(36% 0.105 32)',
-          'ink-soft':   'oklch(36% 0.105 32 / 0.74)',
-          'ink-rule':   'oklch(36% 0.105 32 / 0.20)',
-          'ink-faint':  'oklch(36% 0.105 32 / 0.08)',
+          ink:          'oklch(36% 0.105 358)',
+          'ink-soft':   'oklch(36% 0.105 358 / 0.74)',
+          'ink-rule':   'oklch(36% 0.105 358 / 0.20)',
+          'ink-faint':  'oklch(36% 0.105 358 / 0.08)',
           paper:        'oklch(96.2% 0.022 78)',
           'paper-deep': 'oklch(93% 0.028 74)',
           bark:         'oklch(46% 0.030 45)',

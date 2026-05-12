@@ -5,7 +5,7 @@
 @layer base {
   body {
     background: oklch(96.2% 0.022 78);
-    color: oklch(36% 0.105 32);
+    color: oklch(36% 0.105 358);
     font-variation-settings: 'opsz' 14, 'SOFT' 50;
     font-size: 18px;
     line-height: 1.55;
