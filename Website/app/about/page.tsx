@@ -6,11 +6,9 @@ const CULTURAL_CARE_URL =
 
 const KIM = {
   name: 'Kim Arvdalen',
-  bio: `I grew up in southern Sweden and first came to the US in my late teens on a cultural exchange program. Now, I live in Newport Beach with my two sons, ages 12 and 14.
+  bio: `I grew up in southern Sweden and first came to the U.S. as a teenager through a cultural exchange program. Today, I live in Newport Beach with my two teenage sons. Since 2017, I have supported families throughout Orange County with their childcare needs. Having experienced life as an exchange participant myself, I'm able to relate closely to what it's like for au pairs to adjust to a new culture, language, and living situation. As a working mom, I also understand the importance of dependable, trustworthy childcare for busy families.
 
-I've successfully supported families with their childcare needs throughout Orange County since 2017. I relate to the au pair's experience of coming to the US as a young adult for the first time and adjusting to a new culture, language, and living situation. As a working mom, I also understand my families' needs for dependable childcare.
-
-In my nine years as an au pair childcare coordinator, I've seen firsthand how transformative the au pair program can be for host families and au pairs. Most of my host families have grown with the program over the years. As a trusted resource in the au pair community, I know what it takes to create successful relationships and guide you through the process. As a passionate advocate for the program, I'll ensure you have the tools you need for a rewarding hosting experience.`,
+Over my nine years as an au pair childcare coordinator, I've seen firsthand how transformative the au pair program can be for both host families and au pairs. As a trusted resource and passionate advocate within the au pair community, I know what it takes to build successful, lasting relationships and guide families through every step of the process. My goal is to ensure both families and au pairs feel supported, prepared, and set up for a rewarding experience together. In many cases, these relationships extend far beyond the experience itself.`,
 }
 
 export async function generateMetadata(): Promise<Metadata> {
