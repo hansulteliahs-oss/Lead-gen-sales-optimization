@@ -3,7 +3,7 @@ import { headers } from 'next/headers'
 import Image from 'next/image'
 import FadeInSection from './FadeInSection'
 
-const CULTURAL_CARE_URL =
+const APPLY_URL =
   'https://www.culturalcare.com/lcc/karvdalen/?utm_source=ig&utm_medium=social&utm_content=link_in_bio#become-hf-form'
 
 const KIM = {
@@ -12,7 +12,7 @@ const KIM = {
   subheadline:
     'Based in Newport Beach, I help families across the country discover the au pair program — a childcare solution that combines flexibility, cultural connection, and real affordability.',
   bio_teaser:
-    "As an experienced Local Childcare Consultant with Cultural Care Au Pair, I've spent years guiding families through the process of welcoming an au pair into their home. From your first question to your au pair's arrival, I'm here every step of the way — making a complex process feel personal and simple.",
+    "As an experienced Local Childcare Consultant, I've spent years guiding families through the process of welcoming an au pair into their home. From your first question to your au pair's arrival, I'm here every step of the way — making a complex process feel personal and simple.",
 }
 
 const TESTIMONIALS = [
@@ -30,7 +30,7 @@ const TESTIMONIALS = [
 
 export async function generateMetadata(): Promise<Metadata> {
   const title = `${KIM.name} | Au Pair Consultant — Newport Beach, CA · Nationwide service`
-  const description = `${KIM.name} is based in Newport Beach and helps families nationwide find affordable live-in childcare through the Cultural Care Au Pair program.`
+  const description = `${KIM.name} is based in Newport Beach and helps families nationwide find affordable live-in childcare through the au pair program.`
 
   return {
     title,
@@ -57,7 +57,6 @@ export default function LandingPage() {
         jobTitle: 'Local Childcare Consultant',
         description: KIM.bio_teaser,
         url: pageUrl,
-        worksFor: { '@type': 'Organization', name: 'Cultural Care Au Pair' },
         sameAs: [
           'https://www.linkedin.com/in/kim-arvdalen-b894ab13/',
           'https://www.facebook.com/kim.arvdalen/',
@@ -69,7 +68,7 @@ export default function LandingPage() {
         name: 'The Au Pair Childcare Consultant',
         alternateName: `${KIM.name}, Local Childcare Consultant`,
         description:
-          `${KIM.name} is an experienced Local Childcare Consultant with Cultural Care Au Pair, helping families in Newport Beach, Orange County, and throughout Southern California find flexible, affordable live-in childcare. Kim guides families from their first inquiry through their au pair's arrival.`,
+          `${KIM.name} is an experienced Local Childcare Consultant, helping families in Newport Beach, Orange County, and throughout Southern California find flexible, affordable live-in childcare through the au pair program. Kim guides families from their first inquiry through their au pair's arrival.`,
         url: pageUrl,
         telephone: '+17145100002',
         priceRange: '$$',
@@ -132,7 +131,7 @@ export default function LandingPage() {
             <div>
               <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark leading-relaxed">
                 <div>Local Childcare Consultant</div>
-                <div>Newport Beach &middot; Cultural Care Au Pair</div>
+                <div>Newport Beach, CA</div>
               </div>
               <h1 className="opsz-display font-light mt-4 text-[clamp(2.75rem,7vw,6rem)] leading-[0.96] tracking-[-0.025em] text-brand-ink text-balance">
                 {KIM.headline}
@@ -146,12 +145,12 @@ export default function LandingPage() {
               <div className="mt-10 flex flex-wrap items-center gap-6">
                 <a
                   data-testid="hero-cta"
-                  href={CULTURAL_CARE_URL}
+                  href={APPLY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-brand-ink text-brand-paper px-7 py-3.5 rounded font-medium text-base hover:bg-brand-spot-deep transition-colors duration-200 ease-out-quart"
                 >
-                  Start with Cultural Care
+                  Start your application
                 </a>
                 <span className="text-sm text-brand-ink-soft">
                   <span className="text-brand-spot-deep">→ </span>
@@ -227,7 +226,7 @@ export default function LandingPage() {
                   What it actually costs.
                 </h2>
                 <p className="opsz-body text-[1.2rem] leading-[1.65] text-brand-ink-soft max-w-[64ch]">
-                  The weekly stipend paid to your au pair is set by federal law and isn&apos;t negotiable. The program fee is paid once, to Cultural Care. Together, for a family with two or more kids, the math typically beats full-time daycare in this area.
+                  The weekly stipend paid to your au pair is set by federal law and isn&apos;t negotiable. The program fee is paid once. Together, for a family with two or more kids, the math typically beats full-time daycare in this area.
                 </p>
 
                 <div className="mt-7 grid grid-cols-1 md:grid-cols-2 border-t border-b border-brand-ink-rule">
@@ -306,10 +305,10 @@ export default function LandingPage() {
             </h2>
             <div>
               <p className="opsz-body text-lg text-brand-ink-soft max-w-[50ch] mb-7">
-                Sign up through Cultural Care and you&apos;ll be connected with {KIM.name} directly. We&apos;ll figure out together if this is right for your family.
+                Sign up to get started and you&apos;ll be connected with {KIM.name} directly. We&apos;ll figure out together if this is right for your family.
               </p>
               <a
-                href={CULTURAL_CARE_URL}
+                href={APPLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-brand-ink text-brand-paper px-8 py-4 rounded font-medium text-base hover:bg-brand-spot-deep transition-colors duration-200 ease-out-quart"

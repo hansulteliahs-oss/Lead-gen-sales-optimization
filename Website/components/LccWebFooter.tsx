@@ -75,7 +75,7 @@ export default function LccWebFooter({ lccName }: { lccName: string }) {
             &copy; {year} {lccName}. All rights reserved.
           </div>
           <div className="font-mono uppercase tracking-[0.08em]">
-            Cultural Care Au Pair &middot; Local Childcare Consultant
+            Local Childcare Consultant
           </div>
         </div>
       </div>

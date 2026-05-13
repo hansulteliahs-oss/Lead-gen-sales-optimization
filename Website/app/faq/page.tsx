@@ -24,7 +24,7 @@ const FAQS = [
     id: 'faq-2',
     question: 'How long does it take to get an au pair?',
     answer:
-      "The time it takes to get an au pair varies from family to family. As soon as an au pair matches with their future host family, our staff initiates the visa application process. Most au pairs looking for a host family are still living in their home countries and will need at least six to eight weeks to get their visa, complete Cultural Care's training program, and prepare to leave. If you have an immediate need for childcare, there is a smaller number of au pairs already in the U.S., and they can arrive to your home much faster.",
+      "The time it takes to get an au pair varies from family to family. As soon as an au pair matches with their future host family, our staff initiates the visa application process. Most au pairs looking for a host family are still living in their home countries and will need at least six to eight weeks to get their visa, complete the program's training, and prepare to leave. If you have an immediate need for childcare, there is a smaller number of au pairs already in the U.S., and they can arrive to your home much faster.",
   },
   {
     id: 'faq-3',
@@ -177,7 +177,7 @@ export default function FAQPage() {
                           </table>
                         </div>
                         <p className="mt-3 text-xs text-brand-bark">
-                          Source: Cultural Care Au Pair, 2025.
+                          Source: au pair program data, 2025.
                         </p>
                       </>
                     ) : (
