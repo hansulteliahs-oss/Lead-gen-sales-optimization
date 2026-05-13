@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 
-const CULTURAL_CARE_URL =
+const APPLY_URL =
   'https://www.culturalcare.com/lcc/karvdalen/?utm_source=ig&utm_medium=social&utm_content=link_in_bio#become-hf-form'
 
 const KIM = {
@@ -109,7 +109,7 @@ export default function AboutPage() {
               Reach out today and {KIM.name} will walk you through everything — no pressure, no script.
             </p>
             <a
-              href={CULTURAL_CARE_URL}
+              href={APPLY_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-brand-ink text-brand-paper px-8 py-4 rounded font-medium text-base hover:bg-brand-spot-deep transition-colors duration-200 ease-out-quart"
