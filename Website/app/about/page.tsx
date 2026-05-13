@@ -41,7 +41,6 @@ export default function AboutPage() {
         jobTitle: 'Local Childcare Consultant',
         description: KIM.bio,
         url: rootUrl,
-        worksFor: { '@type': 'Organization', name: 'Cultural Care Au Pair' },
       },
       {
         '@type': 'BreadcrumbList',
@@ -70,7 +69,7 @@ export default function AboutPage() {
                 Hi, I&apos;m {KIM.name.split(' ')[0]}.
               </h1>
               <p className="opsz-small mt-4 text-sm text-brand-bark uppercase tracking-[0.08em] font-mono">
-                Local Childcare Consultant &middot; Cultural Care Au Pair
+                Local Childcare Consultant
               </p>
               <p className="opsz-small mt-1 text-sm text-brand-bark">
                 Based in Newport Beach, CA &middot; Serving families nationwide
