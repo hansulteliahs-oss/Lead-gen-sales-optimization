@@ -10,6 +10,9 @@ const NAV_LINKS = [
 
 const PHONE_DISPLAY = '(714) 510-0002'
 const PHONE_TEL = '+17145100002'
+const EMAIL = 'kim@aupaircc.com'
+const INSTAGRAM_URL = 'https://www.instagram.com/theaupairchildcareconsultant/'
+const INSTAGRAM_HANDLE = 'theaupairchildcareconsultant'
 
 export default function LccWebFooter({ lccName }: { lccName: string }) {
   const year = new Date().getFullYear()
@@ -27,18 +30,37 @@ export default function LccWebFooter({ lccName }: { lccName: string }) {
           <div className="mt-2 text-brand-ink font-medium text-lg tracking-tight">
             The Au Pair Childcare Consultant
           </div>
-          <div className="mt-0.5 text-sm text-brand-ink-soft">
-            with {lccName} &middot; Newport Beach, CA
+          <div className="mt-5 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark leading-relaxed">
+            Contact
           </div>
-          <a
-            href={`tel:${PHONE_TEL}`}
-            className="mt-3 inline-block text-brand-ink hover:text-brand-spot-deep transition-colors duration-200 ease-out-quart text-base"
-          >
-            {PHONE_DISPLAY}
-          </a>
-          <div className="mt-1 text-sm text-brand-ink-soft">
-            Open daily 9 AM&ndash;5 PM
-          </div>
+          <ul className="mt-3 space-y-1.5 text-sm">
+            <li>
+              <a
+                href={`mailto:${EMAIL}`}
+                className="text-brand-ink-soft hover:text-brand-ink transition-colors duration-200 ease-out-quart"
+              >
+                {EMAIL}
+              </a>
+            </li>
+            <li>
+              <a
+                href={`tel:${PHONE_TEL}`}
+                className="text-brand-ink-soft hover:text-brand-ink transition-colors duration-200 ease-out-quart"
+              >
+                {PHONE_DISPLAY}
+              </a>
+            </li>
+            <li>
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand-ink-soft hover:text-brand-ink transition-colors duration-200 ease-out-quart"
+              >
+                {INSTAGRAM_HANDLE}
+              </a>
+            </li>
+          </ul>
         </div>
 
         <div>
