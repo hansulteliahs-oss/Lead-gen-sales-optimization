@@ -33,29 +33,32 @@ export default function LccWebFooter({ lccName }: { lccName: string }) {
           <div className="mt-5 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark leading-relaxed">
             Contact
           </div>
-          <ul className="mt-3 space-y-1.5 text-sm">
+          <ul className="mt-3 space-y-1.5 text-sm text-brand-ink-soft">
             <li>
+              <span className="text-brand-bark">Email:</span>{' '}
               <a
                 href={`mailto:${EMAIL}`}
-                className="text-brand-ink-soft hover:text-brand-ink transition-colors duration-200 ease-out-quart"
+                className="hover:text-brand-ink transition-colors duration-200 ease-out-quart"
               >
                 {EMAIL}
               </a>
             </li>
             <li>
+              <span className="text-brand-bark">Phone:</span>{' '}
               <a
                 href={`tel:${PHONE_TEL}`}
-                className="text-brand-ink-soft hover:text-brand-ink transition-colors duration-200 ease-out-quart"
+                className="hover:text-brand-ink transition-colors duration-200 ease-out-quart"
               >
                 {PHONE_DISPLAY}
               </a>
             </li>
             <li>
+              <span className="text-brand-bark">Instagram:</span>{' '}
               <a
                 href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-brand-ink-soft hover:text-brand-ink transition-colors duration-200 ease-out-quart"
+                className="hover:text-brand-ink transition-colors duration-200 ease-out-quart"
               >
                 {INSTAGRAM_HANDLE}
               </a>
