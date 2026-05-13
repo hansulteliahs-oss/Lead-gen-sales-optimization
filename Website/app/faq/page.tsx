@@ -119,9 +119,6 @@ export default function FAQPage() {
               <h1 className="opsz-headline font-light text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.0] tracking-[-0.025em] text-brand-ink text-balance">
                 Frequently asked questions.
               </h1>
-              <p className="opsz-body mt-6 text-lg text-brand-ink-soft max-w-[60ch]">
-                Answers from {KIM.name}, your Local Childcare Consultant.
-              </p>
             </div>
           </div>
         </div>
@@ -201,9 +198,6 @@ export default function FAQPage() {
             Still have questions?
           </h2>
           <div>
-            <p className="opsz-body text-lg text-brand-ink-soft max-w-[50ch] mb-7">
-              Reach out and {KIM.name} will be happy to help.
-            </p>
             <a
               href={CULTURAL_CARE_URL}
               target="_blank"
