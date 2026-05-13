@@ -10,7 +10,7 @@ const KIM = {
   name: 'Kim Arvdalen',
   headline: 'Your Guide to Finding the Perfect Au Pair',
   subheadline:
-    'Based in Newport Beach, I help families across the country discover the au pair program — a childcare solution that combines flexibility, cultural connection, and real affordability.',
+    'Based in Newport Beach, I help families across the country discover the au pair program — a childcare solution that combines flexibility, cultural connection, and affordability.',
   bio_teaser:
     "As an experienced Local Childcare Consultant, I've spent years guiding families through the process of welcoming an au pair into their home. From your first question to your au pair's arrival, I'm here every step of the way — making a complex process feel personal and simple.",
 }
@@ -152,10 +152,6 @@ export default function LandingPage() {
                 >
                   Start your application
                 </a>
-                <span className="text-sm text-brand-ink-soft">
-                  <span className="text-brand-spot-deep">→ </span>
-                  Or read on for what an au pair actually costs.
-                </span>
               </div>
             </div>
             <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark leading-relaxed text-right hidden md:block">
