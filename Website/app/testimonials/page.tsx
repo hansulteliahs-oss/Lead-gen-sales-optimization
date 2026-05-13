@@ -21,13 +21,6 @@ const TESTIMONIALS = [
     quote:
       'I was overwhelmed before I called Kim. Within an hour she had answered every question I had and made the whole thing feel totally doable. Highly recommend!',
   },
-  {
-    id: 't-2',
-    family_name: 'The Nguyen Family',
-    location: 'Irvine',
-    quote:
-      "Having an au pair has opened our children's eyes to a whole new culture and language. Kim matched us with someone who fits our family perfectly, and the cultural exchange has been a gift we didn't expect.",
-  },
 ]
 
 export async function generateMetadata(): Promise<Metadata> {
