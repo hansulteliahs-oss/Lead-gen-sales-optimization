@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 
-const CULTURAL_CARE_URL =
+const APPLY_URL =
   'https://www.culturalcare.com/lcc/karvdalen/?utm_source=ig&utm_medium=social&utm_content=link_in_bio#become-hf-form'
 
 const KIM = { name: 'Kim Arvdalen' }
@@ -110,10 +110,10 @@ export default function TestimonialsPage() {
           </h2>
           <div>
             <p className="opsz-body text-lg text-brand-ink-soft max-w-[50ch] mb-7">
-              Sign up through Cultural Care and {KIM.name} will be in touch personally to walk you through it.
+              Sign up to get started and {KIM.name} will be in touch personally to walk you through it.
             </p>
             <a
-              href={CULTURAL_CARE_URL}
+              href={APPLY_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-brand-ink text-brand-paper px-8 py-4 rounded font-medium text-base hover:bg-brand-spot-deep transition-colors duration-200 ease-out-quart"

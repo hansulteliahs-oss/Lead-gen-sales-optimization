@@ -3,7 +3,7 @@ import { headers } from 'next/headers'
 import Image from 'next/image'
 import { Disclosure } from '@/components/ui/disclosure'
 
-const CULTURAL_CARE_URL =
+const APPLY_URL =
   'https://www.culturalcare.com/lcc/karvdalen/?utm_source=ig&utm_medium=social&utm_content=link_in_bio#become-hf-form'
 
 const KIM = { name: 'Kim Arvdalen' }
@@ -26,7 +26,7 @@ const MYTHS = [
   {
     myth: 'It is hard to find a good match.',
     reality:
-      'Cultural Care Au Pair uses a thorough screening and matching process. You review profiles and interview candidates before committing — you are always in control of who joins your family.',
+      'The au pair program uses a thorough screening and matching process. You review profiles and interview candidates before committing — you are always in control of who joins your family.',
   },
   {
     myth: 'Having a live-in caregiver means no privacy.',
@@ -36,7 +36,7 @@ const MYTHS = [
   {
     myth: 'Au pairs can only care for older children.',
     reality:
-      'Au pairs can care for children of all ages, including infants, as long as the au pair meets the infant care requirements set by Cultural Care (including specific experience hours with children under two).',
+      "Au pairs can care for children of all ages, including infants, as long as the au pair meets the program's infant care requirements (including specific experience hours with children under two).",
   },
 ]
 
@@ -121,7 +121,7 @@ export default function AuPairsPage() {
                   Au pairs are young adults (ages 18–26) from abroad who live with a host family, providing up to 45 hours per week of childcare as part of a federally regulated cultural-exchange program. They become a true part of your family while sharing their language and culture with your children.
                 </p>
                 <p className="opsz-body text-[1.2rem] leading-[1.7] text-brand-ink-soft mt-5">
-                  Cultural Care Au Pair matches families with candidates, manages the J-1 visa process, and provides year-round support. As your Local Childcare Consultant, I&apos;m your local point of contact through matching and the full year together.
+                  The au pair program matches families with candidates, manages the J-1 visa process, and provides year-round support. As your Local Childcare Consultant, I&apos;m your local point of contact through matching and the full year together.
                 </p>
               </div>
               <figure className="md:pt-3">
@@ -288,7 +288,7 @@ export default function AuPairsPage() {
               {KIM.name} is happy to walk you through everything — no pressure.
             </p>
             <a
-              href={CULTURAL_CARE_URL}
+              href={APPLY_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-brand-ink text-brand-paper px-8 py-4 rounded font-medium text-base hover:bg-brand-spot-deep transition-colors duration-200 ease-out-quart"

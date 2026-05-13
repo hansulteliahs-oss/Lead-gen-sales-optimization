@@ -34,7 +34,7 @@ test.describe('Landing Page', () => {
     await expect(quote).toBeVisible()
   })
 
-  test('hero "Get Started" CTA links to Cultural Care form', async ({ page }) => {
+  test('hero "Get Started" CTA links to application form', async ({ page }) => {
     const cta = page.locator('[data-testid="hero-cta"]')
     await expect(cta).toBeVisible()
     const href = await cta.getAttribute('href')

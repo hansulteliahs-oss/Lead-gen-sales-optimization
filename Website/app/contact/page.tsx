@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 
-const CULTURAL_CARE_URL =
+const APPLY_URL =
   'https://www.culturalcare.com/lcc/karvdalen/?utm_source=ig&utm_medium=social&utm_content=link_in_bio#become-hf-form'
 
 const KIM = { name: 'Kim Arvdalen' }
@@ -13,7 +13,7 @@ const SERVICE_AREA = 'Based in Newport Beach, CA · Serving families nationwide'
 
 export async function generateMetadata(): Promise<Metadata> {
   const title = `Contact ${KIM.name} — Au Pair Consultant in Newport Beach, CA · Nationwide`
-  const description = `Reach ${KIM.name}, your Local Childcare Consultant for the Cultural Care Au Pair program. Based in Newport Beach, serving families nationwide — call ${PHONE_DISPLAY}.`
+  const description = `Reach ${KIM.name}, your Local Childcare Consultant for the au pair program. Based in Newport Beach, serving families nationwide — call ${PHONE_DISPLAY}.`
   return {
     title,
     description,
@@ -57,7 +57,7 @@ export default function ContactPage() {
                 Get in touch with {KIM.name.split(' ')[0]}.
               </h1>
               <p className="opsz-body mt-9 max-w-[56ch] text-xl leading-relaxed text-brand-ink-soft">
-                Questions about the Cultural Care Au Pair program, what hosting an au pair really looks like, or whether it&rsquo;s the right fit for your family? You can call directly or sign up through Cultural Care and {KIM.name.split(' ')[0]} will reach out personally.
+                Questions about the au pair program, what hosting an au pair really looks like, or whether it&rsquo;s the right fit for your family? You can call directly or sign up online and {KIM.name.split(' ')[0]} will reach out personally.
               </p>
             </div>
           </div>
@@ -117,15 +117,15 @@ export default function ContactPage() {
           </h2>
           <div>
             <p className="opsz-body text-lg text-brand-ink-soft max-w-[50ch] mb-7">
-              Sign up through Cultural Care to start your host family application. {KIM.name} will be in touch personally to walk you through every step.
+              Sign up online to start your host family application. {KIM.name} will be in touch personally to walk you through every step.
             </p>
             <a
-              href={CULTURAL_CARE_URL}
+              href={APPLY_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-brand-ink text-brand-paper px-8 py-4 rounded font-medium text-base hover:bg-brand-spot-deep transition-colors duration-200 ease-out-quart"
             >
-              Start with Cultural Care
+              Start your application
             </a>
             <div className="mt-5 text-sm text-brand-ink-soft">
               Or call <a href={`tel:${PHONE_TEL}`} className="text-brand-ink hover:text-brand-spot-deep transition-colors">{PHONE_DISPLAY}</a>
