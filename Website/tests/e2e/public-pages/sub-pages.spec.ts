@@ -44,33 +44,29 @@ test.describe('About page (/kim-johnson/about)', () => {
 
 // ── PAGE-04: /au-pairs ───────────────────────────────────────────────────────
 
-test.describe('Au Pairs page (/kim-johnson/au-pairs)', () => {
+test.describe('Au Pairs page (/au-pairs)', () => {
   test('returns 200', async ({ page }) => {
     const response = await page.goto(`/au-pairs`)
     expect(response?.status()).toBe(200)
   })
 
-  // RED: stub has no details elements — fails until Plan 05 adds accordion
-  test('renders 4 accordion items (details elements)', async ({ page }) => {
+  test('renders 6 au pair profile cards', async ({ page }) => {
     await page.goto(`/au-pairs`)
-    // Accordion items implemented as <details> elements
-    await expect(page.locator('details')).toHaveCount(4)
+    await expect(page.getByRole('link', { name: /Click to view profile/i })).toHaveCount(6)
   })
 
-  // RED: stub has no details elements with these labels
-  test('accordion items have correct headings', async ({ page }) => {
+  test('hero heading is present', async ({ page }) => {
     await page.goto(`/au-pairs`)
-    await expect(page.getByText('How It Works')).toBeVisible()
-    await expect(page.getByText('Program Costs')).toBeVisible()
-    await expect(page.getByText('Au Pair vs. Nanny')).toBeVisible()
-    await expect(page.getByText('Common Questions')).toBeVisible()
+    await expect(
+      page.getByRole('heading', { level: 1, name: /Meet au pairs ready to join your family/i }),
+    ).toBeVisible()
   })
 
-  // RED: stub has no table element — fails until Plan 05 adds comparison table inside accordion
-  test('contains a comparison table (au pair vs nanny)', async ({ page }) => {
+  test('profile "Click to view profile" links open the apply URL', async ({ page }) => {
     await page.goto(`/au-pairs`)
-    const table = page.locator('table')
-    await expect(table).toBeVisible()
+    const firstProfileLink = page.getByRole('link', { name: /Click to view profile/i }).first()
+    await expect(firstProfileLink).toHaveAttribute('href', /culturalcare\.com\/lcc\/karvdalen/)
+    await expect(firstProfileLink).toHaveAttribute('target', '_blank')
   })
 })
 

@@ -1,48 +1,86 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import Image from 'next/image'
-import { Disclosure } from '@/components/ui/disclosure'
 
 const APPLY_URL =
   'https://www.culturalcare.com/lcc/karvdalen/?utm_source=ig&utm_medium=social&utm_content=link_in_bio#become-hf-form'
 
 const KIM = { name: 'Kim Arvdalen' }
 
-const COMPARISON_ROWS: Array<[string, string, string]> = [
-  ['Cost per week', '~$195.75 (federally set)', '$600–$1,500+ (market rate)'],
-  ['Lives with family', 'Yes — live-in arrangement', 'Usually no'],
-  ['Hours per week', 'Up to 45 hrs (regulated)', 'Varies by contract'],
-  ['Cultural exchange', 'Yes — core program element', 'Not typically'],
-  ['Agency support', 'Full matching, visa, LCC', 'Agency optional, extra cost'],
-  ['Program duration', '12 months (extendable)', 'Open-ended'],
-]
+type Profile = {
+  name: string
+  age: number
+  country: string
+  photo: string
+  highlights: [string, string]
+}
 
-const MYTHS = [
+const PROFILES: Profile[] = [
   {
-    myth: 'Au pairs are only for wealthy families.',
-    reality:
-      'The au pair program is often more affordable than full-time daycare or a private nanny, especially for families with two or more children. The federally regulated stipend keeps costs predictable.',
+    name: 'Sofy',
+    age: 21,
+    country: 'Italy',
+    photo: '/au-pairs/sofy.png',
+    highlights: [
+      '2,000+ hours childcare experience',
+      'Competitive alpine skier',
+    ],
   },
   {
-    myth: 'It is hard to find a good match.',
-    reality:
-      'The au pair program uses a thorough screening and matching process. You review profiles and interview candidates before committing — you are always in control of who joins your family.',
+    name: 'Amber',
+    age: 22,
+    country: 'South Africa',
+    photo: '/au-pairs/amber.png',
+    highlights: [
+      'Special-needs experience',
+      'Cares for younger brothers and cousins',
+    ],
   },
   {
-    myth: 'Having a live-in caregiver means no privacy.',
-    reality:
-      'Most host families find the arrangement works smoothly with clear expectations set upfront. Your LCC helps you navigate boundaries and house rules from day one.',
+    name: 'Villemo',
+    age: 19,
+    country: 'South Africa',
+    photo: '/au-pairs/villemo.png',
+    highlights: [
+      '2,000+ hours childcare experience',
+      'Advanced English level',
+    ],
   },
   {
-    myth: 'Au pairs can only care for older children.',
-    reality:
-      "Au pairs can care for children of all ages, including infants, as long as the au pair meets the program's infant care requirements (including specific experience hours with children under two).",
+    name: 'Franziska',
+    age: 24,
+    country: 'Germany',
+    photo: '/au-pairs/franziska.png',
+    highlights: [
+      'Volunteer at a daycare for toddlers',
+      'Licensed to drive since 2019',
+    ],
+  },
+  {
+    name: 'Braian',
+    age: 22,
+    country: 'Argentina',
+    photo: '/au-pairs/braian.png',
+    highlights: [
+      'Advanced English level',
+      'Loves singing, dancing & theater',
+    ],
+  },
+  {
+    name: 'Karla',
+    age: 21,
+    country: 'Mexico',
+    photo: '/au-pairs/karla.png',
+    highlights: [
+      'Worked as a summer nanny',
+      'Studies architecture',
+    ],
   },
 ]
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = `Au Pair Program Guide | ${KIM.name} — Newport Beach, CA · Nationwide service`
-  const description = `Everything families nationwide need to know about the au pair program — costs, matching, visa, and how it compares to a nanny — from ${KIM.name}, a Newport Beach–based Local Childcare Consultant.`
+  const title = `Meet Au Pairs Open to Match | ${KIM.name} — Newport Beach, CA · Nationwide service`
+  const description = `Browse au pair profiles from the Cultural Care program — childcare experience, languages, and interests at a glance. ${KIM.name} helps families nationwide find the right match.`
   return {
     title,
     description,
@@ -61,14 +99,6 @@ export default function AuPairsPage() {
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
-      {
-        '@type': 'FAQPage',
-        mainEntity: MYTHS.map((m) => ({
-          '@type': 'Question',
-          name: m.myth,
-          acceptedAnswer: { '@type': 'Answer', text: m.reality },
-        })),
-      },
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
@@ -90,13 +120,13 @@ export default function AuPairsPage() {
       <section className="pt-20 md:pt-24 pb-16">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6 md:gap-16">
-            <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-brand-bark pt-3.5">§ Au Pairs</div>
+            <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-brand-bark pt-3.5">§ Find an au pair</div>
             <div>
               <h1 className="opsz-headline font-light text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.0] tracking-[-0.025em] text-brand-ink text-balance">
-                Understanding the au pair program.
+                Meet au pairs ready to join your family.
               </h1>
               <p className="opsz-body mt-7 text-[1.2rem] leading-[1.65] text-brand-ink-soft max-w-[64ch]">
-                Flexible, affordable live-in childcare with a cultural-exchange dimension. Whether you have one child or four, an au pair can provide the consistent, personalized care your family needs.
+                Real candidates from the Cultural Care program — screened, trained, and looking for a host family in the U.S. Take a look at who&apos;s open to match.
               </p>
             </div>
           </div>
@@ -107,171 +137,61 @@ export default function AuPairsPage() {
         <div className="border-t border-brand-ink-rule" />
       </div>
 
-      {/* HOW IT WORKS */}
+      {/* AU PAIR GRID */}
       <section className="py-14 md:py-16">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6 md:gap-16">
-            <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-brand-bark pt-3.5">§ How it works</div>
-            <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8 md:gap-12 items-start">
-              <div>
-                <h2 className="opsz-title font-normal text-[clamp(2rem,4.5vw,3rem)] leading-[1.05] tracking-[-0.02em] text-brand-ink mb-7 text-balance">
-                  What an au pair actually is.
-                </h2>
-                <p className="opsz-body text-[1.2rem] leading-[1.7] text-brand-ink-soft">
-                  Au pairs are young adults (ages 18–26) from abroad who live with a host family, providing up to 45 hours per week of childcare as part of a federally regulated cultural-exchange program. They become a true part of your family while sharing their language and culture with your children.
-                </p>
-                <p className="opsz-body text-[1.2rem] leading-[1.7] text-brand-ink-soft mt-5">
-                  The au pair program matches families with candidates, manages the J-1 visa process, and provides year-round support. As your Local Childcare Consultant, I&apos;m your local point of contact through matching and the full year together.
-                </p>
-              </div>
-              <figure className="md:pt-3">
-                <Image
-                  src="/photos/kitchen-play.jpg"
-                  alt="An au pair sits on the kitchen floor playing a game with a young boy."
-                  width={640}
-                  height={427}
-                  sizes="(min-width: 768px) 360px, 100vw"
-                  className="w-full h-auto rounded-sm"
-                />
-                <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
-                  Daily life &middot; Morning at home, mid-week
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="border-t border-brand-ink-rule" />
-      </div>
-
-      {/* COSTS */}
-      <section className="py-14 md:py-16">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6 md:gap-16">
-            <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-brand-bark pt-3.5">§ Costs</div>
+            <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-brand-bark pt-3.5">§ Open to match</div>
             <div>
-              <h2 className="opsz-title font-normal text-[clamp(2rem,4.5vw,3rem)] leading-[1.05] tracking-[-0.02em] text-brand-ink mb-7 text-balance">
-                The numbers, plainly.
+              <h2 className="opsz-title font-normal text-[clamp(2rem,4.5vw,3rem)] leading-[1.05] tracking-[-0.02em] text-brand-ink mb-4 text-balance">
+                Browse profiles.
               </h2>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 border-t border-b border-brand-ink-rule">
-                <div className="py-5 pr-6 md:pr-7 md:border-r border-b md:border-b-0 border-brand-ink-rule">
-                  <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
-                    Weekly stipend
-                  </div>
-                  <div className="font-mono font-semibold text-2xl md:text-[1.75rem] text-brand-ink mt-2 tracking-tight">
-                    $195.75
-                  </div>
-                  <div className="opsz-small text-sm text-brand-ink-soft mt-1.5">
-                    Federally set. Paid directly to your au pair.
-                  </div>
-                </div>
-                <div className="py-5 md:pl-7">
-                  <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
-                    Annual program total
-                  </div>
-                  <div className="font-mono font-semibold text-2xl md:text-[1.75rem] text-brand-ink mt-2 tracking-tight">
-                    $20–30k
-                  </div>
-                  <div className="opsz-small text-sm text-brand-ink-soft mt-1.5">
-                    All-in. Often less than full-time daycare in major cities.
-                  </div>
-                </div>
-              </div>
-
-              <p className="opsz-body text-[1.2rem] leading-[1.7] text-brand-ink-soft max-w-[64ch] mt-7">
-                The program fee covers candidate matching, J-1 visa support, insurance, and twelve months of full coverage. The stipend is set by federal law and ensures fair compensation for every au pair in the program.
+              <p className="opsz-body text-[1.2rem] leading-[1.7] text-brand-ink-soft max-w-[64ch] mb-10">
+                These au pairs are looking for a host family right now. Each one has been screened, trained, and is ready to start. Click through to begin your match.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="border-t border-brand-ink-rule" />
-      </div>
-
-      {/* AU PAIR vs NANNY */}
-      <section className="py-14 md:py-16">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6 md:gap-16">
-            <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-brand-bark pt-3.5">§ Au pair vs. nanny</div>
-            <div>
-              <h2 className="opsz-title font-normal text-[clamp(2rem,4.5vw,3rem)] leading-[1.05] tracking-[-0.02em] text-brand-ink mb-7 text-balance">
-                Side by side.
-              </h2>
-
-              <div className="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0">
-                <table className="w-full text-sm border-collapse min-w-[34rem]">
-                  <thead>
-                    <tr className="border-y border-brand-ink-rule">
-                      <th className="text-left py-3 pr-4 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark font-medium">Feature</th>
-                      <th className="text-left py-3 pr-4 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark font-medium">Au pair</th>
-                      <th className="text-left py-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark font-medium">Nanny</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {COMPARISON_ROWS.map(([feature, aupair, nanny]) => (
-                      <tr key={feature} className="border-b border-brand-ink-rule">
-                        <td className="py-4 pr-4 font-medium text-brand-ink align-top">{feature}</td>
-                        <td className="py-4 pr-4 text-brand-ink-soft align-top">{aupair}</td>
-                        <td className="py-4 text-brand-ink-soft align-top">{nanny}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="border-t border-brand-ink-rule" />
-      </div>
-
-      {/* MYTHS */}
-      <section className="py-14 md:py-16">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6 md:gap-16">
-            <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-brand-bark pt-3.5">§ Common questions</div>
-            <div>
-              <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-8 md:gap-12 items-start">
-                <div>
-                  <h2 className="opsz-title font-normal text-[clamp(2rem,4.5vw,3rem)] leading-[1.05] tracking-[-0.02em] text-brand-ink mb-4 text-balance">
-                    Things people get wrong.
-                  </h2>
-                  <p className="opsz-body text-[1.2rem] leading-[1.7] text-brand-ink-soft">
-                    The au pair program can sound complicated from the outside. Most of what families worry about going in turns out to be a myth — here are the ones that come up most.
-                  </p>
-                </div>
-                <figure className="md:pt-3">
-                  <Image
-                    src="/photos/reading-park.jpg"
-                    alt="An au pair reads a picture book to a toddler on a park bench."
-                    width={640}
-                    height={427}
-                    sizes="(min-width: 768px) 360px, 100vw"
-                    className="w-full h-auto rounded-sm"
-                  />
-                  <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
-                    Beyond the math &middot; A quiet afternoon in the park
-                  </figcaption>
-                </figure>
-              </div>
-              <div className="mt-10">
-                {MYTHS.map((m) => (
-                  <Disclosure
-                    key={m.myth}
-                    question={m.myth}
-                    triggerClassName="text-lg"
-                  >
-                    {m.reality}
-                  </Disclosure>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12">
+                {PROFILES.map((p) => (
+                  <li key={p.name} className="flex flex-col">
+                    <div className="relative aspect-square w-full overflow-hidden rounded-sm bg-brand-ink-rule">
+                      <Image
+                        src={p.photo}
+                        alt={`${p.name}, age ${p.age}, from ${p.country}`}
+                        fill
+                        sizes="(min-width: 768px) 240px, (min-width: 640px) 45vw, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="mt-5">
+                      <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
+                        {p.country}
+                      </div>
+                      <div className="opsz-title font-normal text-2xl text-brand-ink mt-1.5 tracking-tight">
+                        {p.name}, {p.age}
+                      </div>
+                      <ul className="mt-4 space-y-1.5">
+                        {p.highlights.map((h) => (
+                          <li
+                            key={h}
+                            className="opsz-body text-[0.95rem] leading-[1.55] text-brand-ink-soft pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-brand-bark"
+                          >
+                            {h}
+                          </li>
+                        ))}
+                      </ul>
+                      <a
+                        href={APPLY_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 mt-6 font-mono text-[11px] uppercase tracking-[0.1em] text-brand-ink border-b border-brand-ink pb-1 hover:text-brand-spot-deep hover:border-brand-spot-deep transition-colors duration-200 ease-out-quart"
+                      >
+                        Click to view profile
+                        <span aria-hidden="true">→</span>
+                      </a>
+                    </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </div>
         </div>
@@ -281,11 +201,11 @@ export default function AuPairsPage() {
       <section className="border-t border-brand-ink-rule py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-end">
           <h2 className="opsz-headline font-light text-[clamp(2.25rem,5vw,3.75rem)] leading-[1.0] tracking-[-0.025em] text-brand-ink text-balance">
-            Still have questions?
+            Ready to start your match?
           </h2>
           <div>
             <p className="opsz-body text-lg text-brand-ink-soft max-w-[50ch] mb-7">
-              {KIM.name} is happy to walk you through everything — no pressure.
+              {KIM.name} will walk you through the next steps — no pressure, just a real conversation about your family.
             </p>
             <a
               href={APPLY_URL}

@@ -127,7 +127,7 @@ export default function LandingPage() {
       {/* HERO */}
       <section data-testid="hero-section" className="pt-20 md:pt-28 pb-20 md:pb-24">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-[7fr_3fr] gap-10 md:gap-16 items-end">
+          <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-10 md:gap-16 items-center">
             <div>
               <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark leading-relaxed">
                 <div>Local Childcare Consultant</div>
@@ -154,11 +154,20 @@ export default function LandingPage() {
                 </a>
               </div>
             </div>
-            <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark leading-relaxed text-right hidden md:block">
-              <div>Issue 01</div>
-              <div>Newport Beach, CA</div>
-              <div>Available now</div>
-            </div>
+            <figure className="order-first md:order-none max-w-xs md:max-w-none">
+              <Image
+                src="/photos/kim-portrait.png"
+                alt={`${KIM.name}, Local Childcare Consultant, standing outdoors in Newport Beach.`}
+                width={512}
+                height={640}
+                sizes="(min-width: 768px) 360px, 320px"
+                priority
+                className="w-full h-auto rounded-sm"
+              />
+              <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark md:text-right">
+                {KIM.name} &middot; Newport Beach, CA
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
