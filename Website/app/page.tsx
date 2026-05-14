@@ -300,16 +300,13 @@ export default function LandingPage() {
               Talk to a real person, not a form.
             </h2>
             <div>
-              <p className="opsz-body text-lg text-brand-ink-soft max-w-[50ch] mb-7">
-                Sign up to get started and you&apos;ll be connected with {KIM.name} directly. We&apos;ll figure out together if this is right for your family.
-              </p>
               <a
                 href={APPLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-brand-ink text-brand-paper px-8 py-4 rounded font-medium text-base hover:bg-brand-spot-deep transition-colors duration-200 ease-out-quart"
               >
-                Sign up with Kim
+                Let&apos;s Connect
               </a>
             </div>
           </div>

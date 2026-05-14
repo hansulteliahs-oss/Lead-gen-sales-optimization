@@ -102,9 +102,6 @@ export default function TestimonialsPage() {
             Ready to start your story?
           </h2>
           <div>
-            <p className="opsz-body text-lg text-brand-ink-soft max-w-[50ch] mb-7">
-              Sign up to get started and {KIM.name} will be in touch personally to walk you through it.
-            </p>
             <a
               href={APPLY_URL}
               target="_blank"
