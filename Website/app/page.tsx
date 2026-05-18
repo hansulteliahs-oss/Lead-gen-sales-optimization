@@ -15,6 +15,29 @@ const KIM = {
     "As an experienced Local Childcare Consultant, I've spent years guiding families through the process of welcoming an au pair into their home. From your first question to your au pair's arrival, I'm here every step of the way — making a complex process feel personal and simple.",
 }
 
+const AU_PAIR_PREVIEW = [
+  {
+    name: 'Sofy',
+    age: 21,
+    country: 'Italy',
+    photo: '/au-pairs/sofy.png',
+    highlights: [
+      '2,000+ hours childcare experience',
+      'Competitive alpine skier',
+    ],
+  },
+  {
+    name: 'Amber',
+    age: 22,
+    country: 'South Africa',
+    photo: '/au-pairs/amber.png',
+    highlights: [
+      'Special-needs experience',
+      'Cares for younger brothers and cousins',
+    ],
+  },
+]
+
 const TESTIMONIALS = [
   {
     family_name: 'The Martinez Family',
@@ -220,7 +243,7 @@ export default function LandingPage() {
         <div className="border-t border-brand-ink-rule" />
       </div>
 
-      {/* AU PAIRS — cost-forward editorial block */}
+      {/* AU PAIRS — profile preview block */}
       <FadeInSection>
         <section data-testid="au-pairs-teaser" className="py-14 md:py-16">
           <div className="max-w-6xl mx-auto px-6">
@@ -228,42 +251,60 @@ export default function LandingPage() {
               <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-brand-bark pt-3.5">§ Au Pairs</div>
               <div>
                 <h2 className="opsz-title font-normal text-[clamp(2rem,4.5vw,3.25rem)] leading-[1.05] tracking-[-0.02em] text-brand-ink mb-7 text-balance">
-                  What it actually costs.
+                  Meet au pairs open to match.
                 </h2>
                 <p className="opsz-body text-[1.2rem] leading-[1.65] text-brand-ink-soft max-w-[64ch]">
-                  The weekly stipend paid to your au pair is set by federal law and isn&apos;t negotiable. The program fee is paid once. Together, for a family with two or more kids, the math typically beats full-time daycare in this area.
+                  Real candidates from the Cultural Care program — screened, trained, and ready to join a family in the U.S. Here&apos;s a look at two.
                 </p>
 
-                <div className="mt-7 grid grid-cols-1 md:grid-cols-2 border-t border-b border-brand-ink-rule">
-                  <div className="py-5 pr-6 md:pr-7 md:border-r border-b md:border-b-0 border-brand-ink-rule">
-                    <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
-                      Weekly stipend
-                    </div>
-                    <div className="font-mono font-semibold text-2xl md:text-[1.75rem] text-brand-ink mt-2 tracking-tight">
-                      $195.75
-                    </div>
-                    <div className="opsz-small text-sm text-brand-ink-soft mt-1.5">
-                      Federally set. Paid directly to your au pair.
-                    </div>
-                  </div>
-                  <div className="py-5 md:pl-7">
-                    <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
-                      Annual program total
-                    </div>
-                    <div className="font-mono font-semibold text-2xl md:text-[1.75rem] text-brand-ink mt-2 tracking-tight">
-                      $20–30k
-                    </div>
-                    <div className="opsz-small text-sm text-brand-ink-soft mt-1.5">
-                      All-in. Often less than OC daycare for two kids.
-                    </div>
-                  </div>
-                </div>
+                <ul className="mt-9 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12">
+                  {AU_PAIR_PREVIEW.map((p) => (
+                    <li key={p.name} className="flex flex-col">
+                      <div className="relative aspect-square w-full overflow-hidden rounded-sm bg-brand-ink-rule">
+                        <Image
+                          src={p.photo}
+                          alt={`${p.name}, age ${p.age}, from ${p.country}`}
+                          fill
+                          sizes="(min-width: 768px) 240px, (min-width: 640px) 45vw, 100vw"
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="mt-5">
+                        <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
+                          {p.country}
+                        </div>
+                        <div className="opsz-title font-normal text-2xl text-brand-ink mt-1.5 tracking-tight">
+                          {p.name}, {p.age}
+                        </div>
+                        <ul className="mt-4 space-y-1.5">
+                          {p.highlights.map((h) => (
+                            <li
+                              key={h}
+                              className="opsz-body text-[0.95rem] leading-[1.55] text-brand-ink-soft pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-brand-bark"
+                            >
+                              {h}
+                            </li>
+                          ))}
+                        </ul>
+                        <a
+                          href={APPLY_URL}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 mt-6 font-mono text-[11px] uppercase tracking-[0.1em] text-brand-ink border-b border-brand-ink pb-1 hover:text-brand-spot-deep hover:border-brand-spot-deep transition-colors duration-200 ease-out-quart"
+                        >
+                          Click to view profile
+                          <span aria-hidden="true">→</span>
+                        </a>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
 
                 <a
                   href="/au-pairs"
-                  className="inline-block mt-7 font-medium text-brand-spot-deep border-b border-brand-spot-deep pb-0.5 hover:text-brand-ink hover:border-brand-ink transition-colors duration-200 ease-out-quart"
+                  className="inline-block mt-10 font-medium text-brand-spot-deep border-b border-brand-spot-deep pb-0.5 hover:text-brand-ink hover:border-brand-ink transition-colors duration-200 ease-out-quart"
                 >
-                  See full breakdown →
+                  See all au pairs →
                 </a>
               </div>
             </div>
