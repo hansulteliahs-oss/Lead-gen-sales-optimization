@@ -108,7 +108,7 @@ export default function TestimonialsPage() {
               rel="noopener noreferrer"
               className="inline-block bg-brand-ink text-brand-paper px-8 py-4 rounded font-medium text-base hover:bg-brand-spot-deep transition-colors duration-200 ease-out-quart"
             >
-              Get in touch
+              Get Started
             </a>
           </div>
         </div>
