@@ -106,7 +106,7 @@ export default function AboutPage() {
           </h2>
           <div>
             <p className="opsz-body text-lg text-brand-ink-soft max-w-[50ch] mb-7">
-              Reach out today and {KIM.name} will walk you through everything — no pressure, no script.
+              Ready to learn more about becoming a host family?
             </p>
             <a
               href={APPLY_URL}
@@ -114,7 +114,7 @@ export default function AboutPage() {
               rel="noopener noreferrer"
               className="inline-block bg-brand-ink text-brand-paper px-8 py-4 rounded font-medium text-base hover:bg-brand-spot-deep transition-colors duration-200 ease-out-quart"
             >
-              Get in touch
+              Get started
             </a>
           </div>
         </div>
