@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
+import Image from 'next/image'
 import { Disclosure } from '@/components/ui/disclosure'
 
 const CULTURAL_CARE_URL =
@@ -121,6 +122,28 @@ export default function FAQPage() {
               </h1>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FEATURE IMAGE */}
+      <section className="pb-14 md:pb-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <figure className="max-w-3xl mx-auto">
+            <div className="bg-brand-paper-deep p-2.5 md:p-3 border border-brand-ink-rule rounded-sm">
+              <Image
+                src="/photos/kitchen-play.jpg"
+                alt="An au pair sitting on the kitchen floor with a young boy, both smiling during a moment of play."
+                width={640}
+                height={427}
+                sizes="(min-width: 768px) 624px, 100vw"
+                className="w-full h-auto block"
+                priority
+              />
+            </div>
+            <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
+              Everyday life with an au pair &middot; In the host family&apos;s home
+            </figcaption>
+          </figure>
         </div>
       </section>
 

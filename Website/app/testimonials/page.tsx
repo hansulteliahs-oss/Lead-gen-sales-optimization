@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
+import Image from 'next/image'
 
 const APPLY_URL =
   'https://www.culturalcare.com/lcc/karvdalen/?utm_source=ig&utm_medium=social&utm_content=link_in_bio#become-hf-form'
@@ -68,6 +69,28 @@ export default function TestimonialsPage() {
               </h1>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FEATURE IMAGE */}
+      <section className="pb-14 md:pb-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <figure className="max-w-3xl mx-auto">
+            <div className="bg-brand-paper-deep p-2.5 md:p-3 border border-brand-ink-rule rounded-sm">
+              <Image
+                src="/photos/reading-park.jpg"
+                alt="An au pair sitting on a park bench, reading a picture book to a toddler on her lap."
+                width={640}
+                height={427}
+                sizes="(min-width: 768px) 624px, 100vw"
+                className="w-full h-auto block"
+                priority
+              />
+            </div>
+            <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.08em] text-brand-bark">
+              An au pair and her host child &middot; Reading in the park
+            </figcaption>
+          </figure>
         </div>
       </section>
 
