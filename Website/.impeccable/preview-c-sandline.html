@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Variant C — Sandline | Kim Arvdalen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@500;600&display=swap"
+  rel="stylesheet"
+/>
+<style>
+  :root {
+    /* "Sandline" — strict 4-role beach palette, structural not decorative.
+       Sand = paper. Ocean = text. Palm bark = structure. Palm frond = single editorial spot. */
+    --sand:        oklch(93% 0.030 78);   /* warm Newport beige, golden-hour */
+    --sand-deep:   oklch(89% 0.038 76);   /* shadowed sand, used once on pull-quote panel */
+    --ocean:       oklch(33% 0.075 205);  /* deep Pacific kelp-forest, not pool teal */
+    --ocean-soft:  oklch(33% 0.075 205 / 0.74);
+    --bark:        oklch(45% 0.040 60);   /* dry palm-trunk brown — structural */
+    --bark-soft:   oklch(45% 0.040 60 / 0.62);
+    --bark-rule:   oklch(45% 0.040 60 / 0.32);
+    --frond:       oklch(58% 0.140 135);  /* sage-leaning palm green, sparing spot */
+    --frond-deep:  oklch(48% 0.140 135);
+    --serif: "Fraunces", "Cormorant Garamond", Georgia, serif;
+    --mono:  "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--sand);
+    color: var(--ocean);
+    font-family: var(--serif);
+    font-variation-settings: "opsz" 14, "SOFT" 50;
+    font-size: 18px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--frond); color: var(--sand); }
+
+  nav.top {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--sand);
+    border-bottom: 1px solid var(--bark-rule);
+  }
+  nav.top .row {
+    max-width: 1120px; margin: 0 auto;
+    padding: 16px 32px;
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 32px;
+  }
+  nav.top .brand {
+    font-variation-settings: "opsz" 60, "SOFT" 30;
+    font-weight: 500;
+    font-size: 19px;
+    letter-spacing: -0.005em;
+    color: var(--ocean);
+  }
+  nav.top .links {
+    display: flex; gap: 28px; align-items: baseline;
+    font-size: 14px;
+    font-variation-settings: "opsz" 14, "SOFT" 60;
+    color: var(--ocean-soft);
+  }
+  nav.top .links a:hover { color: var(--frond-deep); }
+  nav.top .cta {
+    background: var(--ocean); color: var(--sand);
+    padding: 10px 18px;
+    border-radius: 4px;
+    font-size: 14px; font-weight: 500;
+    transition: background 200ms cubic-bezier(0.22,1,0.36,1);
+  }
+  nav.top .cta:hover { background: var(--frond-deep); }
+
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+
+  .hero { padding: 88px 0 96px; }
+  .hero .row {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+    gap: 64px;
+    align-items: end;
+  }
+  .hero .meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--bark);
+    line-height: 1.6;
+  }
+  .hero .meta div + div { margin-top: 4px; }
+  .hero h1 {
+    font-variation-settings: "opsz" 144, "SOFT" 0;
+    font-weight: 300;
+    font-size: clamp(48px, 7vw, 96px);
+    line-height: 0.96;
+    letter-spacing: -0.025em;
+    margin: 18px 0 0;
+    color: var(--ocean);
+    text-wrap: balance;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--frond-deep);
+  }
+  .hero .lede {
+    margin-top: 36px;
+    max-width: 56ch;
+    font-size: 20px;
+    line-height: 1.55;
+    color: var(--ocean-soft);
+    font-variation-settings: "opsz" 24, "SOFT" 60;
+  }
+  .hero .signoff {
+    margin-top: 42px;
+    display: flex; align-items: center; gap: 24px;
+    flex-wrap: wrap;
+  }
+  .hero .signoff .button {
+    background: var(--ocean); color: var(--sand);
+    padding: 14px 26px;
+    border-radius: 4px;
+    font-family: var(--serif);
+    font-size: 16px; font-weight: 500;
+    font-variation-settings: "opsz" 14, "SOFT" 50;
+    transition: background 200ms cubic-bezier(0.22,1,0.36,1);
+  }
+  .hero .signoff .button:hover { background: var(--frond-deep); }
+  .hero .signoff .footnote {
+    font-size: 14px; color: var(--bark);
+  }
+  .hero .signoff .footnote::before {
+    content: "→ ";
+    color: var(--frond-deep);
+  }
+
+  .section-rule { border-top: 1px solid var(--bark-rule); margin-top: 80px; }
+  .section { padding: 56px 0 16px; }
+  .section .row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+    gap: 64px;
+  }
+  .section .marginalia {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--bark);
+    padding-top: 14px;
+  }
+  .section h2 {
+    font-variation-settings: "opsz" 72, "SOFT" 30;
+    font-weight: 400;
+    font-size: clamp(32px, 4.5vw, 52px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 28px;
+    color: var(--ocean);
+    text-wrap: balance;
+  }
+  .section p {
+    font-size: 19px;
+    line-height: 1.65;
+    margin: 0 0 16px;
+    max-width: 64ch;
+    color: var(--ocean-soft);
+    font-variation-settings: "opsz" 24, "SOFT" 60;
+  }
+  .section .arrow-link {
+    display: inline-block;
+    margin-top: 16px;
+    font-weight: 500;
+    color: var(--frond-deep);
+    border-bottom: 1px solid var(--frond-deep);
+    padding-bottom: 2px;
+  }
+  .section .arrow-link:hover { color: var(--ocean); border-color: var(--ocean); }
+
+  .cost-row {
+    margin: 28px 0 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+    border-top: 1px solid var(--bark-rule);
+    border-bottom: 1px solid var(--bark-rule);
+  }
+  .cost-row .cell {
+    padding: 22px 24px 22px 0;
+    border-right: 1px solid var(--bark-rule);
+  }
+  .cost-row .cell:last-child {
+    border-right: none;
+    padding-left: 28px;
+  }
+  .cost-row .cell .label {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--bark);
+  }
+  .cost-row .cell .figure {
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 28px;
+    color: var(--ocean);
+    margin-top: 8px;
+    letter-spacing: -0.01em;
+  }
+  .cost-row .cell .note {
+    margin-top: 6px;
+    font-size: 14px;
+    color: var(--ocean-soft);
+    font-variation-settings: "opsz" 14, "SOFT" 60;
+  }
+
+  .pull { padding: 96px 0; }
+  .pull .quote {
+    font-variation-settings: "opsz" 96, "SOFT" 30;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(28px, 3.6vw, 44px);
+    line-height: 1.18;
+    letter-spacing: -0.012em;
+    color: var(--ocean);
+    max-width: 26ch;
+    text-wrap: balance;
+  }
+  .pull .quote::before {
+    content: "“";
+    color: var(--frond);
+    font-style: normal;
+    font-weight: 300;
+    margin-right: 0.05em;
+  }
+  .pull .attrib {
+    margin-top: 28px;
+    font-family: var(--mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--bark);
+  }
+
+  .cta-section {
+    border-top: 1px solid var(--bark-rule);
+    padding: 96px 0 120px;
+  }
+  .cta-section .row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 64px; align-items: end;
+  }
+  .cta-section h2 {
+    font-variation-settings: "opsz" 96, "SOFT" 0;
+    font-weight: 300;
+    font-size: clamp(40px, 5.5vw, 68px);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    margin: 0;
+    color: var(--ocean);
+    text-wrap: balance;
+  }
+  .cta-section p {
+    font-size: 18px;
+    color: var(--ocean-soft);
+    max-width: 50ch;
+    margin: 0 0 24px;
+  }
+  .cta-section .button {
+    display: inline-block;
+    background: var(--ocean); color: var(--sand);
+    padding: 16px 28px;
+    border-radius: 4px;
+    font-size: 16px; font-weight: 500;
+  }
+  .cta-section .button:hover { background: var(--frond-deep); }
+
+  footer.foot {
+    border-top: 1px solid var(--bark-rule);
+    padding: 32px 0 48px;
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--bark);
+  }
+  footer .row {
+    display: flex; justify-content: space-between; gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 720px) {
+    .hero .row { grid-template-columns: 1fr; gap: 32px; }
+    .section .row { grid-template-columns: 1fr; gap: 16px; }
+    .cta-section .row { grid-template-columns: 1fr; gap: 24px; }
+    .cost-row { grid-template-columns: 1fr; }
+    .cost-row .cell { border-right: none; border-bottom: 1px solid var(--bark-rule); padding: 18px 0; }
+    .cost-row .cell:last-child { border-bottom: none; padding: 18px 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="row">
+    <a href="#" class="brand">Kim Arvdalen</a>
+    <div class="links">
+      <a href="#">About</a>
+      <a href="#">Au Pairs</a>
+      <a href="#">FAQ</a>
+      <a href="#">Testimonials</a>
+      <a href="#" class="cta">Get started</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="row">
+      <div>
+        <div class="meta">
+          <div>Local Childcare Consultant</div>
+          <div>Newport Beach &middot; Cultural Care Au Pair</div>
+        </div>
+        <h1>
+          A real childcare option for the families of <em>Newport Beach</em>, written by someone who lives here.
+        </h1>
+        <p class="lede">
+          I'm Kim, your Local Childcare Consultant. I help families across Orange County and the SoCal coast figure out whether the au pair program — yes, really — is the right fit. Most parents I meet are paying daycare prices and not sure there's another way. There is.
+        </p>
+        <div class="signoff">
+          <a href="#" class="button">Start with Cultural Care</a>
+          <span class="footnote">Or read on for what an au pair actually costs.</span>
+        </div>
+      </div>
+      <div class="meta" style="text-align: right;">
+        <div>Issue 01</div>
+        <div>Newport Beach, CA</div>
+        <div>Available now</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-rule"></div>
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="marginalia">§ About</div>
+      <div>
+        <h2>Hi, I'm Kim.</h2>
+        <p>
+          I've been a Local Childcare Consultant with Cultural Care Au Pair for several years. I grew up nearby. My own kids go to school here. The families I work with are friends, neighbours, the parents two rows over at the school assembly.
+        </p>
+        <p>
+          When you sign up through me, you're not signing up to a corporate program. You're signing up to a person who will pick up the phone.
+        </p>
+        <a href="#" class="arrow-link">Read more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-rule"></div>
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="marginalia">§ Au Pairs</div>
+      <div>
+        <h2>What it actually costs.</h2>
+        <p>
+          The weekly stipend paid to your au pair is set by federal law and isn't negotiable. The program fee is paid once, to Cultural Care. Together, for a family with two or more kids, the math typically beats full-time daycare in this area.
+        </p>
+        <div class="cost-row">
+          <div class="cell">
+            <div class="label">Weekly stipend</div>
+            <div class="figure">$195.75</div>
+            <div class="note">Federally set. Paid directly to your au pair.</div>
+          </div>
+          <div class="cell">
+            <div class="label">Annual program total</div>
+            <div class="figure">$20–30k</div>
+            <div class="note">All-in. Often less than OC daycare for two kids.</div>
+          </div>
+        </div>
+        <a href="#" class="arrow-link" style="margin-top: 28px;">See full breakdown →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pull">
+  <div class="container">
+    <p class="quote">Within an hour she had answered every question I had and made the whole thing feel totally doable.</p>
+    <div class="attrib">— Sarah T., Costa Mesa</div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="row">
+      <h2>Talk to a real person, not a form.</h2>
+      <div>
+        <p>Sign up through Cultural Care and you'll be connected with me directly. I answer my own phone. We'll figure out together if this is right for your family.</p>
+        <a href="#" class="button">Sign up with Kim</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    <div class="row">
+      <div>Kim Arvdalen &middot; Local Childcare Consultant</div>
+      <div>Newport Beach &middot; Costa Mesa &middot; Irvine &middot; Greater SoCal</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
